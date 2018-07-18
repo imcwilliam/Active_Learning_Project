@@ -1,0 +1,14 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Background}{2}
+\contentsline {section}{\numberline {2.1}Active Learning}{2}
+\contentsline {section}{\numberline {2.2}Curriculum Learning}{2}
+\contentsline {chapter}{\numberline {3}Related Work}{3}
+\contentsline {chapter}{\numberline {4}Methods}{4}
+\contentsline {section}{\numberline {4.1}Active Learning Metrics}{4}
+\contentsline {section}{\numberline {4.2}Curriculum Construction}{4}
+\contentsline {section}{\numberline {4.3}MNIST}{4}
+\contentsline {section}{\numberline {4.4}Geometric Shapes}{4}
+\contentsline {section}{\numberline {4.5}CIFAR}{4}
+\contentsline {chapter}{\numberline {5}Results}{5}
+\contentsline {chapter}{\numberline {6}Discussion}{6}
+\contentsline {chapter}{\numberline {7}Conclusion and Further Work}{7}
