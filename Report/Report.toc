@@ -1,0 +1,15 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Background}{3}
+\contentsline {section}{\numberline {2.1}Stochastic Gradient Descent}{3}
+\contentsline {section}{\numberline {2.2}Active Learning}{3}
+\contentsline {section}{\numberline {2.3}Curriculum Learning}{5}
+\contentsline {chapter}{\numberline {3}Related Work}{7}
+\contentsline {chapter}{\numberline {4}Methods}{8}
+\contentsline {section}{\numberline {4.1}Active Learning Metrics}{8}
+\contentsline {section}{\numberline {4.2}Curriculum Construction}{8}
+\contentsline {section}{\numberline {4.3}MNIST}{8}
+\contentsline {section}{\numberline {4.4}Geometric Shapes}{8}
+\contentsline {section}{\numberline {4.5}CIFAR}{8}
+\contentsline {chapter}{\numberline {5}Results}{9}
+\contentsline {chapter}{\numberline {6}Discussion}{10}
+\contentsline {chapter}{\numberline {7}Conclusion and Further Work}{11}

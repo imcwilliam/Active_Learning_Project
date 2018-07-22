@@ -1,0 +1,40 @@
+\chapter{Background}
+
+\section{Stochastic Gradient Descent}
+Brief intro and description of gradient descent, discussion of unbiased estimate and variance etc, some examples of variance reduction methods
+
+\section{Active Learning}
+A key component in any supervised learning effort is labeled data; in many domains it is relatively easy and cheap to obtain large volumes training samples, however in others it can be far more costly, particularly when assigning acurate labels. In medical image analysis for example one may require a domain expert to spend significant time analysing each image before assigning label, or in document tagging it can take time to read a document and assign a topic label. It can therefore be very useful for a designer to understand which sample they should go to the effort of acquiring, labeling and feeding into their chosen learning algorithm, generally measured by how much the chosen sample improve the network performance, compared to if a random sample was selected instead. We here introduce some of the main methodologies employed for active learning, giving the reader some background to the methods that will be used in this paper.
+
+There are a variety of approaches to the active learning problem, however most involve the use of an \textit{acquisition function}, which selects which sample, from a set of candidate unlabeled examples, should be selected for labeling and training. As the most appropriate training examples varies depending on the learning algorithm, and its current state in the training process, the chosen sample is said to be `queried' by the algorithm. The motivation behind different active learning approaches vary; one of the most common approaches is that of \textit{uncertainty sampling}, wherein the samples that the learning algorithm is most uncertain about labeling are queried. This uncertainty can be captured by analysing the distance to classification threshold of the model outputs; for example one method is to select the sample about which the model is least confident in predicting: (taken from REF SETTLES:)
+\begin{equation}
+x^{*}_{LC} = \arg\max_{x} 1 - P_{\theta}(\hat{y}|x),
+\end{equation}
+where
+\begin{equation}
+\hat{y} = \arg\max_{y}P_{\theta}(y|x).
+\end{equation}
+Where $x^{*}_{LC}$ is the queried training sample and $P_{\theta}(y_{i}|x)$ is the model's predicted probability that sample $x$ is of class $y_{i}$, given model parameters $\theta$. Similarly, samples can be queried by their average distance to classification threshold or, very similarly, the entropy of the algorithm prediction, again taken from REF SETTLES:
+\begin{equation}
+x^{*} = \arg\max_{x} - \sum_{i} P_{\theta}(y_i|x)\log P_{\theta}(y_i|x),
+\end{equation}
+where the sum runs over the possible classes $yi$.
+
+An alternative approach to querying training samples is to estimate the expected change in model parameters, if trained on a given sample. As, in the active learning setting, it is assumed that the label is unavailable, this is calculated as an average across all potential labels. Model change can be estimated by the magnitude of the gradient vector produced by training on the tuple $\braket{x,y}$. The acquition function then selects the sample which maximises the expected gradient size (REF SETTLES AGAIN):
+\begin{equation}
+x^{*}_{EGL} = \arg\max_{x} \sum_{i} P_{\theta}(y_i|x) \norm{\nabla \ell_{\theta}(\mathcal{L} \cup \braket{x,y_{i}})},
+\end{equation}
+where $\norm{.}$ is the Euclidean norm, $\mathcal{L}$ is the current set of labelled training samples, $\ell$ is the objective function used to train the model and $\nabla \ell_{\theta}(\mathcal{L})$ is the gradient of this objective function with respect to the model parameters $\theta$, when trained on $\mathcal{L}$. This approach therefore find the sample that leads to the largest increase expected in the gradient when added to the training set $\mathcal{L}$.
+
+Finally, another common approach for active learning is that of \textit{query by committee}; here a population of different models are trained on an initial training set, then the samples about which the models exhibit the most disagreement in their predictions are queried. An example of this is \textit{vote entropy} REF:
+\begin{equation}
+x_{VE}^{*} = \arg\max_{x} - \sum_{i} \frac{V(y_i)}{C} \log \frac{V(y_i)}{C},
+\end{equation}
+where $C$ represent the size of the `committee' (i.e. the number of models) and $V(y_i)$ is the number of models in the committe that predict predict label $y_i$. There are obvious parallels here to methods such as ensembling, boosting and bagging, indeed active learning has drawn parallels with several other learning paradigms, such as self-paced learning (REF) and curriculum learning (REF), the latter of which we shall now introduce. 
+
+\section{Curriculum Learning}
+While active learning uses methods to identify which samples to label and train in order to speed up training in domains with a high labeling cost, \textit{curriculum learning} attempts to present training samples to the learner in a meaningful order that will lead to greater overall generalization performance of the model. The motivation stems from the way in which humans, and other animals generally learn, beginning with easy concepts before moving onto more complex facets of the area of study. The same principle can be applied to training deep models, and the authors of REF suggest that, by initially training only on `easy' samples, one can reduce overall generalization error. The authors offer several theoretical justifications, for example comparing curriculum learning to \textit{continuation methods};  it is proposed that the easier samples represent a smoother, more convex version of the error space of the overall problem, and that, by training on easier samples, the parameters of the model are effectively initialised into an area of parameter space closer to the global optimum. This argument is similar to that of unsupervised pre-training, which again has been shown to lead to better generalized models, as a result of moving initialising the parameters into parts of the error space closer to the global optimum. Comparisons have also been drawn between curriculum learning and \textit{transfer learning}, with the easier samples being seen as a separate task that the model is trained on, before using the weights for a different task (i.e. the harder samples) as in transfer learning.  
+
+The main issue with curriculum learning is that it is often very difficult to delineate between `easy' and `difficult' samples, while it is also hard to ascertain how one should transition from different difficulties. The example given in REF BENGIO  for curriculum learning is the `GeoShapes' dataset, an image classification where a network attempts to classify whether or a not an image shows a rectangle, ellipse or triangle. In this case there is a natural subset of `easy' samples; specifically squares (i.e. regular rectangle), circles (regular ellipses) and equilateral triangles. The authors show that, by training initially on only the regular shapes, then transitioning to training on harder shapes, the test set performance is significantly improved compared to training simply on the harder shapes for the entirety of training. One issue with this study is that it can be argued that the curriculum trained model has seen more samples overall than the baseline, as the curriculum model is trained on both an `easy' training set and a `hard' training set, whereas the baseline is trained only on the hard training set. A better baseline therefore is a model trained uniformly on the union of the easy and hard training sets. While the authors do comment on this issue, and claim that the curriculum method still outperform uniform sampling from the combined training set, the results we will set out in this paper did not reach the same conclusions. 
+
+

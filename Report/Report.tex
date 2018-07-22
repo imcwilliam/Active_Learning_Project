@@ -1,12 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%
-%% Sample use of the infthesis class to prepare a thesis. This can be used as 
-%% a template to produce your own thesis.
-%%
-%% The title, abstract and so on are taken from Martin Reddy's csthesis class
-%% documentation.
-%%
-%% MEF, October 2002
-%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%
 %% Load the class. Put any options that you want here (see the documentation
@@ -44,7 +36,7 @@
 %% Taught MSc -- specify a particular degree instead. If none is specified,
 %% "MSc in Informatics" is used.
 % \documentclass[msc,cogsci]{infthesis}
- \documentclass[msc,leftchapter]{infthesis}  % for the MSc in Informatics
+ \documentclass[msc,ai,leftchapter,deptreport]{infthesis}  % for the MSc in Informatics
 
 %% Master of Informatics (5 year degree)
 % \documentclass[minf]{infthesis}
@@ -58,6 +50,9 @@
 %% Put any \usepackage commands you want to use right here; the following is 
 %% an example:
 \usepackage{natbib}
+\usepackage{braket}
+\usepackage{amsmath}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
 
 %% Information about the title, etc.
 \title{Automatic Curriculum Learning for Deep Models Using Active Learning}
@@ -72,8 +67,7 @@
 
 %% Specify the abstract here.
 \abstract{%
-    This doctoral thesis will present the results of my work into the
-    reanimation of lifeless human tissues.
+    This 
 }
 
 %% Now we start with the actual document.
@@ -87,8 +81,7 @@
 
 %% Acknowledgements
 \begin{acknowledgements}
-Many thanks to my mummy for the numerous packed lunches; and of course to
-Igor, my faithful lab assistant.
+Many thanks 
 \end{acknowledgements}
 
 %% Next we need to have the declaration.
@@ -112,11 +105,10 @@ Igor, my faithful lab assistant.
 %% format.
 
 
-\chapter{Introduction}
-Hypothesis/objective, motivation and results achieved,
-\chapter{Background}
-\section{Active Learning}
-\section{Curriculum Learning}
+\include{Introduction}
+
+\include{Background}
+
 \chapter{Related Work}
 
 \chapter{Methods}
