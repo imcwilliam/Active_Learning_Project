@@ -1,13 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%
-%% Sample use of the infthesis class to prepare a thesis. This can be used as 
-%% a template to produce your own thesis.
-%%
-%% The title, abstract and so on are taken from Martin Reddy's csthesis class
-%% documentation.
-%%
-%% MEF, October 2002
-%%%%%%%%%%%%%%%%%%%%%%%%
-
 %%%%
 %% Load the class. Put any options that you want here (see the documentation
 %% for the list of options). The following are samples for each type of
@@ -31,20 +21,11 @@
 %%  parskip: don't indent paragraphs, put a blank line between instead
 %%  abbrevs: define a list of useful abbreviations (see documentation)
 %%  draft: produce a single-spaced, double-sided thesis with narrow margins
-%%
-%% For a PhD thesis -- you must also specify a research institute:
-%\documentclass[phd,ilcc,twoside]{infthesis}
-
-%% For an MPhil thesis -- also needs an institute
-% \documentclass[mphil,ianc]{infthesis}
-
-%% MSc by Research, which also needs an institute
-% \documentclass[mscres,irr]{infthesis}
 
 %% Taught MSc -- specify a particular degree instead. If none is specified,
 %% "MSc in Informatics" is used.
 % \documentclass[msc,cogsci]{infthesis}
- \documentclass[msc,leftchapter]{infthesis}  % for the MSc in Informatics
+ \documentclass[msc,ai,leftchapter]{infthesis}  % for the MSc in Informatics
 
 %% Master of Informatics (5 year degree)
 % \documentclass[minf]{infthesis}
@@ -114,6 +95,8 @@ Igor, my faithful lab assistant.
 
 \chapter{Introduction}
 Hypothesis/objective, motivation and results achieved,
+
+Surface level introduction to Active Learning, Curriculum Learning
 \chapter{Background}
 \section{Active Learning}
 \section{Curriculum Learning}
