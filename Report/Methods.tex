@@ -5,7 +5,7 @@ The purpose of this paper is investigate how different active learning query met
 
 Each active learning method will be used to score the training samples, with the score then being fed as an input into the curriculum construction method to build the training mini-batches throughout the learning phase. As we are not `acquiring' samples, rather we are calculating a score for every training sample, the terminology `acquisition function' would be inappropriate, instead we refer to these score producing functions as \textit{active score functions}.  Each function will map training samples to a real number, which is then passed through a softmax function; this has the effect standardizing the various metrics, as well as allowing us to control the score ratio between different functions using the softmax temperature, as well as producing an output that can interpreted as sampling probabilities (see \ref{Methods_SoftmaxTemperature}). In order to have consistency across the different methods we invert certain scores so that a \textit{higher} score for a sample always corresponding to the sample being estimated to be \textit{easier} for the sample to classify. The classic curriculum learning approach would therefore bias learning towards samples with high scores, while the classic active learning approach would bias learning towards samples with low scores. 
 
-As well as monitoring how the different active score functions affect model performance, we will also investigate how succesful the different methods are at identifying which samples are `hard' or `easy', by visually inspecting the samples which receive very high or low scores by the different functions throughout training. 
+As well as monitoring how the different active score functions affect model performance, we will also investigate how successful the different methods are at identifying which samples are `hard' or `easy', by visually inspecting the samples which receive very high or low scores by the different functions throughout training. 
 \subsection{Average Absolute Distance to Threshold (AADT)}
 As laid out in section \ref{Background_ActiveLearning}, a popular active learning method is to examine the proximity to the classification boundary of the model's outputted probabilities (assuming the model outputs probabilities; we will be using deep models with a softmax output layer). The assumption is that samples that the model is uncertain about classifying will produce probabilities close to the classification boundary; indeed as mentioned in section \ref{Background_ActiveLearning} the authors of REF show that prediction variance is inversely proportional to the distance to the boundary. From a curriculum perspective we can estimate a sample's difficulty by the algorithm's uncertainty in predicting the class label, with uncertain samples being seen as hard, and vice versa. 
 We therefore calculate the distance to threshold active score function as follows, note that the score is proportional to the \textit{inverse} of the average distance to threshold, in order to ensure that easier samples have a higher score and vice versa:
@@ -31,8 +31,22 @@ S^{H}_{\theta}(x_i) = - \sum_{c}^{C} P_{\theta}(y_c|x)\log P_{\theta}(y_c|x).
 \end{equation}
 
 \subsection{BALD}
+Recent advances in Bayesian neural networks and variational inference motivate an alternative approach to measuring uncertainty; while the distance to classification threshold may encapsulate classification uncertainty for samples close to the boundary, it does not consider the uncertainty associated with analysing samples from parts of the feature space that is not represented in the training data. Consider the toy example shown in FIGURE, where a sample may be far from the classification boundary, but so dissimilar from the training samples that we would want to measure the sample as having high classification uncertainty. One approach to this problem is given by REF GAL, where they motivate using the \textit{Monte Carlo dropout} method as a way of approximating variational inference in neural networks. As with the usual dropout procedure, weights are randomly set to zero throughout the training phase, however, unlike the usual approach, dropout is maintained at the test stage, and a number of forward passes are carried out, resulting in a distribution of outputs. The resultant distribution can subsequently be analysed to infer which test samples the model is more or less confident in predicting, for example by comparing the variance of the output distributions. In REF GAL ACTIVE LEARNING, the authors use the MC dropout method to construct an active learning acquisition function \textit{Bayesian Active Learning by Disagreement (BALD)}, which queries points which ``maximise the mutual information between predictions and model posterior'', identifying samples that have a high probability of being placed into different classes in the different stochastic forward passes. One interpration of the BALD method is that it is similar to the `Query by Committee'' active learning methods, with the different forward passes representing different models' votes. 
 
+We calculate the BALD active score function as follows:
 
+\begin{equation}
+P_{\theta}^{BALD} (x_i) = \frac{exp(\frac{S^{BALD}_{\theta}(x_i)}{\tau})}{\sum_{j}^{N} exp(\frac{S^{BALD}_{\theta}(x_j)}{\tau})},
+\end{equation}
+where
+\begin{equation}
+S^{BALD}_{\theta}(x_i) = - \sum_{c}^{C} \bar{P}_{\theta}(y_c|x_i)\log( \bar{P}_{\theta}(y_c|x_i)) + \frac{1}{M} \sum_{m}^{M} (\sum_{c}^{C} P^{m}_{\theta}(y_c|x)\log(P^{m}_{\theta}(y_c|x))),
+\end{equation}
+and
+\begin{equation}
+ \bar{P}_{\theta}(y_c|x_i) = \frac{\sum_{m}^{M}P^{m}_{\theta}(y_c|x)}{M}. 
+\end{equation}
+Here $M$ is the number of stochastic forward passes carried out and $P^{m}_{\theta}(y_c|x)$ is the softmax probability of class $c$ from the $m^{th}$ forward pass. The score can therefore be interpreted as the difference between the entropy of the average softmax output and the average entropy of the output of each forward pass.
 \subsection{Softmax temperature}\label{Methods_SoftmaxTemperature}
 In order to homogenize the outputs of the different active score functions, we pass the the scores through a softmax functions, resulting in an output of softmax probabilities summing to 1. Using the softmax function also allows us to use the softmax temperature in order to control the diversity of the sampling probabilities. A common issue with active learning is that the acquisition functions can end up sampling from an unrepresentative subset of the input space, resulting in significant bias in the training of the model (REF!). Indeed, GIVE EXAMPLE OF MAX RATIO FOR DIST2THRESH
 
@@ -44,7 +58,7 @@ To do this we begin with a softmax temperature of 1, then calculate the current 
 
 PSEUDOCODE FOR SOFTMAX CONTROL
 
-The downside to this method is it could be skewed by outlier probabilities; if there were one sample with an extremely large sampling probability this method would still achieve a target maximum probability ratio, without achieving sufficient diversity in the sampling probabilities. We investigated using winsorization (REF) as an outlier removal technique prior to tuning the temperature parameter, howevever, as the active score functions we use generally did not result in outliers, this did not affect results.  
+The downside to this method is it could be skewed by outlier probabilities; if there were one sample with an extremely large sampling probability this method would still achieve a target maximum probability ratio, without achieving sufficient diversity in the sampling probabilities. We investigated using winsorization (REF) as an outlier removal technique prior to tuning the temperature parameter, however, as the active score functions we use generally did not result in outliers, this did not affect results.  We show in section REF how controlling the maximum probability ratio affects training. 
 
 \section{Curriculum Construction}
 
