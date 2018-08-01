@@ -83,7 +83,7 @@
 
 %% Acknowledgements
 \begin{acknowledgements}
-Many thanks 
+Many thanks
 \end{acknowledgements}
 
 %% Next we need to have the declaration.
@@ -116,6 +116,9 @@ Many thanks
 \include{Methods}
 
 \chapter{Results}
+ \cite{Levy09}
+ \cite{Bengio2009}
+ \nocite{*}
 
 \chapter{Analysis and Discussion}
 
@@ -123,12 +126,11 @@ Many thanks
 
 % \include{chap2}
 %% ... etc ...
-
 %%%%%%%%
 %% Any appendices should go here. The appendix files should look just like the
 %% chapter files.
-\appendix
-\include{appendix1}
+%\appendix
+%\include{appendix1}
 %% ... etc...
 
 %% Choose your favourite bibliography style here.
@@ -136,10 +138,11 @@ Many thanks
 
 %% If you want the bibliography single-spaced (which is allowed), uncomment
 %% the next line.
-% \singlespace
+\singlespace
 
 %% Specify the bibliography file. Default is thesis.bib.
-\bibliography{thesis}
+\bibliography{bibliography}
+
 
 %% ... that's all, folks!
 \end{document}

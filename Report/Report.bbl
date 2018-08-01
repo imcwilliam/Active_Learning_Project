@@ -1,0 +1,25 @@
+\begin{thebibliography}{}
+
+\bibitem[E.L.Allgower and K.Georg, 1980]{Allgoer1980}
+E.L.Allgower and K.Georg (1980).
+\newblock {\em Numerical continuation methods. An introduction}.
+\newblock Springer-Verlag.
+
+\bibitem[Levy et~al., 2009]{Levy09}
+Levy, A., Patel, N., Wang, J., and Zhang, J. (2009).
+\newblock {\em Modeling Retail Correlations in Credit Portfolios}.
+\newblock Moody's Analytics.
+
+\bibitem[S.Bubeck, 2012]{Bubeck2012}
+S.Bubeck, N.-B. (2012).
+\newblock Regret analysis of stochastic and nonstochastic multi-armed bandit
+  problems.
+\newblock {\em Machine Learning}, 5:1--122.
+
+\bibitem[Y.Bengio and J.Weston, 2009]{Bengio2009}
+Y.Bengio, J.Louradour, R. and J.Weston (2009).
+\newblock Curriculum learning.
+\newblock {\em Procedures of the International Conference on Machine Learning},
+  26:41--18.
+
+\end{thebibliography}

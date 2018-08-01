@@ -1,16 +1,7 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Report.aux
-A level-1 auxiliary file: appendix1.aux
-I couldn't open style file apalike.bst
----line 31 of file Report.aux
- : \bibstyle{apalike
- :                  }
-I'm skipping whatever remains of this command
-I couldn't open database file thesis.bib
----line 32 of file Report.aux
- : \bibdata{thesis
- :                }
-I'm skipping whatever remains of this command
-I found no \citation commands---while reading file Report.aux
-I found no database files---while reading file Report.aux
-I found no style file---while reading file Report.aux
-(There were 5 error messages)
+A level-1 auxiliary file: Introduction.aux
+A level-1 auxiliary file: Background.aux
+A level-1 auxiliary file: RelatedWork.aux
+A level-1 auxiliary file: Methods.aux
+The style file: apalike.bst
+Database file #1: bibliography.bib
