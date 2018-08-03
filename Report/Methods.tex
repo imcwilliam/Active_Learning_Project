@@ -1,13 +1,15 @@
 \chapter{Methods}
 
-\section{Active Learning Metrics}
+\section{Active Learning Metrics}\label{Methods_Active_Learning_Metrics}
 The purpose of this paper is investigate how different active learning query metrics can be used to automatically construct learning curricula to improve the generalization performance of deep models. As such we select several active learning approaches, each of which can be used in combination with a curriculum construction methodology (REF SECTION) during training. Testing several methods will also allow us to test the robustness of the results and ascertain whether or not performance differences are consistent across different methods. 
 
 Each active learning method will be used to score the training samples, with the score then being fed as an input into the curriculum construction method to build the training mini-batches throughout the learning phase. As we are not `acquiring' samples, rather we are calculating a score for every training sample, the terminology `acquisition function' would be inappropriate, instead we refer to these score producing functions as \textit{active score functions}.  Each function will map training samples to a real number, which is then passed through a softmax function; this has the effect standardizing the various metrics, as well as allowing us to control the score ratio between different functions using the softmax temperature, as well as producing an output that can interpreted as sampling probabilities (see \ref{Methods_SoftmaxTemperature}). In order to have consistency across the different methods we invert certain scores so that a \textit{higher} score for a sample always corresponding to the sample being estimated to be \textit{easier} for the sample to classify. The classic curriculum learning approach would therefore bias learning towards samples with high scores, while the classic active learning approach would bias learning towards samples with low scores. 
 
 As well as monitoring how the different active score functions affect model performance, we will also investigate how successful the different methods are at identifying which samples are `hard' or `easy', by visually inspecting the samples which receive very high or low scores by the different functions throughout training. 
 \subsection{Average Absolute Distance to Threshold (AADT)}
-As laid out in section \ref{Background_ActiveLearning}, a popular active learning method is to examine the proximity to the classification boundary of the model's outputted probabilities (assuming the model outputs probabilities; we will be using deep models with a softmax output layer). The assumption is that samples that the model is uncertain about classifying will produce probabilities close to the classification boundary; indeed as mentioned in section \ref{Background_ActiveLearning} the authors of REF show that prediction variance is inversely proportional to the distance to the boundary. From a curriculum perspective we can estimate a sample's difficulty by the algorithm's uncertainty in predicting the class label, with uncertain samples being seen as hard, and vice versa. 
+As laid out in section \ref{Background_ActiveLearning}, a popular active learning method is to examine the proximity to the classification boundary of the model's outputted probabilities (assuming the model outputs probabilities; we will be using deep models with a softmax output layer). The assumption is that samples that the model is uncertain about classifying will produce probabilities close to the classification boundary; indeed as mentioned in section \ref{Background_ActiveLearning} the authors of REF show that prediction variance is inversely proportional to the distance to the boundary. From a curriculum perspective we can estimate a sample's difficulty by the algorithm's uncertainty in predicting the class label, with uncertain samples being seen as hard, and vice versa. Note that each active score function is dependent on a the output of a model; as we will show in section \ref{Methods_Curriculum_Construction}, this can the same model that will then be trained using the curriculum, or a reference model that we will use to derive a curriculum for a subsequent model.
+
+
 We therefore calculate the distance to threshold active score function as follows, note that the score is proportional to the \textit{inverse} of the average distance to threshold, in order to ensure that easier samples have a higher score and vice versa:
 \begin{equation}
 P_{\theta}^{AADT} (x_i) = \frac{exp(\frac{S^{AADT}_{\theta}(x_i)}{\tau})}{\sum_{j}^{N} exp(\frac{S^{DT}_{\theta}(x_j)}{\tau})},
@@ -59,15 +61,6 @@ To do this we begin with a softmax temperature of 1, then calculate the current 
 PSEUDOCODE FOR SOFTMAX CONTROL
 
 The downside to this method is it could be skewed by outlier probabilities; if there were one sample with an extremely large sampling probability this method would still achieve a target maximum probability ratio, without achieving sufficient diversity in the sampling probabilities. We investigated using winsorization (REF) as an outlier removal technique prior to tuning the temperature parameter, however, as the active score functions we use generally did not result in outliers, this did not affect results.  We show in section REF how controlling the maximum probability ratio affects training. 
-
-\section{Curriculum Construction}
-
-\subsection{Biased Sampling}
-
-\subsection{Uniform Sampled Tasks}
-Similar to self-paced learning
-\subsection{Biased Sampled Tasks}
-
 
 \section{Datasets}
 Description, example, dataset size, source
