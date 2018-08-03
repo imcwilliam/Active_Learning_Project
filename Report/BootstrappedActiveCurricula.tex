@@ -1,0 +1,14 @@
+\chapter{Bootstrapped Active Curricula}
+\section{Curriculum Construction}
+In this approach we train two models; the first, which we term the `baseline model', is trained using a standard mini-batch gradient descent optimisation on the entire available training set. We then use the outputs of this model to construct a learning curriculum which is used to train a second model, which we term the `curriculum model'. If the curriculum method is effective, we would expect that the curriculum model would outperform the baseline model on a held out test set. Due to the use of an initial model to construct the learning curriculum, we refer to this method as a \textit{bootstrapped active curriculum}.
+
+To construct the curriculum we first use the trained baseline model to score all of the training samples, using one of the active score functions from section\ref{Methods_Active_Learning_Metrics}. Once the samples are scored we sort them by rank and divide them into non-overlapping `tasks' of equal size, for example if we chose to split the data into two tasks, the first 50\% of samples would constitute task 1 and the second 50\% would be task 2. We then train the curriculum model on these tasks, initially training only on the first task, then including the second task, and so on until all tasks are included and the whole training set is being used to train the model. Figure REF below illustrates the different phases of training.
+
+\subsubsection{BAC Training Epochs}
+A naive approach to this curriculum would be to train the curriculum model for the same number of epochs as the baseline model, split equally acrossing training phases. For example if the baseline model was trained for 100 epochs and we constructed a two task curriculum, then the curriculum model would be trained on the first task for the first 50 epochs, then on both tasks for the second 50 epochs. The issue with this method however is that, as the first 50 epochs will be using half as much training data, the curriculum model will not have as many parameter updates as the baseline model. To emphasize this, consider that if we were using stochastic gradient descent (i.e. a mini-batch size of 1) for example, with a full training set of 1000 samples, the baseline model in this instance would have (\# epochs x \# training samples) parameter updates, i.e. 100 * 1000 = 100,000 parameter updates. The curriculum model on the other hand would have (50*500) + (50*1000) = 75,000 parameter updates.
+
+To address this, we adjust the number of training epochs in each training phase in order to ensure that both models are updated the same number of times. To do so, we simply 
+
+\section{Experiments}
+
+\section{Results and Discussion}
