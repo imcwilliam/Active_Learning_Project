@@ -1,6 +1,71 @@
-\chapter{Dynamic Sampled Active Curricula}
+\chapter{Dynamic Active Curricula}
+The results laid out in Chapter \ref{ch:BootstrappedActiveCurricula} suggest that generalisation performance can indeed be improved through the use of a learning curriculum, and that using active learning approaches to score which training samples are hard or difficult can be an effective way of automatically constructing such curricula without manually analysing the training samples. The disadvantage with the BAC method from Chapter \ref{ch:BootstrappedActiveCurricula} however is that it is necessary to first train a `baseline' model that can be used to derive a curriculum based on which samples it is uncertain about classifying. While in some cases this may not too significant a computational burden, it does effectively double the overall training time, motivating the approach laid out in this section. Specifically, we wish to investigate methods that can dynamically construct a curriculum throughout training, without needed to reference another model. We do this by calculating the model uncertainty on the training samples throughout training, using the uncertainty scores to construct dynamic curricula which evolve throughout training to focus on the samples that the model is more, or less, uncertain in its predictions. If succesful, these methods should lead to model performance which beats a the benchmark test set performance of a baseline model trained with normal mini-batch stochastic gradient descent on the entire training set, and hopefully will achieve results similar to those achieved by the bootstrapped active curricula from Chapter \ref{ch:BootstrappedActiveCurricula}.
 \section{Curriculum Construction}
+\subsection{Dynamic Task Curricula (DTC)}
+The first dynamic curriculum method we test we term `dynamic task curricula'; this approach is very similar to that of the BAC method laids out in Chapter \ref{ch:BootstrappedActiveCurricula}, however instead of constructing tasks based on the uncertainty scores of a fully trained baseline model, tasks are constructed dynamically using the uncertainty of the curriculum model itself throughout training. 
+
+\subsection{Biased Sampling Curricula (BSC)}
+
+\subsection{Biased Task Curricula (BTC)}
+ 
 
 \section{Experiments}
+
+\begin{table}[h]
+\caption{Geometric Shapes Dataset Model Architecture} \label{tab:GeoArchitecture}
+\begin{tabular}{|c||c|c|c|c|c|c|c|}
+\hline
+\multicolumn{8}{|c|}{Geometric Shapes Dataset Model Architecture} \\
+\hline
+ & Layer 1 & Layer 2 & Layer 3& Layer 4 &Layer 5 & Layer 6 & Layer 7 \\
+\hline
+\hline
+Layer Type & FC & Dropout & FC & Dropout & FC & Dropout  & FC \\
+\hline
+Units & 300 & NA & 300 & NA & 300 & NA & 3 \\
+\hline
+Activation & Tanh & NA & Tanh & NA & Tanh & NA & Softmax \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{MNIST Dataset Model Architecture} \label{tab:MNISTArchitecture}
+\begin{tabular}{|c||c|c|c|c|c|c|c|}
+\hline
+\multicolumn{8}{|c|}{MNIST Dataset Model Architecture} \\
+\hline
+ & Layer 1 & Layer 2 & Layer 3& Layer 4 &Layer 5 & Layer 6 & Layer 7 \\
+\hline
+\hline
+Layer Type & FC & Dropout & FC & Dropout & FC & Dropout  & FC \\
+\hline
+Units & 300 & NA & 300 & NA & 300 & NA & 3 \\
+\hline
+Activation & ReLU & NA & ReLU & NA & ReLU & NA & Softmax \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{CIFAR Dataset Model Architecture} \label{tab:CIFARArchitecture}
+\begin{tabular}{|c||c|c|c|c|c|c|c|}
+\hline
+\multicolumn{8}{|c|}{MNIST Dataset Model Architecture} \\
+\hline
+ & Layer 1 & Layer 2 & Layer 3& Layer 4 &Layer 5 & Layer 6 & Layer 7 \\
+\hline
+\hline
+Layer Type & Conv & Conv & Flatten & Dropout & FC & Dropout  & FC \\
+\hline
+Units & 50 & 50 & NA & NA & 100 & NA & 10 \\
+\hline
+Activation & ReLU &ReLU & NA & NA & ReLU & NA & Softmax \\
+\hline
+Kernel Size & 3x3 &3x3 & NA &NA &NA &NA &NA  \\
+\hline
+\end{tabular}
+\end{table}
+
 
 \section{Results and Discussion}

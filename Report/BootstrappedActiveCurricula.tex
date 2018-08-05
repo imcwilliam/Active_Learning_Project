@@ -1,14 +1,100 @@
-\chapter{Bootstrapped Active Curricula}
+\chapter{Bootstrapped Active Curricula}\label{ch:BootstrappedActiveCurricula}
+The first curriculum construction approach we investigate is what we term \textit{bootstrapped active curricula (BAC)}, the name is chosen as it involves `bootstrapping' a curriculum from a separate model. The intuition behind this approach is that, while it may be difficult to ascertain a-priori which samples are `hard' or `easy' (particularly for very large datasets where it is infeasible to analyse every sample), we can automatically infer which samples are difficult by first training a model on the data and then using an active learning uncertainty metric to investigate which samples the model is uncertain about classifying. Using prediction uncertainty to approximate difficulty, we can then construct a learning curriculum which can be used to train a new model, for example by splitting the training samples into separate tasks of increasing difficulty, as detailed below.
 \section{Curriculum Construction}
-In this approach we train two models; the first, which we term the `baseline model', is trained using a standard mini-batch gradient descent optimisation on the entire available training set. We then use the outputs of this model to construct a learning curriculum which is used to train a second model, which we term the `curriculum model'. If the curriculum method is effective, we would expect that the curriculum model would outperform the baseline model on a held out test set. Due to the use of an initial model to construct the learning curriculum, we refer to this method as a \textit{bootstrapped active curriculum}.
+In the BAC approach we train two models; the first, which we term the `baseline model' and denote  $\theta_{baseline}$, is trained to convergence using a standard mini-batch gradient descent optimisation on the entire available training set $\mathcal{T}$. We then use $\theta_{baseline}$ in conjunction with the AADT uncertainty function as defined below in section \ref{BAC_AADT}, scoring each training sample in $\mathcal{T}$. This produces $\mathbf{S}^{\theta_{baseline}}$, a vector of $N$ scores, where $N$ is the number of samples in $\mathcal{T}$, such that the $i^{th}$ element of $\mathbf{S}^{\theta_{baseline}}$ is the output of AADT uncertainty function:
 
-To construct the curriculum we first use the trained baseline model to score all of the training samples, using one of the active score functions from section\ref{Methods_Active_Learning_Metrics}. Once the samples are scored we sort them by rank and divide them into non-overlapping `tasks' of equal size, for example if we chose to split the data into two tasks, the first 50\% of samples would constitute task 1 and the second 50\% would be task 2. We then train the curriculum model on these tasks, initially training only on the first task, then including the second task, and so on until all tasks are included and the whole training set is being used to train the model. Figure REF below illustrates the different phases of training.
+\begin{equation}
+S^{\theta_{baseline}}_i = AADT_{\theta_{baseline}}(x_i) 
+\end{equation}
+where $x_i$ are the inputs of the $i^{th}$ training sample.
 
-\subsubsection{BAC Training Epochs}
-A naive approach to this curriculum would be to train the curriculum model for the same number of epochs as the baseline model, split equally acrossing training phases. For example if the baseline model was trained for 100 epochs and we constructed a two task curriculum, then the curriculum model would be trained on the first task for the first 50 epochs, then on both tasks for the second 50 epochs. The issue with this method however is that, as the first 50 epochs will be using half as much training data, the curriculum model will not have as many parameter updates as the baseline model. To emphasize this, consider that if we were using stochastic gradient descent (i.e. a mini-batch size of 1) for example, with a full training set of 1000 samples, the baseline model in this instance would have (\# epochs x \# training samples) parameter updates, i.e. 100 * 1000 = 100,000 parameter updates. The curriculum model on the other hand would have (50*500) + (50*1000) = 75,000 parameter updates.
+ We then sort the training samples according to their score, producing an ordered training set $\mathcal{T}_{\mathbf{S}^{\theta_{baseline}}}$, such that the first training sample in $\mathcal{T}_{\mathbf{S}^{\theta_{baseline}}}$ is the sample which produces the highest value from the active score function. We then split $\mathcal{T}_{\mathbf{S}^{\theta_{baseline}}}$ into equally sized `tasks', with the number of tasks being a hyperparameter of the curriculum construction. The learning curriculum is then constructed from these tasks; the chosen approach is to split training into discrete phases, with the number of phases being equal to the chosen number of tasks. The first phase of the curriculum consists of training only on the first task, denoted $\mathcal{T}^1_{\mathbf{S}^{\theta_{baseline}}}$, in the second phase, the second task is added to the training samples, training the model on $\mathcal{T}^1_{\mathbf{S}^{\theta_{baseline}}}$ and  $\mathcal{T}^2_{\mathbf{S}^{\theta_{baseline}}}$. In the third phase (if the number of tasks is greater than 2), the next task is added, and so on until all tasks have been added and the final phase consist of the training on the entirety of the original training set $\mathcal{T}$. Having constructed the BAC learning curriculum, we train a new `curriculum' model', which we denote by $\theta_{curriculum}$, using the curriculum. Pseudocode for the BAC method is given in section \ref{BACPseudocode}.
 
-To address this, we adjust the number of training epochs in each training phase in order to ensure that both models are updated the same number of times. To do so, we simply 
+\section{Average Absolute Distance to Threshold (AADT)}\label{BAC_AADT}
+As laid out in section \ref{Background_ActiveLearning}, a popular active learning method is to examine the proximity to the classification boundary of the model's outputted probabilities (assuming the model outputs probabilities; we will be using deep models with a softmax output layer). The assumption is that samples that the model is uncertain about classifying will produce probabilities close to the classification boundary; indeed as mentioned in section \ref{Background_ActiveLearning} the authors of REF show that prediction variance is inversely proportional to the distance to the boundary. From a curriculum perspective we can estimate a sample's difficulty by the algorithm's uncertainty in predicting the class label, with uncertain samples being seen as hard, and vice versa. We thus define the uncertainty function $AADT$ which calculates the absolute distance to classification threshold for the model outputs, averaged across all possible classes. Note that the function is dependent on a the output of the model in question, which is denoted $\theta$.
+\begin{equation}
+AADT_{\theta}(x_i) = \frac{ \sum_{c=1}^{C} \left|P_{\theta}(y_c |x_i) - \frac{1}{C}\right|}{C}.
+\end{equation}
+Where $|.|$ represents the L1 norm/absolute value function.
+Here $N$ is the number of training samples, $C$ is the number of output classes and $P_{\theta}(y_c |x_i)$ is the outputt softmax probability for class $y_c$ of the model $\theta$, given input $x_i$. We also tested the average \textit{square} of the distance to threshold, as opposed to the absolute distance to threshold, as well as testing the entropy of the outputs as an uncertainty measure, however results were extremely similar in all cases.
+
+\subsection{Phase Training Epochs}
+A naive approach to the BAC approach would be to train the curriculum model for the same number of epochs as the baseline model, split equally acrossing training phases. For example if the baseline model was trained for 100 epochs and we then constructed a two task curriculum, the curriculum model would be trained on the first task for the first 50 epochs, then on both tasks for the second 50 epochs. The issue with this method however is that, as during the first 50 epochs there are only half as many training samples, the curriculum model will not have as many parameter updates as the baseline model. To emphasize this, consider that if we were using stochastic gradient descent (i.e. a mini-batch size of 1) with a full training set of 1000 samples, the baseline model in this instance would have (\# epochs * \# training samples) parameter updates, i.e. 100 * 1000 = 100,000 parameter updates. The curriculum model on the other hand would have (50*500) parameter updates the first training phase and (50*1000) in the second, resulting in a total of   (50*500) + (50*1000) = 75,000 parameter updates, 25\% less updates than the baseline model underwent. To address this, we increase the number of epochs in each phase by the ratio of the number of samples used in the phase to the size of the whole training set. Specifically, we set the number of training epochs in each phase as follows:
+\begin{equation}
+NumEpochs^{i} =\floor{ \frac{BaselineEpochs}{i}}
+\end{equation}
+Where $BaselineEpochs$ is the number of epochs used to train the baseline model and $NumEpochs^{i}$ denotes the number of training epochs in the $i^{th}$ training phase. For example, in the first phase, $NumEpochs^{1} = \frac{BaselineEpochs}{1} = BaselineEpochs$. $\floor{.}$ represents the floor function; as $\frac{BaselineEpochs}{i}$ will not always be integer, we round down the number of epochs to ensure that and performance improvements are not a result of a higher number of parameter updates. The curriculum model will therefore be trained for a higher number of epochs (precisely, $\sum_{i=1}^{NumTasks}{\frac{1}{i}}$ times more epochs), however the number of parameter updates will be equalised. 
+
+\subsection{Pseudocode for BAC}\label{BACPseudocode}
+
+\section{Geometric Shapes Dataset}\label{sec:GeoShapes}
+To test the boostrapped active curriculum approach we use the `Geometric Shapes' dataset, as used in \cite{Bengio2009}. This dataset consists of 32x32 pixel images of geometric shapes, specifically ellipses, rectangles and triangles; the class labels are one-hot vectors which indicate to which of the three classes each sample belongs. As well as varying the shapes shown in the image, the samples also vary in colour, orientation, size and position. This dataset is used in \cite{Bengio2009} as it is easy to construct a predefined curriculum for geometric shapes; circles, squares and equilateral triangles represent regular, `easy' versions of the broader classes of ellipses, rectangles and triangles, respectively, figure REF FIGURE shows some examples taken from the dataset. The authors of \cite{Bengio2009} train a curriculum model by first training only on an easy training set consisting only of circles, squares and equilateral triangles, before then training on the more difficult training set with the more general shapes, both the easy and difficult training sets consist of 10,000 training samples, while the test set, consisting of hard samples, contains 5,000 images. The authors demonstrate that their approach outperforms an identical model trained only on the harder shapes, with the curriculum model consistently achieving greater test accuracy, with the greatest improvement coming  when the first half of the training epochs train on the easier shapes, and the second half the harder ones, as shown in REF FIGURE. As discussed by the authors, one potential pitfall of their experiments is that the curriculum model has seen more samples than the benchmark model, as it has been trained on both the easy and the difficult training sets, to avoid this in our experiments, the training set we use is the union of both the easy and difficult samples. Our training set therefore consists of 20,000 geometric shape images, including both the easy, regular shapes and the more difficult shapes, the test set is unchanged however, consisting of the 5,000 difficult samples. In the results section \ref{BAC_Results}, we analyse how succesful our tested curriculum method is at automatically identifying which samples come from the easy or hard training sets, investigating which training samples fall into the different tasks automatically constructed through the BAC curriculum method. 
+
+
 
 \section{Experiments}
+ In order to measure the effect of the curriculum on test performance, we set $\theta_{baseline}$ and $\theta_{curriculum}$ to have identical architectures, hyperparameters and initial weights, essentially minimizing any differences in training besides the learning curriculum. We use both the Average Absolute Distance to Threshold (AADT) and BALD active scoring functions, detailed in section \ref{Methods_Active_Learning_Metrics}, to score the training samples with the trained baseline model in each experiment. Furthermore, as well as testing `easy to hard' curricula, where the training phases progress from  $\mathcal{T}^1_{\mathbf{S}^{\theta_{baseline}}}$ to the final task, we also test the opposite approach, with the first training phase using only the hardest task, then incorporating the other tasks throughout training. We run the experiments using the Geometric Shapes dataset, as introduced in section REF, allowing us to compare results with the predefined curriculum as in REF BENGIO. To do so, as well as training the baseline and curriculum models, we also train a model using the predefined curriculum
+ 
+ , repeating multiple times with different weight initialisations. To analyse the effect of the curriculum on learning we report the accuracy of the different models over held out test sets. The exact architectures model architectures are given in tables 5.1 - 5.3 below; `FC' = fully connected Layer, ReLU = rectified linear unit activation and Conv = convolutional Layer. Note also that, while not shown in the tables, convolutitonal layers are always followed by a max pooling layer with a 2x2 kernel, and a batch normalization layer. 
+ 
+\begin{table}[h]
+\caption{Geometric Shapes Dataset Model Architecture} \label{tab:GeoArchitecture}
+\begin{tabular}{|c||c|c|c|c|c|c|c|}
+\hline
+\multicolumn{8}{|c|}{Geometric Shapes Dataset Model Architecture} \\
+\hline
+ & Layer 1 & Layer 2 & Layer 3& Layer 4 &Layer 5 & Layer 6 & Layer 7 \\
+\hline
+\hline
+Layer Type & FC & Dropout & FC & Dropout & FC & Dropout  & FC \\
+\hline
+Units & 300 & NA & 300 & NA & 300 & NA & 3 \\
+\hline
+Activation & Tanh & NA & Tanh & NA & Tanh & NA & Softmax \\
+\hline
+\end{tabular}
+\end{table}
 
-\section{Results and Discussion}
+We also lay out the hyperparameters for the training procedures in table \ref{tab:HyperParams} below:
+
+\begin{table}[h]
+\caption{Experiment Hyperparameters} \label{tab:HyperParams}
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+\multicolumn{7}{|c|}{Experiment Hyperparameters} \\
+\hline
+ &Epochs & Optimiser &Learning Rate & Dropout \% & Batch Size & Num Tasks \\
+\hline
+\hline
+GeoShapes & 350 & ADAM & 0.0001 & 0.25 & 32 & 2  \\
+\hline
+\end{tabular}
+\end{table}
+
+
+Architectures and hyperparameters were chosen and tuned in order to deliver a good level of performance without prohibitive training times, robustness tests were however carried out varying the model architectures and hyperparameters resulting in little change in the relative performance of the different methods. 
+\section{Results and Discussion}\label{sec:BAC_Results}
+The results of running the bootstrapped active curriuculum experiments with the Geometric Shapes dataset are summarised in table REF which shows the test set accuracies and cross entropy errors, including standard errors derived from 24 experiments with different initialisations.
+\begin{table}[h]
+\caption{Geometric Shapes BAC Results} \label{tab:GeoShapes BACResults}
+\begin{tabular}{|c||c|c|}
+\hline
+\multicolumn{3}{|c|}{GeoShapes BAC Results} \\
+\hline
+ & Test Accuracy (\%) & Test Cross-Entropy Error \\
+\hline
+\hline
+Baseline&  0.825 $\pm$ 0.00269 & 0.440 $\pm$ 0.00614 \\
+\hline
+Easy to Hard Curriculum & 0.840 $\pm$ 0.00267 & 0.398 $\pm$ 0.00670 \\
+\hline
+Hard to Easy Curriculum Model &    0.815 $\pm$ 0.00278 & 0.467 $\pm$ 0.00699 \\
+\hline
+\end{tabular}
+\end{table}
+
+We see from table \ref{tab:GeoShapes BACResults} that the easy to hard curriculum model significantly outperforms the baseline model, with an average test accuracy improvement of around 2.5\%, over 5 standard errors higher than the baseline test performance. Conversely, the hard to easy curriculum consistently underperforms, with a test accuracy on average 1\% lower than the baseline. Cross-entropy error is also reduced, with the easy to hard curriculum test error over 6 standard errors below that of the baseline model. These results suggest that, not only is there a benefit to training the model with a curriculum, the BAC model seems to be succesful at identifying which samples should be used in the different curriculum learning phases. As well as studying the test performance, we can also analyse how the BAC method splits up the training samples, by investigating which training samples are in each of the two tasks. Given that the Geometric Shapes dataset has a predefined curriculum, as explained in section \ref{sec:GeoShapes}, with the training set used in the experiments being made up of the union of an `easy' training set of regular shapes (circles, squares and equilateral triangles), and `hard' training set of more general shapes (ellipses, rectangles and triangles), we can analyse what proportion of the first task of the easy to hard curriculum comes from the easy training set. If the AADT uncertainty function is effective at discriminative between easy and hard samples, testing they hypothesis that active learning uncertainty metrics can be used to approximate sample difficulty for curriculum construction. Analysing the composition of the tasks in the BAC curricula EXAMPLE IMAGES AND PROPORTIONS ETC
+
+
+
+
