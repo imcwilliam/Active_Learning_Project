@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.27)  5 AUG 2018 16:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.27)  7 AUG 2018 18:10
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -230,32 +230,55 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen133
 \l_MT_above_shortintertext_sep=\dimen134
 \l_MT_below_shortintertext_sep=\dimen135
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen136
+\Gin@req@width=\dimen137
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+\c@subfigure=\count110
+\c@subtable=\count111
 ) (Report.aux
 (Introduction.aux) (Background.aux) (RelatedWork.aux) (Methods.aux)
-(BootstrappedActiveCurricula.aux) (DynamicSampledActiveCurricula.aux
+(BootstrappedActiveCurricula.aux
+
+LaTeX Warning: Label `fig:EasyGeoSamples' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:EasyGeoSamples' multiply defined.
+
+
+LaTeX Warning: Label `fig:HardGeoSamples' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:HardGeoSamples' multiply defined.
+
+) (DynamicSampledActiveCurricula.aux
 
 LaTeX Warning: Label `tab:GeoArchitecture' multiply defined.
 
 ))
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 80.
-LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 80
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 85.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 85
 .
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omspzccm.fd"
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -293,16 +316,16 @@ LaTeX Font Info:    ... okay on input line 80.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
-\scratchdimen=\dimen136
+\scratchcounter=\count112
+\scratchdimen=\dimen138
 \scratchbox=\box28
-\nofMPsegments=\count111
-\nofMParguments=\count112
+\nofMPsegments=\count113
+\nofMParguments=\count114
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count113
-\MPscratchDim=\dimen137
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
+\MPscratchCnt=\count115
+\MPscratchDim=\dimen139
+\MPnumerator=\count116
+\makeMPintoPDFobject=\count117
 \everyMPtoPDFconversion=\toks22
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -354,61 +377,54 @@ G,.JBIG2,.JB2,.eps]
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
-\Gin@req@height=\dimen138
-\Gin@req@width=\dimen139
-)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 86.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 86.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 91.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 86.
+(Font)              scaled to size 18.66588pt on input line 91.
  [1
 
 {C:/Users/ian mcwilliam/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 86.
+(Font)              scaled to size 10.79993pt on input line 91.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 86.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 91.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 86.
+(Font)              scaled to size 10.79993pt on input line 91.
  [1
 
-] [2] [3]
+]
+[2] [3]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 101.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 106.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 101.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 106.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 101.
-
-(Report.toc
+(Font)              scaled to size 22.39185pt on input line 106.
+ (Report.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 3.
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 2.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptmcm.fd"
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 3.
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 2.
 
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlptmcm.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlptmcm.fd"
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 3.
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 2.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omxpsycm.fd"
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
  [4
 
 ])
@@ -421,36 +437,44 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 (Introduction.tex
 Chapter 1.
-[1
-
-
-
-])
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 114.
-LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 10.79993pt on input line 114.
- [2] [3]
-\openout2 = `Background.aux'.
-
- (Background.tex
-Chapter 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 15.55188pt on input line 3.
-[4
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 4.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 15.
+[1
 
 
 
-] [5] [6] [7] [8]) [9]
+]
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 27.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 10.79993pt on input line 27.
+ [2]) [3] [4]
+\openout2 = `Background.aux'.
+
+ (Background.tex
+Chapter 2.
+[5
+
+
+
+] [6] [7] [8] [9]) [10]
 \openout2 = `RelatedWork.aux'.
 
  (RelatedWork.tex
 Chapter 3.
-) [10
+) [11
 
 
 
@@ -459,23 +483,16 @@ Chapter 3.
 
  (Methods.tex
 Chapter 4.
-[11
+[12
 
 
 
 ]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 9.
-LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 9.
 
-
-LaTeX Warning: Reference `Methods_Curriculum_Construction' on page 12 undefined
+LaTeX Warning: Reference `Methods_Curriculum_Construction' on page 13 undefined
  on input line 10.
 
-[12] [13] [14]) [15]
+[13] [14] [15]) [16]
 \openout2 = `BootstrappedActiveCurricula.aux'.
 
  (BootstrappedActiveCurricula.tex
@@ -486,33 +503,85 @@ Overfull \hbox (1.55127pt too wide) in paragraph at lines 2--3
 te is what we term \OT1/ptm/m/it/12 boot-strapped
  []
 
-[16
+[17
 
 
 
-] [17]
+] [18] [19]
+<C:/Active_Learning_Project/Report/Graphics/EasyGeoShapesExamples.png, id=93, 7
+22.7pt x 722.7pt>
+File: C:/Active_Learning_Project/Report/Graphics/EasyGeoShapesExamples.png Grap
+hic file (type png)
+<use C:/Active_Learning_Project/Report/Graphics/EasyGeoShapesExamples.png>
+Package pdftex.def Info: C:/Active_Learning_Project/Report/Graphics/EasyGeoShap
+esExamples.png  used on input line 40.
+(pdftex.def)             Requested size: 247.54149pt x 247.53429pt.
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 41.
+<C:/Active_Learning_Project/Report/Graphics/HardGeoShapesExamples.png, id=95, 7
+22.7pt x 722.7pt>
+File: C:/Active_Learning_Project/Report/Graphics/HardGeoShapesExamples.png Grap
+hic file (type png)
+<use C:/Active_Learning_Project/Report/Graphics/HardGeoShapesExamples.png>
+Package pdftex.def Info: C:/Active_Learning_Project/Report/Graphics/HardGeoShap
+esExamples.png  used on input line 46.
+(pdftex.def)             Requested size: 247.54149pt x 247.53429pt.
 
-LaTeX Warning: Reference `BAC_Results' on page 18 undefined on input line 31.
+Overfull \hbox (27.89253pt too wide) in paragraph at lines 36--50
+ []|  $[]$$[]$ 
+ []
 
-[18] [19]
-Overfull \hbox (11.72511pt too wide) in paragraph at lines 42--56
+[20] [21 <C:/Active_Learning_Project/Report/Graphics/EasyGeoShapesExamples.png>
+ <C:/Active_Learning_Project/Report/Graphics/HardGeoShapesExamples.png>]
+[22]
+Overfull \hbox (11.72511pt too wide) in paragraph at lines 70--83
 [][] 
  []
 
 
-Overfull \hbox (37.75148pt too wide) in paragraph at lines 62--72
+Overfull \hbox (37.75148pt too wide) in paragraph at lines 89--98
 [][] 
+ []
+
+<C:/Active_Learning_Project/Report/Graphics/GeoShapesBACResults_STE.png, id=107
+, 939.51pt x 939.51pt>
+File: C:/Active_Learning_Project/Report/Graphics/GeoShapesBACResults_STE.png Gr
+aphic file (type png)
+<use C:/Active_Learning_Project/Report/Graphics/GeoShapesBACResults_STE.png>
+Package pdftex.def Info: C:/Active_Learning_Project/Report/Graphics/GeoShapesBA
+CResults_STE.png  used on input line 129.
+(pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
+<C:/Active_Learning_Project/Report/Graphics/GeoShapesBACResults_Boxplt.png, id=
+108, 1084.05pt x 1084.05pt>
+File: C:/Active_Learning_Project/Report/Graphics/GeoShapesBACResults_Boxplt.png
+ Graphic file (type png)
+<use C:/Active_Learning_Project/Report/Graphics/GeoShapesBACResults_Boxplt.png>
+
+Package pdftex.def Info: C:/Active_Learning_Project/Report/Graphics/GeoShapesBA
+CResults_Boxplt.png  used on input line 136.
+(pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
+
+Overfull \hbox (81.94524pt too wide) in paragraph at lines 125--140
+ []|  $[]$$[]$ 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20] [21]) [22]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `GeoSamples' on page 23 undefined on input line 144.
+
+[23] [24] [25 <C:/Active_Learning_Project/Report/Graphics/GeoShapesBACResults_S
+TE.png> <C:/Active_Learning_Project/Report/Graphics/GeoShapesBACResults_Boxplt.
+png>]) [26]
 \openout2 = `DynamicSampledActiveCurricula.aux'.
 
  (DynamicSampledActiveCurricula.tex
 Chapter 6.
-[23
+[27
 
 
 
@@ -534,16 +603,16 @@ Overfull \hbox (10.04463pt too wide) in paragraph at lines 52--68
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [24] [25]
+) [28] [29]
 Chapter 7.
-[26
+[30
 
 
 ]
 Chapter 8.
-(Report.bbl [27
+(Report.bbl [31
 
-]) [28
+]) [32
 
 ] (Report.aux (Introduction.aux) (Background.aux)
 (RelatedWork.aux) (Methods.aux) (BootstrappedActiveCurricula.aux)
@@ -556,13 +625,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5255 strings out of 492973
- 79248 string characters out of 3135906
- 160896 words of memory out of 3000000
- 8973 multiletter control sequences out of 15000+200000
- 43497 words of font info for 80 fonts, out of 3000000 for 9000
+ 5345 strings out of 492973
+ 81735 string characters out of 3135906
+ 167676 words of memory out of 3000000
+ 9054 multiletter control sequences out of 15000+200000
+ 45257 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,9n,41p,2470b,296s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,9n,41p,2436b,469s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
@@ -574,9 +643,9 @@ es/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
 /utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/
 Program Files/MiKTeX 2.9/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on Report.pdf (34 pages, 181597 bytes).
+Output written on Report.pdf (38 pages, 308491 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
+ 184 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
