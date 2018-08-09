@@ -2,12 +2,59 @@
 The results laid out in Chapter \ref{ch:BootstrappedActiveCurricula} suggest that generalisation performance can indeed be improved through the use of a learning curriculum, and that using active learning approaches to score which training samples are hard or difficult can be an effective way of automatically constructing such curricula without manually analysing the training samples. The disadvantage with the BAC method from Chapter \ref{ch:BootstrappedActiveCurricula} however is that it is necessary to first train a `baseline' model that can be used to derive a curriculum based on which samples it is uncertain about classifying. While in some cases this may not too significant a computational burden, it does effectively double the overall training time, motivating the approach laid out in this section. Specifically, we wish to investigate methods that can dynamically construct a curriculum throughout training, without needed to reference another model. We do this by calculating the model uncertainty on the training samples throughout training, using the uncertainty scores to construct dynamic curricula which evolve throughout training to focus on the samples that the model is more, or less, uncertain in its predictions. If succesful, these methods should lead to model performance which beats a the benchmark test set performance of a baseline model trained with normal mini-batch stochastic gradient descent on the entire training set, and hopefully will achieve results similar to those achieved by the bootstrapped active curricula from Chapter \ref{ch:BootstrappedActiveCurricula}.
 \section{Curriculum Construction}
 \subsection{Dynamic Task Curricula (DTC)}
-The first dynamic curriculum method we test we term `dynamic task curricula'; this approach is very similar to that of the BAC method laids out in Chapter \ref{ch:BootstrappedActiveCurricula}, however instead of constructing tasks based on the uncertainty scores of a fully trained baseline model, tasks are constructed dynamically using the uncertainty of the curriculum model itself throughout training. 
+The first dynamic curriculum method we test we term \textit{dynamic task curricula}; this approach is very similar to that of the BAC method laids out in Chapter \ref{ch:BootstrappedActiveCurricula}, however instead of constructing tasks based on the uncertainty scores of a fully trained baseline model, tasks are constructed dynamically using the uncertainty of the curriculum model itself throughout training. To do this, we calculate the model's uncertainty in predicting the classes of the training samples in the full training set $\mathcal{T}$ using the AADT function \ref{BAC_AADT} (or another active learning uncertainty measure) at the end of every epoch, then ranking the training sample by the the model's uncertainty. We then split the training data into separate tasks, with the first task consisting of the first $\frac{1}{T}$ samples where $T$ is the chosen number of tasks. At the start of each epoch, we will obtain a new set of ordered tasks, $\mathcal{T}_i^1, \mathcal{T}_i^2,...,\mathcal{T}_i^T$, where $i$ is the current epoch, and $T$ is the chosen number of tasks. Training is divided into $T$ phases, such that, during epoch $j$ of phase $t$, the model is trained on a training set consisting $\mathcal{T}_j^1 \cup \mathcal{T}_j^2 \cup ... \cup \mathcal{T}_j^t$, where $t$ denotes the current training phase.The final training phase will therefore consist of training on the full training set, as $\mathcal{T} = \mathcal{T}_i^1 \cup \mathcal{T}_i^2 \cup ... \cup \mathcal{T}_i^T, \forall  i$. As in the BAC curriculum method \ref{ch:BootstrappedActiveCurricula}, we normalise the number of parameter updates in each phase by scaling the number of epochs relative to the number of samples in the training set for that phase. Similarly in Equation \ref{eq:BAC_Epochs}, the number of epochs in training phase $t$ is set as follows:
+\begin{equation}\label{eq:DTC_Epochs}
+NumEpochs^{t} =\floor{ \frac{TotalEpochs}{t}}
+\end{equation}
+where $TotalEpochs$ is the number of epochs the model would need to be trained for on the whole training set in order to achieve the same number of parameter updates as the DTC curriculum method.
+
+Note that we can rank the samples from low to high uncertainty or from high to low uncertainty; in the low to high case the first tasks will contain samples about which the model is confident in predicting, corresponding to dynamically constructing an easy to hard curriculum. Alternatively, ranking the samples from high to low uncertainty will produce a curriculum more similar to an active learning approach, focussing on training the model on areas of the input space that it is more uncertain about classifying. While the latter method may contradict some of the underlying motivations for curriculum learning, for example that learning with an easy to hard curriculum allows the model to explore a smoother version of the error space and better initialise the parameters, we would still argue that the hard to easy approach still qualifies as a curriculum method, and may be appropriate in instances where the model already has achieved a high level of expertise in the problem, and improvements are therefore more likely to be made by studying harder samples than easy ones.  We therefore have two variations of the Dynamic Task Curriculum method; Easy to Hard DTC and Hard to Easy DTC. This approach is similar to that of \textit{Self-Paced Learning} REF KOLLER ET AL, where they apply a similar approach with a latent SSVM model REF, however they implement their method by introducing a regularization term reflecting the difficulty of each sample into the objective function of the model, as opposed to employing an actual curriculum. Pseudocode for the DTC method is given in section \ref{sec:DTCPseudocode}.
+
+\subsubsection{Pseudocode for the DTC curriculum}\label{sec:DTCPseudocode}
 
 \subsection{Biased Sampling Curricula (BSC)}
-
+The second dynamic curriculum construction method we test is \textit{Biased Sampling Curricula (BSC)}; one of the potential problems with some curriculum and active learning methods is that of \textit{diversity} REF PAPER ON DIVERSITY. Diversity refers to how well the whole training set is represented in the samples used to train the model; if a sample selection method is extremely undiverse then it may end up selecting only a very small selection of the training samples, leading to the model not training on a suitably broad set of training samples, leading to high generalization error. One way to approach this problem is to avoid deterministic methods of selecting training examples, and instead sample from the training samples using some probability distribution. Mini-batch stochastic gradient descent REF? is one such method, sampling batches of examples from the training data using a uniform probability distribution, however by varying the sampling distribution away from a uniform distribution we can bias training towards different samples, resulting in them being selected more or less often than others. We use this approach in the BSC curriculum method by biasing the sampling probability proportionally to the model uncertainty in predicting the labels of the sample. In particular, at the start of every epoch we use the AADT uncertainty function \ref{BAC_AADT} to infer the model's current uncertainty in predicting the labels of the training data, giving $\mathbf{S}^{\theta_{baseline}}$, a vector of $N$ scores as in Equation \ref{eq:BAC_S}, where the $N$ is the number of samples in the full training set $\mathcal{T}$ and the $i^{th}$ element of $\mathbf{S}$ corresponds to the ouput of the AADT function for the $i^{th}$ training input. We then pass the vector of scores through a softmax function, effectively transforming the scores into probabilities that can be used as the sampling probability function:
+\begin{equation}
+\tilde{p}(x_i | \theta) = \frac{exp(\frac{AADT_{\theta}(x_i)}{\tau})}{\sum_{j}^{N} exp(\frac{AADT_{\theta}(x_j)}{\tau})}
+\end{equation}
+where $\theta$ is the model being trained with the curriculum, $\tilde{p}(x_i | \theta)$ is the sampling probability of training sample $i$ and $\tau$ is the softmax temperature parameter that can be set as a hyperparameter or tuned each epoch to achieve a target diversity level in the sampling probability. 
 \subsection{Biased Task Curricula (BTC)}
+
+\subsection{BALD Active Score Function}
+Recent advances in Bayesian neural networks and variational inference motivate an alternative approach to measuring uncertainty; while the distance to classification threshold may encapsulate classification uncertainty for samples close to the boundary, it does not consider the uncertainty associated with analysing samples from parts of the feature space that is not represented in the training data. Consider the toy example shown in FIGURE, where a sample may be far from the classification boundary, but so dissimilar from the training samples that we would want to measure the sample as having high classification uncertainty. One approach to this problem is given by REF GAL, where they motivate using the \textit{Monte Carlo dropout} method as a way of approximating variational inference in neural networks. As with the usual dropout procedure, weights are randomly set to zero throughout the training phase, however, unlike the usual approach, dropout is maintained at the test stage, and a number of forward passes are carried out, resulting in a distribution of outputs. The resultant distribution can subsequently be analysed to infer which test samples the model is more or less confident in predicting, for example by comparing the variance of the output distributions. In REF GAL ACTIVE LEARNING, the authors use the MC dropout method to construct an active learning acquisition function \textit{Bayesian Active Learning by Disagreement (BALD)}, which queries points which ``maximise the mutual information between predictions and model posterior'', identifying samples that have a high probability of being placed into different classes in the different stochastic forward passes. One interpration of the BALD method is that it is similar to the `Query by Committee'' active learning methods, with the different forward passes representing different models' votes. 
+
+We calculate the BALD active score function as follows:
+
+\begin{equation}
+P_{\theta}^{BALD} (x_i) = \frac{exp(\frac{S^{BALD}_{\theta}(x_i)}{\tau})}{\sum_{j}^{N} exp(\frac{S^{BALD}_{\theta}(x_j)}{\tau})},
+\end{equation}
+where
+\begin{equation}
+S^{BALD}_{\theta}(x_i) = - \sum_{c}^{C} \bar{P}_{\theta}(y_c|x_i)\log( \bar{P}_{\theta}(y_c|x_i)) + \frac{1}{M} \sum_{m}^{M} (\sum_{c}^{C} P^{m}_{\theta}(y_c|x)\log(P^{m}_{\theta}(y_c|x))),
+\end{equation}
+and
+\begin{equation}
+ \bar{P}_{\theta}(y_c|x_i) = \frac{\sum_{m}^{M}P^{m}_{\theta}(y_c|x)}{M}. 
+\end{equation}
+Here $M$ is the number of stochastic forward passes carried out and $P^{m}_{\theta}(y_c|x)$ is the softmax probability of class $c$ from the $m^{th}$ forward pass. The score can therefore be interpreted as the difference between the entropy of the average softmax output and the average entropy of the output of each forward pass.
  
+ \subsection{Softmax temperature}\label{Methods_SoftmaxTemperature}
+In order to homogenize the outputs of the different active score functions, we pass the the scores through a softmax functions, resulting in an output of softmax probabilities summing to 1. Using the softmax function also allows us to use the softmax temperature in order to control the diversity of the sampling probabilities. A common issue with active learning is that the acquisition functions can end up sampling from an unrepresentative subset of the input space, resulting in significant bias in the training of the model (REF!). Indeed, GIVE EXAMPLE OF MAX RATIO FOR DIST2THRESH
+
+We control this effect by using the softmax temperature to target a preset \textit{maximum probability ratio}, defined as follows:
+\begin{equation}
+Max Ratio = \frac{\max_{i} P_\theta(x_i)}{\min_{i} P_\theta(x_i)}.
+\end{equation}
+To do this we begin with a softmax temperature of 1, then calculate the current maximum probability ratio and increment the temperature until the target ratio is achieved. Pseudocode is given below:
+
+PSEUDOCODE FOR SOFTMAX CONTROL
+
+The downside to this method is it could be skewed by outlier probabilities; if there were one sample with an extremely large sampling probability this method would still achieve a target maximum probability ratio, without achieving sufficient diversity in the sampling probabilities. We investigated using winsorization (REF) as an outlier removal technique prior to tuning the temperature parameter, however, as the active score functions we use generally did not result in outliers, this did not affect results.  We show in section REF how controlling the maximum probability ratio affects training. 
+
+\section{MNIST}
+
+\section{CIFAR 10}
+
 
 \section{Experiments}
 
@@ -51,7 +98,7 @@ Activation & ReLU & NA & ReLU & NA & ReLU & NA & Softmax \\
 \caption{CIFAR Dataset Model Architecture} \label{tab:CIFARArchitecture}
 \begin{tabular}{|c||c|c|c|c|c|c|c|}
 \hline
-\multicolumn{8}{|c|}{MNIST Dataset Model Architecture} \\
+\multicolumn{8}{|c|}{CIFAR Dataset Model Architecture} \\
 \hline
  & Layer 1 & Layer 2 & Layer 3& Layer 4 &Layer 5 & Layer 6 & Layer 7 \\
 \hline
