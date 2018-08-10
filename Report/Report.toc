@@ -8,44 +8,36 @@
 \contentsline {chapter}{\numberline {2}Background}{5}
 \contentsline {section}{\numberline {2.1}Supervised Learning}{5}
 \contentsline {section}{\numberline {2.2}Deep Learning}{6}
-\contentsline {section}{\numberline {2.3}Stochastic Gradient Descent}{6}
-\contentsline {section}{\numberline {2.4}Active Learning}{7}
-\contentsline {section}{\numberline {2.5}Curriculum Learning}{9}
+\contentsline {subsection}{\numberline {2.2.1}Feedforward Networks}{7}
+\contentsline {subsection}{\numberline {2.2.2}Convolutional Networks}{7}
+\contentsline {section}{\numberline {2.3}Stochastic Gradient Descent}{7}
+\contentsline {section}{\numberline {2.4}Curriculum Learning}{7}
+\contentsline {section}{\numberline {2.5}Active Learning}{9}
 \contentsline {chapter}{\numberline {3}Related Work}{11}
 \contentsline {section}{\numberline {3.1}Self Paced Learning}{11}
 \contentsline {section}{\numberline {3.2}Transfer Learning}{11}
 \contentsline {section}{\numberline {3.3}Reinforcement Learning}{11}
 \contentsline {section}{\numberline {3.4}Active Learning}{11}
-\contentsline {chapter}{\numberline {4}Methods}{12}
-\contentsline {section}{\numberline {4.1}Active Learning Metrics}{12}
+\contentsline {chapter}{\numberline {4}Bootstrapped Active Curricula}{12}
+\contentsline {section}{\numberline {4.1}Curriculum Construction}{12}
 \contentsline {subsection}{\numberline {4.1.1}Average Absolute Distance to Threshold (AADT)}{13}
-\contentsline {subsection}{\numberline {4.1.2}Classification Entropy (H)}{14}
-\contentsline {subsection}{\numberline {4.1.3}BALD}{14}
-\contentsline {subsection}{\numberline {4.1.4}Softmax temperature}{15}
-\contentsline {section}{\numberline {4.2}Datasets}{16}
-\contentsline {subsection}{\numberline {4.2.1}MNIST}{16}
-\contentsline {subsection}{\numberline {4.2.2}Geometric Shapes}{16}
-\contentsline {subsection}{\numberline {4.2.3}CIFAR 10}{16}
-\contentsline {section}{\numberline {4.3}Architectures}{16}
-\contentsline {chapter}{\numberline {5}Bootstrapped Active Curricula}{17}
-\contentsline {section}{\numberline {5.1}Curriculum Construction}{17}
-\contentsline {subsection}{\numberline {5.1.1}Average Absolute Distance to Threshold (AADT)}{18}
-\contentsline {subsection}{\numberline {5.1.2}Phase Training Epochs}{19}
-\contentsline {subsection}{\numberline {5.1.3}Pseudocode for BAC}{20}
-\contentsline {section}{\numberline {5.2}Geometric Shapes Dataset}{20}
-\contentsline {section}{\numberline {5.3}Experiments}{21}
-\contentsline {section}{\numberline {5.4}Results and Discussion}{23}
-\contentsline {chapter}{\numberline {6}Dynamic Active Curricula}{27}
-\contentsline {section}{\numberline {6.1}Curriculum Construction}{28}
-\contentsline {subsection}{\numberline {6.1.1}Dynamic Task Curricula (DTC)}{28}
-\contentsline {subsubsection}{\numberline {6.1.1.1}Pseudocode for the DTC curriculum}{29}
-\contentsline {subsection}{\numberline {6.1.2}Biased Sampling Curricula (BSC)}{29}
-\contentsline {subsection}{\numberline {6.1.3}Biased Task Curricula (BTC)}{30}
-\contentsline {subsection}{\numberline {6.1.4}BALD Active Score Function}{30}
-\contentsline {subsection}{\numberline {6.1.5}Softmax temperature}{31}
-\contentsline {section}{\numberline {6.2}MNIST}{32}
-\contentsline {section}{\numberline {6.3}CIFAR 10}{32}
-\contentsline {section}{\numberline {6.4}Experiments}{32}
-\contentsline {section}{\numberline {6.5}Results and Discussion}{32}
-\contentsline {chapter}{\numberline {7}Conclusion and Further Work}{34}
-\contentsline {chapter}{Bibliography}{35}
+\contentsline {subsection}{\numberline {4.1.2}Phase Training Epochs}{14}
+\contentsline {subsection}{\numberline {4.1.3}Pseudocode for BAC}{15}
+\contentsline {section}{\numberline {4.2}Geometric Shapes Dataset}{15}
+\contentsline {section}{\numberline {4.3}Experiments}{16}
+\contentsline {section}{\numberline {4.4}Results and Discussion}{18}
+\contentsline {section}{\numberline {4.5}Summary}{21}
+\contentsline {chapter}{\numberline {5}Dynamic Active Curricula}{22}
+\contentsline {section}{\numberline {5.1}Curriculum Construction}{23}
+\contentsline {subsection}{\numberline {5.1.1}Dynamic Task Curricula (DTC)}{23}
+\contentsline {subsubsection}{\numberline {5.1.1.1}Pseudocode for the DTC curriculum}{24}
+\contentsline {subsection}{\numberline {5.1.2}Biased Sampling Curricula (BSC)}{24}
+\contentsline {subsection}{\numberline {5.1.3}Biased Task Curricula (BTC)}{25}
+\contentsline {subsection}{\numberline {5.1.4}BALD Active Score Function}{25}
+\contentsline {subsection}{\numberline {5.1.5}Softmax temperature}{26}
+\contentsline {section}{\numberline {5.2}MNIST}{27}
+\contentsline {section}{\numberline {5.3}CIFAR 10}{27}
+\contentsline {section}{\numberline {5.4}Experiments}{27}
+\contentsline {section}{\numberline {5.5}Results and Discussion}{27}
+\contentsline {chapter}{\numberline {6}Conclusion and Further Work}{29}
+\contentsline {chapter}{Bibliography}{30}
