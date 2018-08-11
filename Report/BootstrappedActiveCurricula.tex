@@ -3,7 +3,7 @@ The first curriculum construction approach we investigate is what we term \texti
 \section{Curriculum Construction}
 In the BAC approach we train two models; the first, which we term the `baseline model' and denote  $\theta_{baseline}$, is trained to convergence using a standard mini-batch gradient descent optimisation on the entire available training set $\mathcal{T}$. We then use $\theta_{baseline}$ in conjunction with the Absolute Average Distance to Threshold uncertainty function as defined below in Section \ref{BAC_AADT}, scoring each training sample in $\mathcal{T}$. This produces $\mathbf{S}^{\theta_{baseline}}$, a vector of $N$ scores, where $N$ is the number of samples in $\mathcal{T}$, such that the $i^{th}$ element of $\mathbf{S}^{\theta_{baseline}}$ is the output of the AADT uncertainty function for the $i^{th}$ training sample inputs:
 
-\begin{equation}
+\begin{equation}\label{eq:BAC_S}
 S^{\theta_{baseline}}_i = AADT_{\theta_{baseline}}(x_i) 
 \end{equation}
 where $x_i$ are the inputs of the $i^{th}$ training sample.
