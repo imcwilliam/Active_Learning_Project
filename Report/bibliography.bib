@@ -15,7 +15,6 @@
   urldate = {01/05/2018},
   year = 2010,
 }
-
 %GeoShapes
 @article{GeoShapes,
   author = {O.Breuleux, J.Louradour and F.Bastien},
@@ -23,6 +22,23 @@
   url = {http://www.iro.umontreal.ca/~lisa/twiki/bin/view.cgi/Public/BabyAIShapesDatasets},
   urldate = {01/05/2018},
   year = 2008,
+}
+%RL
+@book{sutton1998introduction,
+  title={Introduction to reinforcement learning},
+  author={Sutton, Richard S and Barto, Andrew G},
+  volume={135},
+  year={1998},
+  publisher={MIT press Cambridge}
+}
+%Unsupervised
+@incollection{hastie2009unsupervised,
+  title={Unsupervised learning},
+  author={Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome},
+  booktitle={The elements of statistical learning},
+  pages={485--585},
+  year={2009},
+  publisher={Springer}
 }
 
 %Continuation Methods
@@ -126,6 +142,25 @@
   pages={1345--1359},
   year={2010},
   publisher={Institute of Electrical and Electronics Engineers, Inc., 345 E. 47 th St. NY NY 10017-2394 USA}
+}
+
+%ReLU
+@inproceedings{nair2010rectified,
+  title={Rectified linear units improve restricted boltzmann machines},
+  author={Nair, Vinod and Hinton, Geoffrey E},
+  booktitle={Proceedings of the 27th international conference on machine learning (ICML-10)},
+  pages={807--814},
+  year={2010}
+}
+
+%MaxPooling
+@inproceedings{nagi2011max,
+  title={Max-pooling convolutional neural networks for vision-based hand gesture recognition},
+  author={Nagi, Jawad and Ducatelle, Frederick and Di Caro, Gianni A and Cire{\c{s}}an, Dan and Meier, Ueli and Giusti, Alessandro and Nagi, Farrukh and Schmidhuber, J{\"u}rgen and Gambardella, Luca Maria},
+  booktitle={Signal and Image Processing Applications (ICSIPA), 2011 IEEE International Conference on},
+  pages={342--347},
+  year={2011},
+  organization={IEEE}
 }
 
 %Curriculum Learning
@@ -307,20 +342,19 @@ author = "Jeffrey L. Elman"
   year={2016}
 }
 
+@article{houlsby2011bayesian,
+  title={Bayesian active learning for classification and preference learning},
+  author={Houlsby, Neil and Husz{\'a}r, Ferenc and Ghahramani, Zoubin and Lengyel, M{\'a}t{\'e}},
+  journal={arXiv preprint arXiv:1112.5745},
+  year={2011}
+}
+
 @article{gal2016uncertainty,
   title={Uncertainty in deep learning},
   author={Gal, Yarin},
   journal={University of Cambridge},
   year={2016}
 }
-
-@article{gal2015dropout,
-  title={Dropout as a Bayesian approximation},
-  author={Gal, Yarin and Ghahramani, Zoubin},
-  journal={arXiv preprint arXiv:1506.02157},
-  year={2015}
-}
-
 @article{gal2017deep,
   title={Deep bayesian active learning with image data},
   author={Gal, Yarin and Islam, Riashat and Ghahramani, Zoubin},
@@ -348,6 +382,96 @@ author = "Jeffrey L. Elman"
 }
 
 %Active Learning
+@article{cohn1994improving,
+  title={Improving generalization with active learning},
+  author={Cohn, David and Atlas, Les and Ladner, Richard},
+  journal={Machine learning},
+  volume={15},
+  number={2},
+  pages={201--221},
+  year={1994},
+  publisher={Springer}
+}
+
+@article{cohn1996active,
+  title={Active learning with statistical models},
+  author={Cohn, David A and Ghahramani, Zoubin and Jordan, Michael I},
+  journal={Journal of artificial intelligence research},
+  volume={4},
+  pages={129--145},
+  year={1996}
+}
+
+@article{settles2012active,
+  title={Active learning},
+  author={Settles, Burr},
+  journal={Synthesis Lectures on Artificial Intelligence and Machine Learning},
+  volume={6},
+  number={1},
+  pages={1--114},
+  year={2012},
+  publisher={Morgan \& Claypool Publishers}
+}
+%Active Learning Applications
+@article{tong2001support,
+  title={Support vector machine active learning with applications to text classification},
+  author={Tong, Simon and Koller, Daphne},
+  journal={Journal of machine learning research},
+  volume={2},
+  number={Nov},
+  pages={45--66},
+  year={2001}
+}
+
+@inproceedings{yang2003automatically,
+  title={Automatically labeling video data using multi-class active learning},
+  author={Yang, Jie and others},
+  booktitle={Computer Vision, 2003. Proceedings. Ninth IEEE International Conference on},
+  pages={516--523},
+  year={2003},
+  organization={IEEE}
+}
+
+@article{wang2017cost,
+  title={Cost-effective active learning for deep image classification},
+  author={Wang, Keze and Zhang, Dongyu and Li, Ya and Zhang, Ruimao and Lin, Liang},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology},
+  volume={27},
+  number={12},
+  pages={2591--2600},
+  year={2017},
+  publisher={IEEE}
+}
+
+%Active Learning Theory
+@article{balcan2010true,
+  title={The true sample complexity of active learning},
+  author={Balcan, Maria-Florina and Hanneke, Steve and Vaughan, Jennifer Wortman},
+  journal={Machine learning},
+  volume={80},
+  number={2-3},
+  pages={111--139},
+  year={2010},
+  publisher={Springer}
+}
+@inproceedings{balcan2006agnostic,
+  title={Agnostic active learning},
+  author={Balcan, Maria-Florina and Beygelzimer, Alina and Langford, John},
+  booktitle={Proceedings of the 23rd international conference on Machine learning},
+  pages={65--72},
+  year={2006},
+  organization={ACM}
+}
+
+%Winsorization
+@inproceedings{ghosh2012outliers,
+  title={Outliers: An evaluation of methodologies},
+  author={Ghosh, Dhiren and Vogt, Andrew},
+  booktitle={Joint statistical meetings},
+  pages={3455--3460},
+  year={2012},
+  organization={American Statistical Association San Diego, CA}
+}
 
 %Curriculum Learning (or similar)
 %''Training connectionist networks with queries and selective sampling''

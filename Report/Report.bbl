@@ -4,12 +4,33 @@
 V.~Avramova.
 \newblock Curriculum learning with deep convolutional neural networks, 2015.
 
+\bibitem{balcan2006agnostic}
+M.-F. Balcan, A.~Beygelzimer, and J.~Langford.
+\newblock Agnostic active learning.
+\newblock In {\em Proceedings of the 23rd international conference on Machine
+  learning}, pages 65--72. ACM, 2006.
+
+\bibitem{balcan2010true}
+M.-F. Balcan, S.~Hanneke, and J.~W. Vaughan.
+\newblock The true sample complexity of active learning.
+\newblock {\em Machine learning}, 80(2-3):111--139, 2010.
+
 \bibitem{bengio2012practical}
 Y.~Bengio.
 \newblock Practical recommendations for gradient-based training of deep
   architectures.
 \newblock In {\em Neural networks: Tricks of the trade}, pages 437--478.
   Springer, 2012.
+
+\bibitem{cohn1994improving}
+D.~Cohn, L.~Atlas, and R.~Ladner.
+\newblock Improving generalization with active learning.
+\newblock {\em Machine learning}, 15(2):201--221, 1994.
+
+\bibitem{cohn1996active}
+D.~A. Cohn, Z.~Ghahramani, and M.~I. Jordan.
+\newblock Active learning with statistical models.
+\newblock {\em Journal of artificial intelligence research}, 4:129--145, 1996.
 
 \bibitem{Allgoer1980}
 E.L.Allgower and K.Georg.
@@ -21,11 +42,6 @@ J.~L. Elman.
 \newblock Learning and development in neural networks: the importance of
   starting small.
 \newblock {\em Cognition}, 48(1):71 -- 99, 1993.
-
-\bibitem{erhan2010does}
-D.~Erhan, Y.~Bengio, A.~Courville, P.-A. Manzagol, P.~Vincent, and S.~Bengio.
-\newblock Why does unsupervised pre-training help deep learning?
-\newblock {\em Journal of Machine Learning Research}, 11(Feb):625--660, 2010.
 
 \bibitem{erhan2009difficulty}
 D.~Erhan, P.-A. Manzagol, Y.~Bengio, S.~Bengio, and P.~Vincent.
@@ -45,11 +61,6 @@ Y.~Gal.
 \newblock Uncertainty in deep learning.
 \newblock {\em University of Cambridge}, 2016.
 
-\bibitem{gal2015dropout}
-Y.~Gal and Z.~Ghahramani.
-\newblock Dropout as a bayesian approximation.
-\newblock {\em arXiv preprint arXiv:1506.02157}, 2015.
-
 \bibitem{gal2016dropout}
 Y.~Gal and Z.~Ghahramani.
 \newblock Dropout as a bayesian approximation: Representing model uncertainty
@@ -62,10 +73,11 @@ Y.~Gal, R.~Islam, and Z.~Ghahramani.
 \newblock Deep bayesian active learning with image data.
 \newblock {\em arXiv preprint arXiv:1703.02910}, 2017.
 
-\bibitem{graves2017automated}
-A.~Graves, M.~G. Bellemare, J.~Menick, R.~Munos, and K.~Kavukcuoglu.
-\newblock Automated curriculum learning for neural networks.
-\newblock {\em arXiv preprint arXiv:1704.03003}, 2017.
+\bibitem{ghosh2012outliers}
+D.~Ghosh and A.~Vogt.
+\newblock Outliers: An evaluation of methodologies.
+\newblock In {\em Joint statistical meetings}, pages 3455--3460. American
+  Statistical Association San Diego, CA, 2012.
 
 \bibitem{Chang18}
 A.~H-S~Chang, E.Learned-Miller.
@@ -73,6 +85,17 @@ A.~H-S~Chang, E.Learned-Miller.
   high variance samples.
 \newblock {\em Advances in Neural Information Processing Systems}, 31:1--122,
   2017.
+
+\bibitem{hastie2009unsupervised}
+T.~Hastie, R.~Tibshirani, and J.~Friedman.
+\newblock Unsupervised learning.
+\newblock In {\em The elements of statistical learning}, pages 485--585.
+  Springer, 2009.
+
+\bibitem{houlsby2011bayesian}
+N.~Houlsby, F.~Husz{\'a}r, Z.~Ghahramani, and M.~Lengyel.
+\newblock Bayesian active learning for classification and preference learning.
+\newblock {\em arXiv preprint arXiv:1112.5745}, 2011.
 
 \bibitem{Witten2011}
 E.~I.H.Witten and M.A.Hall.
@@ -91,11 +114,6 @@ L.~Jiang, D.~Meng, S.-I. Yu, Z.~Lan, S.~Shan, and A.~Hauptmann.
 \newblock In {\em Advances in Neural Information Processing Systems}, pages
   2078--2086, 2014.
 
-\bibitem{jiang2015self}
-L.~Jiang, D.~Meng, Q.~Zhao, S.~Shan, and A.~G. Hauptmann.
-\newblock Self-paced curriculum learning.
-\newblock In {\em AAAI}, volume~2, page~6, 2015.
-
 \bibitem{kingma2014adam}
 D.~P. Kingma and J.~Ba.
 \newblock Adam: A method for stochastic optimization.
@@ -106,33 +124,16 @@ A.~Krizhevsky and G.~Hinton.
 \newblock Learning multiple layers of features from tiny images.
 \newblock Technical report, Citeseer, 2009.
 
-\bibitem{krizhevsky2012imagenet}
-A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton.
-\newblock Imagenet classification with deep convolutional neural networks.
-\newblock In {\em Advances in neural information processing systems}, pages
-  1097--1105, 2012.
-
 \bibitem{kumar2010self}
 M.~P. Kumar, B.~Packer, and D.~Koller.
 \newblock Self-paced learning for latent variable models.
 \newblock In {\em Advances in Neural Information Processing Systems}, pages
   1189--1197, 2010.
 
-\bibitem{lecun2015deep}
-Y.~LeCun, Y.~Bengio, and G.~Hinton.
-\newblock Deep learning.
-\newblock {\em nature}, 521(7553):436, 2015.
-
 \bibitem{lecun-mnisthandwrittendigit-2010}
 Y.~LeCun and C.~Cortes.
 \newblock {MNIST} handwritten digit database.
 \newblock 2010.
-
-\bibitem{lecun1988theoretical}
-Y.~LeCun, D.~Touresky, G.~Hinton, and T.~Sejnowski.
-\newblock A theoretical framework for back-propagation.
-\newblock In {\em Proceedings of the 1988 connectionist models summer school},
-  volume~1, pages 21--28. CMU, Pittsburgh, Pa: Morgan Kaufmann, 1988.
 
 \bibitem{louradour2014curriculum}
 J.~Louradour and C.~Kermorvant.
@@ -147,11 +148,19 @@ T.~Mikolov, M.~Karafi{\'a}t, L.~Burget, J.~{\v{C}}ernock{\`y}, and
 \newblock In {\em Eleventh Annual Conference of the International Speech
   Communication Association}, 2010.
 
-\bibitem{mitchell2018never}
-T.~Mitchell, W.~Cohen, E.~Hruschka, P.~Talukdar, B.~Yang, J.~Betteridge,
-  A.~Carlson, B.~Dalvi, M.~Gardner, B.~Kisiel, et~al.
-\newblock Never-ending learning.
-\newblock {\em Communications of the ACM}, 61(5):103--115, 2018.
+\bibitem{nagi2011max}
+J.~Nagi, F.~Ducatelle, G.~A. Di~Caro, D.~Cire{\c{s}}an, U.~Meier, A.~Giusti,
+  F.~Nagi, J.~Schmidhuber, and L.~M. Gambardella.
+\newblock Max-pooling convolutional neural networks for vision-based hand
+  gesture recognition.
+\newblock In {\em Signal and Image Processing Applications (ICSIPA), 2011 IEEE
+  International Conference on}, pages 342--347. IEEE, 2011.
+
+\bibitem{nair2010rectified}
+V.~Nair and G.~E. Hinton.
+\newblock Rectified linear units improve restricted boltzmann machines.
+\newblock In {\em Proceedings of the 27th international conference on machine
+  learning (ICML-10)}, pages 807--814, 2010.
 
 \bibitem{GeoShapes}
 J.~O.Breuleux and F.Bastien.
@@ -170,16 +179,11 @@ A.~Pentina, V.~Sharmanska, and C.~H. Lampert.
 \newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
   Pattern Recognition}, pages 5492--5500, 2015.
 
-\bibitem{ruder2016overview}
-S.~Ruder.
-\newblock An overview of gradient descent optimization algorithms.
-\newblock {\em arXiv preprint arXiv:1609.04747}, 2016.
-
-\bibitem{Bubeck2012}
-N.-B. S.Bubeck.
-\newblock Regret analysis of stochastic and nonstochastic multi-armed bandit
-  problems.
-\newblock {\em Machine Learning}, 5:1--122, 2012.
+\bibitem{settles2012active}
+B.~Settles.
+\newblock Active learning.
+\newblock {\em Synthesis Lectures on Artificial Intelligence and Machine
+  Learning}, 6(1):1--114, 2012.
 
 \bibitem{shamir2013stochastic}
 O.~Shamir and T.~Zhang.
@@ -205,11 +209,34 @@ I.~Sutskever, J.~Martens, G.~Dahl, and G.~Hinton.
 \newblock In {\em International conference on machine learning}, pages
   1139--1147, 2013.
 
+\bibitem{sutton1998introduction}
+R.~S. Sutton and A.~G. Barto.
+\newblock {\em Introduction to reinforcement learning}, volume 135.
+\newblock MIT press Cambridge, 1998.
+
+\bibitem{tong2001support}
+S.~Tong and D.~Koller.
+\newblock Support vector machine active learning with applications to text
+  classification.
+\newblock {\em Journal of machine learning research}, 2(Nov):45--66, 2001.
+
+\bibitem{wang2017cost}
+K.~Wang, D.~Zhang, Y.~Li, R.~Zhang, and L.~Lin.
+\newblock Cost-effective active learning for deep image classification.
+\newblock {\em IEEE Transactions on Circuits and Systems for Video Technology},
+  27(12):2591--2600, 2017.
+
 \bibitem{weinshall2018curriculum}
 D.~Weinshall and G.~Cohen.
 \newblock Curriculum learning by transfer learning: Theory and experiments with
   deep networks.
 \newblock {\em arXiv preprint arXiv:1802.03796}, 2018.
+
+\bibitem{yang2003automatically}
+J.~Yang et~al.
+\newblock Automatically labeling video data using multi-class active learning.
+\newblock In {\em Computer Vision, 2003. Proceedings. Ninth IEEE International
+  Conference on}, pages 516--523. IEEE, 2003.
 
 \bibitem{Bengio2009}
 R.~Y.Bengio, J.Louradour and J.Weston.

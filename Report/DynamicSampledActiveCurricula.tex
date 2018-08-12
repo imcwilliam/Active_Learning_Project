@@ -1,4 +1,4 @@
-\chapter{Dynamic Active Curricula}
+\chapter{Dynamic Active Curricula}\label{ch:DAC}
 The results laid out in Chapter \ref{ch:BootstrappedActiveCurricula} suggest that generalisation performance can indeed be improved through the use of a learning curriculum, and that using active learning approaches to score which training samples are hard or difficult can be an effective way of automatically constructing such curricula without manually analysing the training samples. The disadvantage with the BAC method from Chapter \ref{ch:BootstrappedActiveCurricula} however is that it is necessary to first train a `baseline' model that can be used to derive a curriculum based on which samples it is uncertain about classifying. While in some cases this may not too significant a computational burden, it does effectively double the overall training time, motivating the approach laid out in this section. Specifically, we wish to investigate methods that can dynamically construct a curriculum throughout training, without needed to reference another model. We do this by calculating the model uncertainty on the training samples throughout training, using the uncertainty scores to construct dynamic curricula which evolve throughout training to focus on the samples that the model is more, or less, uncertain in its predictions. If succesful, these methods should lead to model performance which beats a the benchmark test set performance of a baseline model trained with normal mini-batch stochastic gradient descent on the entire training set, and hopefully will achieve results similar to those achieved by the bootstrapped active curricula from Chapter \ref{ch:BootstrappedActiveCurricula}.
 \section{Curriculum Construction}
 \subsection{Dynamic Task Curricula (DTC)}\label{sec:DTC}
@@ -24,7 +24,7 @@ where $\theta_j$ is the model being trained with the curriculum after $j-1$ epoc
 \subsubsection{Pseudocode for the DSC curriculum}\label{sec:DSCPseudocode}
 
 \subsection{Dynamic Sampled Task Curricula (DSTC)}
-The final dynamic curriculum method implemented combines the the DTC and DSC methodologies, into an approach we term \textit{dynamic sampled task curricula (DSTC}. As in the dynamic task curricula method, at the start of every epoch we calculate the model uncertainty on the samples in the training set  $\mathcal{T}$, dividing the training set up into several equally sized tasks of increasing or decreasing uncertainty. Again as in the DTC approach, the model is trained in several phases; in the first phase only the first task is using to train the model, then in the second phase the first two tasks are used, and so on until the entirety of $\mathcal{T}$ is being used. In the DSTC approach however, instead of sampling uniformly from training samples used in each phase, we bias the sampling probability as in the DSC model. We therefore calculate the sampling probability for sample $x_i$ in epoch $j$ as follows, assuming $j$ falls in phase $t$:
+The final dynamic curriculum method implemented combines the the DTC and DSC methodologies, into an approach we term \textit{dynamic sampled task curricula (DSTC)}. As in the dynamic task curricula method, at the start of every epoch we calculate the model uncertainty on the samples in the training set  $\mathcal{T}$, dividing the training set up into several equally sized tasks of increasing or decreasing uncertainty. Again as in the DTC approach, the model is trained in several phases; in the first phase only the first task is using to train the model, then in the second phase the first two tasks are used, and so on until the entirety of $\mathcal{T}$ is being used. In the DSTC approach however, instead of sampling uniformly from training samples used in each phase, we bias the sampling probability as in the DSC model. We therefore calculate the sampling probability for sample $x_i$ in epoch $j$ as follows, assuming $j$ falls in phase $t$:
 
 \begin{equation}\label{eq:DSC_Prob}
 \tilde{p_j}(x_i | \theta_j) = 
@@ -33,10 +33,12 @@ The final dynamic curriculum method implemented combines the the DTC and DSC met
 0 & \text{if } x_i  \notin \mathcal{T}_j^1 \cup \mathcal{T}_j^2 \cup ... \cup \mathcal{T}_j^t
 \end{cases}
 \end{equation}
-where $K$ is the number of training samples in the phase training set $\mathcal{T}_j^1 \cup \mathcal{T}_j^2 \cup ... \cup \mathcal{T}_j^t$.
+where $K$ is the number of training samples in the phase training set $\mathcal{T}_j^1 \cup \mathcal{T}_j^2 \cup ... \cup \mathcal{T}_j^t$, (assuming we are using the AADT uncertainty function to estimate model uncertainty).
+
+The DSTC method therefore combines the DTC and DSC methods, dynamically splitting the training data into uncertainty based tasks, and then sampling from the tasks proportionally to the uncertainty of the samples relative to the rest of the task. DSTC could therefore be considered a more general version of the DSC method, where the DSC method is simply a special case of DSTC, where the number of tasks is equal to one. Pseudocode for the DSTC method is given in the following section.
 
 \subsection{BALD Active Score Function}
-Recent advances in Bayesian neural networks and variational inference motivate an alternative approach to measuring uncertainty; while the distance to classification threshold may encapsulate classification uncertainty for samples close to the boundary, it does not consider the uncertainty associated with analysing samples from parts of the feature space that is not represented in the training data. Consider the toy example shown in FIGURE, where a sample may be far from the classification boundary, but so dissimilar from the training samples that we would want to measure the sample as having high classification uncertainty. One approach to this problem is given by REF GAL, where they motivate using the \textit{Monte Carlo dropout} method as a way of approximating variational inference in neural networks. As with the usual dropout procedure, weights are randomly set to zero throughout the training phase, however, unlike the usual approach, dropout is maintained at the test stage, and a number of forward passes are carried out, resulting in a distribution of outputs. The resultant distribution can subsequently be analysed to infer which test samples the model is more or less confident in predicting, for example by comparing the variance of the output distributions. In REF GAL ACTIVE LEARNING, the authors use the MC dropout method to construct an active learning acquisition function \textit{Bayesian Active Learning by Disagreement (BALD)}, which queries points which ``maximise the mutual information between predictions and model posterior'', identifying samples that have a high probability of being placed into different classes in the different stochastic forward passes. One interpration of the BALD method is that it is similar to the `Query by Committee'' active learning methods, with the different forward passes representing different models' votes. 
+As well as using the AADT uncertainty function \ref{BAC_AADT}, we will also use the BALD acquisition function\cite{houlsby2011bayesian} \cite{gal2017deep}. Recent advances in Bayesian neural networks and variational inference motivate an alternative approach to measuring uncertainty \cite{gal2016uncertainty}; while the distance to classification threshold may encapsulate classification uncertainty for samples close to the boundary, it does not consider the uncertainty associated with analysing samples from parts of the feature space that is not represented in the training data \cite{gal2016uncertainty}. One approach to this problem is given by \cite{gal2016dropout}, where they motivate using the \textit{Monte Carlo dropout} method as a way of approximating variational inference in neural networks. As with the usual dropout procedure \cite{srivastava2014dropout}, weights are randomly set to zero throughout the training phase, however, unlike the usual approach, dropout is maintained at the test stage, and a number of forward passes are carried out, resulting in a distribution of outputs. The resultant distribution can subsequently be analysed to infer which test samples the model is more or less confident in predicting, for example by comparing the variance of the output distributions. In \cite{gal2017deep}, the authors use the MC dropout method to implement the BALD acquisition function, which queries points which ``maximise the mutual information between predictions and model posterior'', identifying samples that have a high probability of being placed into different classes in the different stochastic forward passes. One interpration of the BALD method is that it is similar to the `Query by Committee'' active learning methods, with the different forward passes representing different models' votes. 
 
 We calculate the BALD active score function as follows:
 
@@ -54,9 +56,7 @@ and
 Here $M$ is the number of stochastic forward passes carried out and $P^{m}_{\theta}(y_c|x)$ is the softmax probability of class $c$ from the $m^{th}$ forward pass. The score can therefore be interpreted as the difference between the entropy of the average softmax output and the average entropy of the output of each forward pass.
  
  \subsection{Softmax temperature}\label{Methods_SoftmaxTemperature}
-In order to homogenize the outputs of the different active score functions, we pass the the scores through a softmax functions, resulting in an output of softmax probabilities summing to 1. Using the softmax function also allows us to use the softmax temperature in order to control the diversity of the sampling probabilities. A common issue with active learning is that the acquisition functions can end up sampling from an unrepresentative subset of the input space, resulting in significant bias in the training of the model (REF!). Indeed, GIVE EXAMPLE OF MAX RATIO FOR DIST2THRESH
-
-We control this effect by using the softmax temperature to target a preset \textit{maximum probability ratio}, defined as follows:
+In order to homogenize the outputs of the different active score functions, we pass the the scores through a softmax functions, resulting in an output of softmax probabilities summing to 1. Using the softmax function also allows us to use the softmax temperature in order to control the diversity of the sampling probabilities. A common issue with active learning is that the acquisition functions can end up sampling from an unrepresentative subset of the input space, resulting in significant bias in the training of the model \cite{settles2012active}. We control this effect by using the softmax temperature to target a preset \textit{maximum probability ratio}, defined as follows:
 \begin{equation}
 Max Ratio = \frac{\max_{i} P_\theta(x_i)}{\min_{i} P_\theta(x_i)}.
 \end{equation}
@@ -64,11 +64,11 @@ To do this we begin with a softmax temperature of 1, then calculate the current 
 
 PSEUDOCODE FOR SOFTMAX CONTROL
 
-The downside to this method is it could be skewed by outlier probabilities; if there were one sample with an extremely large sampling probability this method would still achieve a target maximum probability ratio, without achieving sufficient diversity in the sampling probabilities. We investigated using winsorization (REF) as an outlier removal technique prior to tuning the temperature parameter, however, as the active score functions we use generally did not result in outliers, this did not affect results.  We show in section REF how controlling the maximum probability ratio affects training. 
+The downside to this method is it could be skewed by outlier probabilities; if there were one sample with an extremely large sampling probability this method would still achieve a target maximum probability ratio, without achieving sufficient diversity in the sampling probabilities. We investigated using winsorization \cite{ghosh2012outliers} as an outlier removal technique prior to tuning the temperature parameter, however, as the active score functions we use generally did not result in outliers, this did not affect results. While we do not lay out a thorough analysis of this in this paper, we did found that controlling the maximimum probability ratio throughtout training helped to stabilise model performance in the DSC and DSTC curriculum methods. Without this softmax temperature control approach, for example by simply setting the softmax temperature to a constant value of 1, there were times when the sampling probabilities in the DSC and DSTC methods were such that either the maximum probability ratio grew extremely large, resulting in a lack of diversity in the sampling, or the ratio was so small as to render the biased sampling method negligible. In the experiments laid out below, we use a target maximum probability ratio of 10, which we generally found led to a good level of diversity without limiting the impact of the sampling bias.
 
 \section{Datasets}
 In order to test the methods on a broader range of image classifiction tasks, as well as testing the different dynamic active curriculum methods on the Geometric Shapes data, introduced in Section \ref{sec:GeoShapes}, we also test the curriculua on the MNIST and CIFAR 10 datasets, detailed below:
-\subsection{MNIST}
+\subsection{MNIST}\label{MNIST}
 The MNIST dataset \cite{lecun-mnisthandwrittendigit-2010} contains images of handwritten digits, consisting of a training set of 60,000 training images and 10,000 test images (in our experiments we further split the training set into a training set and a validation split using 75\% training, 25\% validation split). The input data are 28x28 greyscale pixel values, while the target labels are one-hot vectors indicating which digit is written in the image, from 0 to 9. MNIST is a popular image classification task due to its relative simplicity, with state of the art architectures achieving test accuracies well in excess of 99\%. Several examples images from the MNIST dataset are showin in Figure \ref{fig:MNISTSamples}.
 \begin{figure}[h!]
 \hspace*{-2cm}    
@@ -84,7 +84,7 @@ The MNIST dataset \cite{lecun-mnisthandwrittendigit-2010} contains images of han
 \caption{Sample figures from the MNIST dataset}
 \label{fig:MNISTSamples}
 \end{figure}
-\subsection{CIFAR 10}
+\subsection{CIFAR 10}\label{CIFAR10}
 The CIFAR 10 dataset \cite{krizhevsky2009learning} is another image classification dataset; the inputs for each samples are 32x32x3 RGB colour pixel values (3 separate channels for the Red, Green and Blue colour value), while the labels specify the class of each image. The possible classes are `airplane', `automobile', `bird', `cat', `deer', `dog' ,'frog', `horse', `ship' and truck'. As can be seen in Figure \ref{fig:CIFARSamples}, the images are significantly downsampled, resulting in images that can be difficult even for a human observer to classify, resulting in a significantly more difficult task than either MNIST or the Geometric Shapes database. For this dataset we use convolutional networks, as introduced in Section \ref{sec:convnets}, this will both improve the results of the experiments with CIFAR 10, but will also test the performance of the curriculum methods with a different type of network.
 
 \begin{figure}[h!]
@@ -105,9 +105,10 @@ The CIFAR 10 dataset \cite{krizhevsky2009learning} is another image classificati
 
 
 \section{Experiments}
+We test the different dynamic curriculum methods introduced above on the Geometric Shapes, MNIST and CIFAR 10 image classification datasets, as introduced in Sections \ref{sec:GeoShapes}, \ref{MNIST} and \ref{CIFAR10}, respectively. For each dataset we used the validation set to construct an architecture and hyperparameters which achieved reasonable accuracies, then used those setting in the experiments for the different curriculum methods, the architectures for each dataset are laid out in Tables \ref{tab:GeoArchitecture2} to \ref{tab:CIFARArchitecture}. Note that in the case of CIFAR, the convolutional layer (denoted ``conv'') are following by a max pooling layer \cite{nagi2011max} and a batch normalization layer \cite{ioffe2015batch}, and ReLU denotes the Rectified Linear Unit activation function\cite{nair2010rectified}. 
 
-\begin{table}[h]
-\caption{Geometric Shapes Dataset Model Architecture} \label{tab:GeoArchitecture}
+\begin{table}[h!]
+\caption{Geometric Shapes Dataset Model Architecture} \label{tab:GeoArchitecture2}
 \begin{tabular}{|c||c|c|c|c|c|c|c|}
 \hline
 \multicolumn{8}{|c|}{Geometric Shapes Dataset Model Architecture} \\
@@ -124,7 +125,7 @@ Activation & Tanh & NA & Tanh & NA & Tanh & NA & Softmax \\
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[h!]
 \caption{MNIST Dataset Model Architecture} \label{tab:MNISTArchitecture}
 \begin{tabular}{|c||c|c|c|c|c|c|c|}
 \hline
@@ -142,7 +143,7 @@ Activation & ReLU & NA & ReLU & NA & ReLU & NA & Softmax \\
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[h!]
 \caption{CIFAR Dataset Model Architecture} \label{tab:CIFARArchitecture}
 \begin{tabular}{|c||c|c|c|c|c|c|c|}
 \hline
@@ -162,14 +163,23 @@ Kernel Size & 3x3 &3x3 & NA &NA &NA &NA &NA  \\
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
-\caption{Experiment Hyperparameters} \label{tab:HyperParams}
+We run experiments across all three datasets using the curriculum methods laid out above, testing both `easy to hard' curricula and `hard to easy' curricula, as well as tested using different uncertainty functions. In each case we also train a baseline model with an equal number of epochs to provide a comparison for the curriculum test performance. We did not test all permutations of curricula and uncertainty functions as it became clear in some cases that there was little difference from the baseline performance, the experiments for which we present results are as follows:
+\begin{itemize}
+\item TEST
+
+\end{itemize}
+
+
+In Table \ref{tab:HyperParams2} we lay out the other hyperparameters for the experiments.
+
+\begin{table}[h!]
+\caption{Experiment Hyperparameters} \label{tab:HyperParams2}
 \hspace*{-1cm}
 \begin{tabular}{|c||c|c|c|c|c|c|c|}
 \hline
 \multicolumn{7}{|c|}{Experiment Hyperparameters} \\
 \hline
- &Epochs & Optimiser &Learning Rate & Dropout \% & Batch Size & Num Tasks \\
+ &Epochs & Optimiser &Learning Rate & Dropout \% & Batch Size & Num Tasks\\
 \hline
 Geometric Shapes & 350 & ADAM & 0.0001 & 0.25 & 32 & 2  \\
 \hline
@@ -182,3 +192,23 @@ CIFAR 10 & 50 & ADAM & 0.0001 & 0.25 & 50 & 2  \\
 
 
 \section{Results and Discussion}
+
+\begin{figure}[h]
+\hspace*{-3cm}    
+\centering
+\begin{subfigure}{0.7\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{GeoShapesDACResults_STE.png}
+  \caption{ Mean Test Set Accuracies}
+  \label{fig:DAC_StE_Geo}
+\end{subfigure}%
+\begin{subfigure}{0.7\textwidth}
+\hspace*{-1cm}   
+  \centering
+  \includegraphics[width=1\linewidth]{GeoShapesDACResults_Boxplt.png}
+  \caption{Test Set Accuracy Boxplots}
+  \label{fig:DAC_BoxPlt_Geo}
+\end{subfigure}
+\caption{Geometric Shapes Bootstrapped Active Curriculum (DAC) Experiment Results}
+\label{fig:GeoShapesBACResults}
+\end{figure}
