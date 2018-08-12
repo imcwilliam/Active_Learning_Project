@@ -1,25 +1,220 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
 
-\bibitem[H-S~Chang, 2017]{Chang18}
-H-S~Chang, E.Learned-Miller, A. (2017).
+\bibitem{avramova2015curriculum}
+V.~Avramova.
+\newblock Curriculum learning with deep convolutional neural networks, 2015.
+
+\bibitem{bengio2012practical}
+Y.~Bengio.
+\newblock Practical recommendations for gradient-based training of deep
+  architectures.
+\newblock In {\em Neural networks: Tricks of the trade}, pages 437--478.
+  Springer, 2012.
+
+\bibitem{Allgoer1980}
+E.L.Allgower and K.Georg.
+\newblock {\em Numerical continuation methods. An introduction}.
+\newblock Springer-Verlag, 1980.
+
+\bibitem{ELMAN199371}
+J.~L. Elman.
+\newblock Learning and development in neural networks: the importance of
+  starting small.
+\newblock {\em Cognition}, 48(1):71 -- 99, 1993.
+
+\bibitem{erhan2010does}
+D.~Erhan, Y.~Bengio, A.~Courville, P.-A. Manzagol, P.~Vincent, and S.~Bengio.
+\newblock Why does unsupervised pre-training help deep learning?
+\newblock {\em Journal of Machine Learning Research}, 11(Feb):625--660, 2010.
+
+\bibitem{erhan2009difficulty}
+D.~Erhan, P.-A. Manzagol, Y.~Bengio, S.~Bengio, and P.~Vincent.
+\newblock The difficulty of training deep architectures and the effect of
+  unsupervised pre-training.
+\newblock In {\em Artificial Intelligence and Statistics}, pages 153--160,
+  2009.
+
+\bibitem{felzenszwalb2008discriminatively}
+P.~Felzenszwalb, D.~McAllester, and D.~Ramanan.
+\newblock A discriminatively trained, multiscale, deformable part model.
+\newblock In {\em Computer Vision and Pattern Recognition, 2008. CVPR 2008.
+  IEEE Conference on}, pages 1--8. IEEE, 2008.
+
+\bibitem{gal2016uncertainty}
+Y.~Gal.
+\newblock Uncertainty in deep learning.
+\newblock {\em University of Cambridge}, 2016.
+
+\bibitem{gal2015dropout}
+Y.~Gal and Z.~Ghahramani.
+\newblock Dropout as a bayesian approximation.
+\newblock {\em arXiv preprint arXiv:1506.02157}, 2015.
+
+\bibitem{gal2016dropout}
+Y.~Gal and Z.~Ghahramani.
+\newblock Dropout as a bayesian approximation: Representing model uncertainty
+  in deep learning.
+\newblock In {\em international conference on machine learning}, pages
+  1050--1059, 2016.
+
+\bibitem{gal2017deep}
+Y.~Gal, R.~Islam, and Z.~Ghahramani.
+\newblock Deep bayesian active learning with image data.
+\newblock {\em arXiv preprint arXiv:1703.02910}, 2017.
+
+\bibitem{graves2017automated}
+A.~Graves, M.~G. Bellemare, J.~Menick, R.~Munos, and K.~Kavukcuoglu.
+\newblock Automated curriculum learning for neural networks.
+\newblock {\em arXiv preprint arXiv:1704.03003}, 2017.
+
+\bibitem{Chang18}
+A.~H-S~Chang, E.Learned-Miller.
 \newblock Active bias: Training more accuracy neural networks by emphasizing
   high variance samples.
-\newblock {\em Advances in Neural Information Processing Systems}, 31:1--122.
+\newblock {\em Advances in Neural Information Processing Systems}, 31:1--122,
+  2017.
 
-\bibitem[I.H.Witten and M.A.Hall, 2011]{Witten2011}
-I.H.Witten, E. and M.A.Hall (2011).
+\bibitem{Witten2011}
+E.~I.H.Witten and M.A.Hall.
 \newblock {\em DATA MINING. Practical Machine Learning Tools and Techniques}.
-\newblock Morgan Kaufman, 3 edition.
+\newblock Morgan Kaufman, 3 edition, 2011.
 
-\bibitem[S.Theodoridis and K.Koutroumbas, 2009]{Theodoridis2009}
-S.Theodoridis and K.Koutroumbas (2009).
+\bibitem{ioffe2015batch}
+S.~Ioffe and C.~Szegedy.
+\newblock Batch normalization: Accelerating deep network training by reducing
+  internal covariate shift.
+\newblock {\em arXiv preprint arXiv:1502.03167}, 2015.
+
+\bibitem{jiang2014self}
+L.~Jiang, D.~Meng, S.-I. Yu, Z.~Lan, S.~Shan, and A.~Hauptmann.
+\newblock Self-paced learning with diversity.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  2078--2086, 2014.
+
+\bibitem{jiang2015self}
+L.~Jiang, D.~Meng, Q.~Zhao, S.~Shan, and A.~G. Hauptmann.
+\newblock Self-paced curriculum learning.
+\newblock In {\em AAAI}, volume~2, page~6, 2015.
+
+\bibitem{kingma2014adam}
+D.~P. Kingma and J.~Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem{krizhevsky2009learning}
+A.~Krizhevsky and G.~Hinton.
+\newblock Learning multiple layers of features from tiny images.
+\newblock Technical report, Citeseer, 2009.
+
+\bibitem{krizhevsky2012imagenet}
+A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1097--1105, 2012.
+
+\bibitem{kumar2010self}
+M.~P. Kumar, B.~Packer, and D.~Koller.
+\newblock Self-paced learning for latent variable models.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  1189--1197, 2010.
+
+\bibitem{lecun2015deep}
+Y.~LeCun, Y.~Bengio, and G.~Hinton.
+\newblock Deep learning.
+\newblock {\em nature}, 521(7553):436, 2015.
+
+\bibitem{lecun-mnisthandwrittendigit-2010}
+Y.~LeCun and C.~Cortes.
+\newblock {MNIST} handwritten digit database.
+\newblock 2010.
+
+\bibitem{lecun1988theoretical}
+Y.~LeCun, D.~Touresky, G.~Hinton, and T.~Sejnowski.
+\newblock A theoretical framework for back-propagation.
+\newblock In {\em Proceedings of the 1988 connectionist models summer school},
+  volume~1, pages 21--28. CMU, Pittsburgh, Pa: Morgan Kaufmann, 1988.
+
+\bibitem{louradour2014curriculum}
+J.~Louradour and C.~Kermorvant.
+\newblock Curriculum learning for handwritten text line recognition.
+\newblock In {\em Document Analysis Systems (DAS), 2014 11th IAPR International
+  Workshop on}, pages 56--60. IEEE, 2014.
+
+\bibitem{mikolov2010recurrent}
+T.~Mikolov, M.~Karafi{\'a}t, L.~Burget, J.~{\v{C}}ernock{\`y}, and
+  S.~Khudanpur.
+\newblock Recurrent neural network based language model.
+\newblock In {\em Eleventh Annual Conference of the International Speech
+  Communication Association}, 2010.
+
+\bibitem{mitchell2018never}
+T.~Mitchell, W.~Cohen, E.~Hruschka, P.~Talukdar, B.~Yang, J.~Betteridge,
+  A.~Carlson, B.~Dalvi, M.~Gardner, B.~Kisiel, et~al.
+\newblock Never-ending learning.
+\newblock {\em Communications of the ACM}, 61(5):103--115, 2018.
+
+\bibitem{GeoShapes}
+J.~O.Breuleux and F.Bastien.
+\newblock Geometric shapes database.
+\newblock 2008.
+
+\bibitem{pan2010survey}
+S.~J. Pan, Q.~Yang, et~al.
+\newblock A survey on transfer learning.
+\newblock {\em IEEE Transactions on knowledge and data engineering},
+  22(10):1345--1359, 2010.
+
+\bibitem{pentina2015curriculum}
+A.~Pentina, V.~Sharmanska, and C.~H. Lampert.
+\newblock Curriculum learning of multiple tasks.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 5492--5500, 2015.
+
+\bibitem{ruder2016overview}
+S.~Ruder.
+\newblock An overview of gradient descent optimization algorithms.
+\newblock {\em arXiv preprint arXiv:1609.04747}, 2016.
+
+\bibitem{Bubeck2012}
+N.-B. S.Bubeck.
+\newblock Regret analysis of stochastic and nonstochastic multi-armed bandit
+  problems.
+\newblock {\em Machine Learning}, 5:1--122, 2012.
+
+\bibitem{shamir2013stochastic}
+O.~Shamir and T.~Zhang.
+\newblock Stochastic gradient descent for non-smooth optimization: Convergence
+  results and optimal averaging schemes.
+\newblock In {\em International Conference on Machine Learning}, pages 71--79,
+  2013.
+
+\bibitem{srivastava2014dropout}
+N.~Srivastava, G.~Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov.
+\newblock Dropout: a simple way to prevent neural networks from overfitting.
+\newblock {\em The Journal of Machine Learning Research}, 15(1):1929--1958,
+  2014.
+
+\bibitem{Theodoridis2009}
+S.Theodoridis and K.Koutroumbas.
 \newblock {\em Pattern Recognition}.
-\newblock Academic Press, 4 edition.
+\newblock Academic Press, 4 edition, 2009.
 
-\bibitem[Y.Bengio and J.Weston, 2009]{Bengio2009}
-Y.Bengio, J.Louradour, R. and J.Weston (2009).
+\bibitem{sutskever2013importance}
+I.~Sutskever, J.~Martens, G.~Dahl, and G.~Hinton.
+\newblock On the importance of initialization and momentum in deep learning.
+\newblock In {\em International conference on machine learning}, pages
+  1139--1147, 2013.
+
+\bibitem{weinshall2018curriculum}
+D.~Weinshall and G.~Cohen.
+\newblock Curriculum learning by transfer learning: Theory and experiments with
+  deep networks.
+\newblock {\em arXiv preprint arXiv:1802.03796}, 2018.
+
+\bibitem{Bengio2009}
+R.~Y.Bengio, J.Louradour and J.Weston.
 \newblock Curriculum learning.
 \newblock {\em Procedures of the International Conference on Machine Learning},
-  26:41--48.
+  26:41--48, 2009.
 
 \end{thebibliography}
