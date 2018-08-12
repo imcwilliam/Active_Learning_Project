@@ -163,10 +163,34 @@ Kernel Size & 3x3 &3x3 & NA &NA &NA &NA &NA  \\
 \end{tabular}
 \end{table}
 
-We run experiments across all three datasets using the curriculum methods laid out above, testing both `easy to hard' curricula and `hard to easy' curricula, as well as tested using different uncertainty functions. In each case we also train a baseline model with an equal number of epochs to provide a comparison for the curriculum test performance. We did not test all permutations of curricula and uncertainty functions as it became clear in some cases that there was little difference from the baseline performance, the experiments for which we present results are as follows:
+We run experiments across all three datasets using the curriculum methods laid out above, testing both `easy to hard' curricula and `hard to easy' curricula, as well as tested using different uncertainty functions. In each case we also train a baseline model with an equal number of epochs to provide a comparison for the curriculum test performance. We did not test all permutations of curricula and uncertainty functions as it became clear in early experiments some cases that there was little difference from the baseline performance, the experiments for which we performed repeated tests and presents present results are as follows:
 \begin{itemize}
-\item TEST
-
+\item Geometric Shapes, using the AADT uncertainty function:
+\begin{itemize}
+\item{Dynamic Task Curriculum, Easy to Hard}
+\item{Dynamic Task Curriculum, Hard to Easy}
+\item{Dynamic Sampling Curriculum, Hard to Easy}
+\item{Dynamic Sampled Task Curriculum, Hard to Easy}
+\item{Uniform Sampling Baseline}
+\end{itemize}
+\item MNIST, using the AADT uncertainty function:
+\begin{itemize}
+\item{Dynamic Task Curriculum, Easy to Hard}
+\item{Dynamic Sampling Curriculum, Easy to Hard}
+\item{Dynamic Sampled Task Curriculum, Easy to Hard}
+\item{Dynamic Task Curriculum, Hard to Easy}
+\item{Dynamic Sampling Curriculum, Hard to Easy}
+\item{Dynamic Sampled Task Curriculum, Hard to Easy}
+\item{Uniform Sampling Baseline}
+\end{itemize}
+\item CIFAR 10, using the BALD uncertainty function\footnote {Tests for CIFAR 10 with the AADT function resulted in little difference with from baseline, however using the BALD uncertainty function improved performance significantly}:
+\begin{itemize}
+\item{Dynamic Task Curriculum, Easy to Hard}
+\item{Dynamic Sampled Task Curriculum, Easy to Hard}
+\item{Dynamic Task Curriculum, Hard to Easy}
+\item{Dynamic Sampled Task Curriculum, Hard to Easy}
+\item{Uniform Sampling Baseline}
+\end{itemize}
 \end{itemize}
 
 
@@ -174,7 +198,7 @@ In Table \ref{tab:HyperParams2} we lay out the other hyperparameters for the exp
 
 \begin{table}[h!]
 \caption{Experiment Hyperparameters} \label{tab:HyperParams2}
-\hspace*{-1cm}
+\hspace*{-2cm}
 \begin{tabular}{|c||c|c|c|c|c|c|c|}
 \hline
 \multicolumn{7}{|c|}{Experiment Hyperparameters} \\
@@ -185,7 +209,7 @@ Geometric Shapes & 350 & ADAM & 0.0001 & 0.25 & 32 & 2  \\
 \hline
 MNIST & 50 & ADAM & 0.0001 & 0.25 & 50 & 2  \\
 \hline
-CIFAR 10 & 50 & ADAM & 0.0001 & 0.25 & 50 & 2  \\
+CIFAR 10 & 50 & ADAM & 0.0001 & 0.25 & 100 & 2  \\
 \hline
 \end{tabular}
 \end{table}
@@ -193,22 +217,42 @@ CIFAR 10 & 50 & ADAM & 0.0001 & 0.25 & 50 & 2  \\
 
 \section{Results and Discussion}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \hspace*{-3cm}    
 \centering
 \begin{subfigure}{0.7\textwidth}
   \centering
-  \includegraphics[width=1\linewidth]{GeoShapesDACResults_STE.png}
+  \includegraphics[width=1\linewidth]{GeoShapes_Dynamic_Results_STE.png}
   \caption{ Mean Test Set Accuracies}
-  \label{fig:DAC_StE_Geo}
+  \label{fig:DAC_ste_Geo}
 \end{subfigure}%
 \begin{subfigure}{0.7\textwidth}
 \hspace*{-1cm}   
   \centering
-  \includegraphics[width=1\linewidth]{GeoShapesDACResults_Boxplt.png}
+  \includegraphics[width=1\linewidth]{GeoShapes_Dynamic_Results_Boxplt.png}
   \caption{Test Set Accuracy Boxplots}
   \label{fig:DAC_BoxPlt_Geo}
 \end{subfigure}
 \caption{Geometric Shapes Bootstrapped Active Curriculum (DAC) Experiment Results}
-\label{fig:GeoShapesBACResults}
+\label{fig:GeoShapesDACResults}
+\end{figure}
+
+\begin{figure}[h!]
+\hspace*{-3cm}    
+\centering
+\begin{subfigure}{0.7\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{MNIST_Dynamic_Results.png}
+  \caption{ Mean Test Set Accuracies}
+  \label{fig:DAC_ste_MNIST}
+\end{subfigure}%
+\begin{subfigure}{0.7\textwidth}
+\hspace*{-1cm}   
+  \centering
+  \includegraphics[width=1\linewidth]{CIFAR_Dynamic_Results.png}
+  \caption{Test Set Accuracy Boxplots}
+  \label{fig:DAC_ste_CIFAR}
+\end{subfigure}
+\caption{Geometric Shapes Bootstrapped Active Curriculum (DAC) Experiment Results}
+\label{fig:DACResults}
 \end{figure}
