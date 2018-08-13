@@ -224,7 +224,7 @@ We run experiments across all three datasets using the curriculum methods laid o
 \item{Dynamic Sampled Task Curriculum, Hard to Easy}
 \item{Uniform Sampling Baseline}
 \end{itemize}
-\item CIFAR 10, using the BALD uncertainty function\footnote {Tests for CIFAR 10 with the AADT function resulted in little difference with from baseline, however using the BALD uncertainty function improved performance significantly}:
+\item CIFAR 10, using the BALD uncertainty function\footnote {Tests for CIFAR 10 with the AADT function resulted in little difference with from baseline, however using the BALD uncertainty function improved performance significantly.}:
 \begin{itemize}
 \item{Dynamic Task Curriculum, Easy to Hard}
 \item{Dynamic Sampled Task Curriculum, Easy to Hard}
@@ -233,10 +233,6 @@ We run experiments across all three datasets using the curriculum methods laid o
 \item{Uniform Sampling Baseline}
 \end{itemize}
 \end{itemize}
-
-
-We run the experiments 10 times with different random initialistions, reporting average results and standard errors. In Table \ref{tab:HyperParams2} we lay out the other hyperparameters for the experiments. Note that in each case we keep the number of tasks at 2, results were robust to differing the number of tasks however as we did not have time to do a full analysis we decided to keep the experimental setups relatively homogeneous in order to avoid tinkering with hyperparameters to achieve positive results. As in Chapter \ref{ch:BootstrappedActiveCurricula}, experiments were carried out in Keras \cite{chollet2015keras} and the Adam optimiser is implemented with the default hyperparameters (except for the learning rate which is given in Table \ref{tab:HyperParams2}). 
-
 \begin{table}[h!]
 \caption{Experiment Hyperparameters} \label{tab:HyperParams2}
 \hspace*{-2cm}
@@ -254,15 +250,15 @@ CIFAR 10 & 50 & Adam & 0.0001 & 0.25 & 100 & 2  \\
 \hline
 \end{tabular}
 \end{table}
-
+We run the experiments 10 times with different random initialistions, reporting average results and standard errors. In Table \ref{tab:HyperParams2} we lay out the other hyperparameters for the experiments. Note that in each case we keep the number of tasks at 2, results were robust to differing the number of tasks however as we did not have time to do a full analysis we decided to keep the experimental setups relatively homogeneous in order to avoid tinkering with hyperparameters to achieve positive results. As in Chapter \ref{ch:BootstrappedActiveCurricula}, experiments were carried out in Keras \cite{chollet2015keras} and the Adam optimiser is implemented with the default hyperparameters (except for the learning rate which is given in Table \ref{tab:HyperParams2}). 
 
 \section{Results and Discussion}
 The results for  the experiments are given in Tables \ref{tab:GeoShapes DACResults} to \ref{tab:CIFAR DACResults}\footnote{Due to the experimental setup for the CIFAR 10 experiments, only test accuracies were recorded.}, and illustrated in Figures \ref{fig:GeoShapesDACResults} and \ref{fig:DACResults}. Note that the denotation `easy' implies that the curriculum was trained on an easy-hard curriculum, with increasingly difficult tasks in the DTC case and by biasing sampling towards easy samples in the DSC method, and similarly for the DSTC method. Conversely, `Hard' denotes that the curriculum used was a hard to easy curriculum.
 \begin{table}[h!]
-\caption{Geometric Shapes DAC Results} \label{tab:GeoShapes DACResults}
+\caption{Geometric Shapes Dynamic Active Curricula Results} \label{tab:GeoShapes DACResults}
 \begin{tabular}{|c||c|c|}
 \hline
-\multicolumn{3}{|c|}{GeoShapes DAC Results} \\
+\multicolumn{3}{|c|}{GeoShapes Dynamic Active Curricula Results} \\
 \hline
  & Test Accuracy (\%) & Test Cross-Entropy Error \\
 \hline
@@ -280,10 +276,10 @@ DTC - Easy & 0.830 $\pm$ 0.00198 & 0.420 $\pm$ 0.00469 \\
 \end{table}
 
 \begin{table}[h!]
-\caption{MNISTShapes DAC Results} \label{tab:MNIST DACResults}
+\caption{MNIST Dynamic Active Curricula  Results} \label{tab:MNIST DACResults}
 \begin{tabular}{|c||c|c|}
 \hline
-\multicolumn{3}{|c|}{MNIST DAC Results} \\
+\multicolumn{3}{|c|}{MNIST Dynamic Active Curricula Results} \\
 \hline
  & Test Accuracy (\%) & Test Cross-Entropy Error \\
 \hline
@@ -305,10 +301,10 @@ DSTC - Easy & 0.964 $\pm$ 0.000314 & 0.228$\pm$ 0.000595 \\
 \end{table}
 
 \begin{table}[h!]
-\caption{CIFAR 10 DAC Results} \label{tab:CIFAR DACResults}
+\caption{CIFAR 10 Dynamic Active Curricula  Results} \label{tab:CIFAR DACResults}
 \begin{tabular}{|c||c|}
 \hline
-\multicolumn{2}{|c|}{CIFAR 10 DAC Results} \\
+\multicolumn{2}{|c|}{CIFAR 10 Dynamic Active Curricula Results} \\
 \hline
  & Test Accuracy (\%) \\
 \hline
