@@ -11,6 +11,25 @@ where $TotalEpochs$ is the number of epochs the model would need to be trained f
 Note that we can rank the samples from low to high uncertainty or from high to low uncertainty; in the low to high case the first tasks will contain samples about which the model is confident in predicting, corresponding to dynamically constructing an easy to hard curriculum. Alternatively, ranking the samples from high to low uncertainty will produce a curriculum more similar to an active learning approach, focussing on training the model on areas of the input space that it is more uncertain about classifying. While the latter method may contradict some of the underlying motivations for curriculum learning, for example that learning with an easy to hard curriculum allows the model to explore a smoother version of the error space and better initialise the parameters, we would still argue that the hard to easy approach still qualifies as a curriculum method, and may be appropriate in instances where the model already has achieved a high level of expertise in the problem, and improvements are therefore more likely to be made by studying harder samples than easy ones.  We therefore have two variations of the Dynamic Task Curriculum method; Easy to Hard DTC and Hard to Easy DTC. This approach is similar to that of \textit{Self-Paced Learning} REF KOLLER ET AL, where they apply a similar approach with a latent SSVM model REF, however they implement their method by introducing a regularization term reflecting the difficulty of each sample into the objective function of the model, as opposed to employing an actual curriculum. As the model parameters are initialised randomly, it would be inappropriate to infer model uncertainty before the first epoch, as such, the first epoch is trained using the whole training set, and the use of the curriculum method begins starting with the second epoch.  Pseudocode for the DTC method is given in section \ref{sec:DTCPseudocode}.
 
 \subsubsection{Pseudocode for the DTC curriculum}\label{sec:DTCPseudocode}
+Pseudocode for the dynamic task curriculum method (assuming the use of the AADT uncertainty function and an easy to hard curriculum):
+\begin{algorithmic}
+\FOR {$i=1$ to $Num\_Epochs$}
+\STATE $TrainingPhase = \floor{\frac{i*Num\_Tasks}{Num\_Epochs}}$
+\STATE $PhaseEpochScale = \frac{Num\_Tasks}{TrainingPhase}$
+\FOR {$PhaseEpochScale$}
+\STATE $\mathbf{S}^{\theta_{curriculum}} = AADT_{\theta_{curriculum}}(\mathcal{T})$
+\STATE $\mathcal{T}_{\mathbf{S}^{\theta_{curriculum}}} = \mathcal{T}, \text{sorted by } \mathbf{S}^{\theta_{curriculum}} \text{ (descending order)}$ 
+\STATE $Num\_Samples = |\mathcal{T}_{\mathbf{S}^{\theta_{baseline}}}|$
+\FOR {$t=0$ to $Num\_Tasks$}
+\STATE $TaskStartIndex = Num\_Samples*\frac{t}{Num\_Tasks} $
+\STATE $TaskEndIndex = Num\_Samples*\frac{t+1}{Num\_Tasks} $
+\STATE $\mathcal{T}^{t}_{\mathbf{S}^{\theta_{baseline}}} = \mathcal{T}_{\mathbf{S}^{\theta_{baseline}}}[TaskStartIndex:TaskEndIndex,:] $
+\ENDFOR
+\STATE $\text{train }  \theta_{curriculum} \text{ on training set } \mathcal{T}^{0:TrainingPhase}_{\mathbf{S}^{\theta_{baseline}}} $
+\ENDFOR
+\ENDFOR
+\end{algorithmic}
+
 
 \subsection{Dynamic Sampling Curricula (DSC)}
 The second dynamic curriculum construction method we test is \textit{Dynamic Sampling Curricula (DSC)}; one of the potential problems with some curriculum and active learning methods is that of \textit{diversity} REF PAPER ON DIVERSITY. Diversity refers to how well the whole training set is represented in the samples used to train the model; if a sample selection method is extremely undiverse then it may end up selecting only a very small selection of the training samples, leading to the model not training on a suitably broad set of training samples, resulting in high generalization error. One way to approach this problem is to avoid deterministic methods of selecting training examples, and instead sample from the training data using some probability distribution. Mini-batch stochastic gradient descent REF? is one such method, sampling batches of examples from the training data using a uniform probability distribution, however by varying the sampling distribution away from a uniform distribution we can bias training towards different samples, resulting in them being selected more or less often than others. 
@@ -22,6 +41,13 @@ We implement the DSC curriculum method by biasing the sampling probability propo
 where $\theta_j$ is the model being trained with the curriculum after $j-1$ epochs, $\tilde{p_j}(x_i | \theta)$ is the sampling probability of training sample $i$ in the $j^{th}$ training epoch, and $\tau$ is the softmax temperature parameter that can be set as a hyperparameter or tuned each epoch to achieve a target diversity level in the sampling probability. The sampling probability is updated at the start of each epoch and training proceeds as with uniform mini-batch stochastic gradient descent, using the sampling probabilities calculated in Equation \ref{eq:DSC_Prob}. As we wish to bias training towards certain certain/uncertain samples, we also do not follow the typical SGD practice of sampling without replacement, instead sampling with replacement. As sampling with replacement implies that some samples will probably not be used in every epoch, this in effect introduces a stochastic curriculum where, instead of removing samples entirely from certain training phases, we instead decrease their probability of being sampled during an epoch. Unlike the DTC curriculum method in Section \ref{sec:DTC}, the DSC method does not have distinct training phases; the sampling probability is biased throughout the entirety of training. As we are no longer using training phases with smaller task training sets we do not need to modify the number of epochs relative to the baseline as we did with the BAC method in Chatper \ref{ch:BootstrappedActiveCurricula} and the DTC method. As with the DTC method in the previous section, we train the model using the whole training set, with uniform mini-batch SGD, for one epoch, before we begin estimating model uncertainty and training with the DSC curriculum. Pseudocode for the DSC curriculum method is given in Section \ref{sec:DSCPseudocode}.
 
 \subsubsection{Pseudocode for the DSC curriculum}\label{sec:DSCPseudocode}
+Pseudocode for the dynamic sampling curriculum method, except for the softmax temperature control method, given in REF (assuming the use of the AADT uncertainty function and an easy to hard curriculum):
+\begin{algorithmic}
+\FOR {$j=1$ to $Num\_Epochs$}
+\STATE $\forall x_i \in \mathcal{T}, \tilde{p_j}(x_i | \theta_j) = \frac{exp(\frac{AADT_{\theta_j}(x_i)}{\tau})}{\sum_{k}^{N} exp(\frac{AADT_{\theta_j}(x_k)}{\tau})}$
+\STATE $\text{train }  \theta_{curriculum} \text{ on training set } \mathcal{T}, \text{ sampled with probabilities }  \tilde{p}(. | \theta_j)  $
+\ENDFOR
+\end{algorithmic}
 
 \subsection{Dynamic Sampled Task Curricula (DSTC)}
 The final dynamic curriculum method implemented combines the the DTC and DSC methodologies, into an approach we term \textit{dynamic sampled task curricula (DSTC)}. As in the dynamic task curricula method, at the start of every epoch we calculate the model uncertainty on the samples in the training set  $\mathcal{T}$, dividing the training set up into several equally sized tasks of increasing or decreasing uncertainty. Again as in the DTC approach, the model is trained in several phases; in the first phase only the first task is using to train the model, then in the second phase the first two tasks are used, and so on until the entirety of $\mathcal{T}$ is being used. In the DSTC approach however, instead of sampling uniformly from training samples used in each phase, we bias the sampling probability as in the DSC model. We therefore calculate the sampling probability for sample $x_i$ in epoch $j$ as follows, assuming $j$ falls in phase $t$:
@@ -37,23 +63,38 @@ where $K$ is the number of training samples in the phase training set $\mathcal{
 
 The DSTC method therefore combines the DTC and DSC methods, dynamically splitting the training data into uncertainty based tasks, and then sampling from the tasks proportionally to the uncertainty of the samples relative to the rest of the task. DSTC could therefore be considered a more general version of the DSC method, where the DSC method is simply a special case of DSTC, where the number of tasks is equal to one. Pseudocode for the DSTC method is given in the following section.
 
+\subsubsection{Pseudocode for the DSTC curriculum}\label{sec:DSTCPseudocode}
+\begin{algorithmic}
+\FOR {$i=1$ to $Num\_Epochs$}
+\STATE $TrainingPhase = \floor{\frac{i*Num\_Tasks}{Num\_Epochs}}$
+\STATE $PhaseEpochScale = \frac{Num\_Tasks}{TrainingPhase}$
+\FOR {$PhaseEpochScale$}
+\STATE $\mathbf{S}^{\theta_{curriculum}} = AADT_{\theta_{curriculum}}(\mathcal{T})$
+\STATE $\mathcal{T}_{\mathbf{S}^{\theta_{curriculum}}} = \mathcal{T}, \text{sorted by } \mathbf{S}^{\theta_{curriculum}} \text{ (descending order)}$ 
+\STATE $Num\_Samples = |\mathcal{T}_{\mathbf{S}^{\theta_{baseline}}}|$
+\FOR {$t=0$ to $Num\_Tasks$}
+\STATE $TaskStartIndex = Num\_Samples*\frac{t}{Num\_Tasks} $
+\STATE $TaskEndIndex = Num\_Samples*\frac{t+1}{Num\_Tasks} $
+\STATE $\mathcal{T}^{t}_{\mathbf{S}^{\theta_{baseline}}} = \mathcal{T}_{\mathbf{S}^{\theta_{baseline}}}[TaskStartIndex:TaskEndIndex,:] $
+\ENDFOR
+\STATE $\forall x_i \in \mathcal{T}^{0:TrainingPhase}, \tilde{p_j}(x_i | \theta_j) = \frac{exp(\frac{AADT_{\theta_j}(x_i)}{\tau})}{\sum_{k}^{N} exp(\frac{AADT_{\theta_j}(x_k)}{\tau})}$
+\STATE $\text{train }  \theta_{curriculum} \text{ on training set } \mathcal{T}^{0:TrainingPhase}_{\mathbf{S}^{\theta_{baseline}}}, \text{ sampled with probabilities }  \tilde{p}(. | \theta_j)   $
+\ENDFOR
+\ENDFOR
+\end{algorithmic}
+
 \subsection{BALD Active Score Function}
-As well as using the AADT uncertainty function \ref{BAC_AADT}, we will also use the BALD acquisition function\cite{houlsby2011bayesian} \cite{gal2017deep}. Recent advances in Bayesian neural networks and variational inference motivate an alternative approach to measuring uncertainty \cite{gal2016uncertainty}; while the distance to classification threshold may encapsulate classification uncertainty for samples close to the boundary, it does not consider the uncertainty associated with analysing samples from parts of the feature space that is not represented in the training data \cite{gal2016uncertainty}. One approach to this problem is given by \cite{gal2016dropout}, where they motivate using the \textit{Monte Carlo dropout} method as a way of approximating variational inference in neural networks. As with the usual dropout procedure \cite{srivastava2014dropout}, weights are randomly set to zero throughout the training phase, however, unlike the usual approach, dropout is maintained at the test stage, and a number of forward passes are carried out, resulting in a distribution of outputs. The resultant distribution can subsequently be analysed to infer which test samples the model is more or less confident in predicting, for example by comparing the variance of the output distributions. In \cite{gal2017deep}, the authors use the MC dropout method to implement the BALD acquisition function, which queries points which ``maximise the mutual information between predictions and model posterior'', identifying samples that have a high probability of being placed into different classes in the different stochastic forward passes. One interpration of the BALD method is that it is similar to the `Query by Committee'' active learning methods, with the different forward passes representing different models' votes. 
+As well as using the AADT uncertainty function \ref{BAC_AADT}, we will also use the BALD acquisition function\cite{houlsby2011bayesian} \cite{gal2017deep}. Recent advances in Bayesian neural networks and variational inference motivate an alternative approach to measuring uncertainty \cite{gal2016uncertainty}; while the distance to classification threshold may encapsulate classification uncertainty for samples close to the boundary, it does not consider the uncertainty associated with analysing samples from parts of the feature space that is not represented in the training data \cite{gal2016uncertainty}. One approach to this problem is given by \cite{gal2016dropout}, where they motivate using the \textit{Monte Carlo dropout} method as a way of approximating variational inference in neural networks. As with the usual dropout procedure \cite{srivastava2014dropout}, weights are randomly set to zero throughout the training phase, however, unlike the usual approach, dropout is maintained at the test stage, and a number of forward passes are carried out, resulting in a distribution of outputs. The resultant distribution can subsequently be analysed to infer which test samples the model is more or less confident in predicting, for example by comparing the variance of the output distributions. In \cite{gal2017deep}, the authors use the MC dropout method to implement the BALD acquisition function, which queries points which ``maximise the mutual information between predictions and model posterior'', identifying samples that have a high probability of being placed into different classes in the different stochastic forward passes. One interpration of the BALD method is that it is similar to the `Query by Committee' active learning methods \cite{settles2012active}, with the different forward passes representing different models' votes. 
 
-We calculate the BALD active score function as follows:
-
+We calculate the BALD active score function as follows, as in \cite{gal2017deep}:
 \begin{equation}
-P_{\theta}^{BALD} (x_i) = \frac{exp(\frac{S^{BALD}_{\theta}(x_i)}{\tau})}{\sum_{j}^{N} exp(\frac{S^{BALD}_{\theta}(x_j)}{\tau})},
-\end{equation}
-where
-\begin{equation}
-S^{BALD}_{\theta}(x_i) = - \sum_{c}^{C} \bar{P}_{\theta}(y_c|x_i)\log( \bar{P}_{\theta}(y_c|x_i)) + \frac{1}{M} \sum_{m}^{M} (\sum_{c}^{C} P^{m}_{\theta}(y_c|x)\log(P^{m}_{\theta}(y_c|x))),
+BALD_{\theta}(x_i) = - \sum_{c}^{C} \bar{P}_{\theta}(y_c|x_i)\log( \bar{P}_{\theta}(y_c|x_i)) + \frac{1}{M} \sum_{m}^{M} (\sum_{c}^{C} P^{m}_{\theta}(y_c|x)\log(P^{m}_{\theta}(y_c|x))),
 \end{equation}
 and
 \begin{equation}
  \bar{P}_{\theta}(y_c|x_i) = \frac{\sum_{m}^{M}P^{m}_{\theta}(y_c|x)}{M}. 
 \end{equation}
-Here $M$ is the number of stochastic forward passes carried out and $P^{m}_{\theta}(y_c|x)$ is the softmax probability of class $c$ from the $m^{th}$ forward pass. The score can therefore be interpreted as the difference between the entropy of the average softmax output and the average entropy of the output of each forward pass.
+Here $M$ is the number of stochastic forward passes carried out and $P^{m}_{\theta}(y_c|x)$ is the softmax probability of class $c$ from the $m^{th}$ forward pass. The score can therefore be interpreted as the difference between the entropy of the average softmax output and the average entropy of the output of each forward pass \cite{gal2017deep}.
  
  \subsection{Softmax temperature}\label{Methods_SoftmaxTemperature}
 In order to homogenize the outputs of the different active score functions, we pass the the scores through a softmax functions, resulting in an output of softmax probabilities summing to 1. Using the softmax function also allows us to use the softmax temperature in order to control the diversity of the sampling probabilities. A common issue with active learning is that the acquisition functions can end up sampling from an unrepresentative subset of the input space, resulting in significant bias in the training of the model \cite{settles2012active}. We control this effect by using the softmax temperature to target a preset \textit{maximum probability ratio}, defined as follows:

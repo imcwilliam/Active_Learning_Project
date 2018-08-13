@@ -24,22 +24,23 @@
 \contentsline {subsection}{\numberline {4.1.2}Phase Training Epochs}{19}
 \contentsline {subsection}{\numberline {4.1.3}Pseudocode for BAC}{20}
 \contentsline {section}{\numberline {4.2}Geometric Shapes Dataset}{20}
-\contentsline {section}{\numberline {4.3}Experiments}{21}
-\contentsline {section}{\numberline {4.4}Results and Discussion}{23}
-\contentsline {section}{\numberline {4.5}Summary}{26}
-\contentsline {chapter}{\numberline {5}Dynamic Active Curricula}{27}
-\contentsline {section}{\numberline {5.1}Curriculum Construction}{28}
-\contentsline {subsection}{\numberline {5.1.1}Dynamic Task Curricula (DTC)}{28}
-\contentsline {subsubsection}{\numberline {5.1.1.1}Pseudocode for the DTC curriculum}{29}
-\contentsline {subsection}{\numberline {5.1.2}Dynamic Sampling Curricula (DSC)}{29}
-\contentsline {subsubsection}{\numberline {5.1.2.1}Pseudocode for the DSC curriculum}{30}
-\contentsline {subsection}{\numberline {5.1.3}Dynamic Sampled Task Curricula (DSTC)}{30}
-\contentsline {subsection}{\numberline {5.1.4}BALD Active Score Function}{31}
-\contentsline {subsection}{\numberline {5.1.5}Softmax temperature}{32}
-\contentsline {section}{\numberline {5.2}Datasets}{33}
-\contentsline {subsection}{\numberline {5.2.1}MNIST}{33}
-\contentsline {subsection}{\numberline {5.2.2}CIFAR 10}{34}
-\contentsline {section}{\numberline {5.3}Experiments}{35}
-\contentsline {section}{\numberline {5.4}Results and Discussion}{38}
-\contentsline {chapter}{\numberline {6}Conclusion and Further Work}{41}
-\contentsline {chapter}{Bibliography}{42}
+\contentsline {section}{\numberline {4.3}Experiments}{22}
+\contentsline {section}{\numberline {4.4}Results and Discussion}{24}
+\contentsline {section}{\numberline {4.5}Summary}{27}
+\contentsline {chapter}{\numberline {5}Dynamic Active Curricula}{28}
+\contentsline {section}{\numberline {5.1}Curriculum Construction}{29}
+\contentsline {subsection}{\numberline {5.1.1}Dynamic Task Curricula (DTC)}{29}
+\contentsline {subsubsection}{\numberline {5.1.1.1}Pseudocode for the DTC curriculum}{30}
+\contentsline {subsection}{\numberline {5.1.2}Dynamic Sampling Curricula (DSC)}{31}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Pseudocode for the DSC curriculum}{32}
+\contentsline {subsection}{\numberline {5.1.3}Dynamic Sampled Task Curricula (DSTC)}{32}
+\contentsline {subsubsection}{\numberline {5.1.3.1}Pseudocode for the DSTC curriculum}{33}
+\contentsline {subsection}{\numberline {5.1.4}BALD Active Score Function}{34}
+\contentsline {subsection}{\numberline {5.1.5}Softmax temperature}{34}
+\contentsline {section}{\numberline {5.2}Datasets}{35}
+\contentsline {subsection}{\numberline {5.2.1}MNIST}{36}
+\contentsline {subsection}{\numberline {5.2.2}CIFAR 10}{36}
+\contentsline {section}{\numberline {5.3}Experiments}{37}
+\contentsline {section}{\numberline {5.4}Results and Discussion}{39}
+\contentsline {chapter}{\numberline {6}Conclusion and Further Work}{43}
+\contentsline {chapter}{Bibliography}{44}

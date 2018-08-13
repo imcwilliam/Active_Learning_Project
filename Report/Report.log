@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.15)  13 AUG 2018 01:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.15)  13 AUG 2018 02:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -250,6 +250,15 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen134
 \l_MT_below_shortintertext_sep=\dimen135
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count110
+\c@ALC@line=\count111
+\c@ALC@rem=\count112
+\c@ALC@depth=\count113
+\ALC@tlm=\skip52
+\algorithmicindent=\skip53
+)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@height=\dimen136
@@ -257,8 +266,8 @@ Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
-\c@subfigure=\count110
-\c@subtable=\count111
+\c@subfigure=\count114
+\c@subtable=\count115
 )
 (./Report.aux (./Introduction.aux) (./Background.aux) (./RelatedWork.aux)
 (./BootstrappedActiveCurricula.aux) (./DynamicSampledActiveCurricula.aux
@@ -268,23 +277,23 @@ LaTeX Warning: Label `eq:DSC_Prob' multiply defined.
 ))
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 87.
-LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 87
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 88.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 88
 .
  (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -322,16 +331,16 @@ LaTeX Font Info:    ... okay on input line 87.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count112
+\scratchcounter=\count116
 \scratchdimen=\dimen138
 \scratchbox=\box28
-\nofMPsegments=\count113
-\nofMParguments=\count114
+\nofMPsegments=\count117
+\nofMParguments=\count118
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count115
+\MPscratchCnt=\count119
 \MPscratchDim=\dimen139
-\MPnumerator=\count116
-\makeMPintoPDFobject=\count117
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
 \everyMPtoPDFconversion=\toks22
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
@@ -382,31 +391,31 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 94.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 93.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 94.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 93.
+(Font)              scaled to size 18.66588pt on input line 94.
 
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 93.
+(Font)              scaled to size 10.79993pt on input line 94.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 93.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 94.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 93.
+(Font)              scaled to size 10.79993pt on input line 94.
 
 [1
 
 ] [2] [3]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 104.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 105.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 104.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 105.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 104.
+(Font)              scaled to size 22.39185pt on input line 105.
  (./Report.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
@@ -559,49 +568,55 @@ Overfull \hbox (2.36656pt too wide) in paragraph at lines 14--15
 ine the prox-im-ity of the model's
  []
 
-[18] [19]
+[18]
+Overfull \hbox (51.6872pt too wide) in paragraph at lines 29--31
+\OT1/ptm/m/n/12 AADT un-cer-tainty func-tion and an easy to hard cur-ricu-lum):
+                                                      
+ []
+
+[19] [20]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/EasyGe
-oShapesExamples.png, id=100, 722.7pt x 722.7pt>
+oShapesExamples.png, id=103, 722.7pt x 722.7pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/E
 asyGeoShapesExamples.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ea
 syGeoShapesExamples.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/EasyGeoShapesExamples.png used on input line 40.
+t/Report/Graphics/EasyGeoShapesExamples.png used on input line 60.
 (pdftex.def)             Requested size: 247.54149pt x 247.53429pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 41.
+(Font)              scaled to size 9.85492pt on input line 61.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/HardGe
-oShapesExamples.png, id=101, 722.7pt x 722.7pt>
+oShapesExamples.png, id=104, 722.7pt x 722.7pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/H
 ardGeoShapesExamples.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ha
 rdGeoShapesExamples.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/HardGeoShapesExamples.png used on input line 46.
+t/Report/Graphics/HardGeoShapesExamples.png used on input line 66.
 (pdftex.def)             Requested size: 247.54149pt x 247.53429pt.
 
-Overfull \hbox (27.89253pt too wide) in paragraph at lines 36--50
+Overfull \hbox (27.89253pt too wide) in paragraph at lines 56--70
  []|  $[]$$[]$ 
  []
 
-[20] [21 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphi
-cs/EasyGeoShapesExamples.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_
-Project/Report/Graphics/HardGeoShapesExamples.png>]
-Overfull \hbox (11.72511pt too wide) in paragraph at lines 70--83
+[21 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ea
+syGeoShapesExamples.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Proje
+ct/Report/Graphics/HardGeoShapesExamples.png>] [22]
+Overfull \hbox (11.72511pt too wide) in paragraph at lines 90--103
+[][] 
+ []
+
+
+Overfull \hbox (37.75148pt too wide) in paragraph at lines 109--118
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-[22]
-Overfull \hbox (37.75148pt too wide) in paragraph at lines 89--98
-[][] 
- []
 
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/GeoSha
@@ -612,7 +627,7 @@ eoShapesBACResults_STE.png Graphic file (type png)
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ge
 oShapesBACResults_STE.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/GeoShapesBACResults_STE.png used on input line 129.
+t/Report/Graphics/GeoShapesBACResults_STE.png used on input line 149.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/GeoSha
@@ -623,97 +638,100 @@ eoShapesBACResults_Boxplt.png Graphic file (type png)
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ge
 oShapesBACResults_Boxplt.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/GeoShapesBACResults_Boxplt.png used on input line 136.
+t/Report/Graphics/GeoShapesBACResults_Boxplt.png used on input line 156.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
-Overfull \hbox (81.94524pt too wide) in paragraph at lines 125--140
+Overfull \hbox (81.94524pt too wide) in paragraph at lines 145--160
  []|  $[]$$[]$ 
  []
 
+[23]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[23] [24] [25 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/G
-raphics/GeoShapesBACResults_STE.png> </Users/ianmcwilliam/Desktop/MSc/Active_Le
-arning_Project/Report/Graphics/GeoShapesBACResults_Boxplt.png>]) [26]
+[24] [25 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphi
+cs/GeoShapesBACResults_STE.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learnin
+g_Project/Report/Graphics/GeoShapesBACResults_Boxplt.png>] [26]) [27]
 \openout2 = `DynamicSampledActiveCurricula.aux'.
 
 
 (./DynamicSampledActiveCurricula.tex
 Chapter 5.
-[27
+[28
 
 
 
-] [28] [29] [30] [31] [32]
+] [29]
+Overfull \hbox (16.08403pt too wide) in paragraph at lines 14--16
+\OT1/ptm/m/n/12 un-cer-tainty func-tion and an easy to hard cur-ricu-lum):     
+                                                 
+ []
+
+[30] [31] [32]
+Overfull \hbox (14.14821pt too wide) in paragraph at lines 81--82
+[] []$[]\OML/ptmcm/m/it/12 ^^R[][]\OMS/pzccm/m/n/12 T[]\OML/ptmcm/m/it/12 ; [][
+]\OT1/ptmcm/m/n/12 (\OML/ptmcm/m/it/12 :\OMS/pzccm/m/n/12 j\OML/ptmcm/m/it/12 ^
+^R[]\OT1/ptmcm/m/n/12 )$ 
+ []
+
+[33] [34]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MNISTE
-xamples.png, id=149, 722.7pt x 722.7pt>
+xamples.png, id=155, 722.7pt x 722.7pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/M
 NISTExamples.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
 ISTExamples.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/MNISTExamples.png used on input line 78.
+t/Report/Graphics/MNISTExamples.png used on input line 119.
 (pdftex.def)             Requested size: 247.54149pt x 247.53429pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MNISTE
-xamples2.png, id=150, 722.7pt x 722.7pt>
+xamples2.png, id=156, 722.7pt x 722.7pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/M
 NISTExamples2.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
 ISTExamples2.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/MNISTExamples2.png used on input line 82.
+t/Report/Graphics/MNISTExamples2.png used on input line 123.
 (pdftex.def)             Requested size: 247.54149pt x 247.53429pt.
 
-Overfull \hbox (27.89253pt too wide) in paragraph at lines 74--84
+Overfull \hbox (27.89253pt too wide) in paragraph at lines 115--125
  []|  $[]$$[]$ 
  []
 
-[33]
+[35] [36 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphi
+cs/MNISTExamples.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/
+Report/Graphics/MNISTExamples2.png>]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CIFARE
-xamples.png, id=154, 542.025pt x 542.025pt>
+xamples.png, id=165, 542.025pt x 542.025pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/C
 IFARExamples.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CI
 FARExamples.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/CIFARExamples.png used on input line 95.
+t/Report/Graphics/CIFARExamples.png used on input line 136.
 (pdftex.def)             Requested size: 247.54149pt x 247.5398pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CIFARE
-xamples2.png, id=155, 542.025pt x 542.025pt>
+xamples2.png, id=166, 542.025pt x 542.025pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/C
 IFARExamples2.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CI
 FARExamples2.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/CIFARExamples2.png used on input line 99.
+t/Report/Graphics/CIFARExamples2.png used on input line 140.
 (pdftex.def)             Requested size: 247.54149pt x 247.5398pt.
 
-Overfull \hbox (27.89253pt too wide) in paragraph at lines 91--101
+Overfull \hbox (27.89253pt too wide) in paragraph at lines 132--142
  []|  $[]$$[]$ 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[34 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
-ISTExamples.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Repor
-t/Graphics/MNISTExamples2.png>]
-Overfull \hbox (11.72511pt too wide) in paragraph at lines 112--126
-[][] 
- []
-
-
-Overfull \hbox (11.72511pt too wide) in paragraph at lines 130--144
+Overfull \hbox (11.72511pt too wide) in paragraph at lines 153--167
 [][] 
  []
 
@@ -721,48 +739,59 @@ Overfull \hbox (11.72511pt too wide) in paragraph at lines 130--144
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (10.04463pt too wide) in paragraph at lines 148--164
+Overfull \hbox (11.72511pt too wide) in paragraph at lines 171--185
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[35 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CI
+
+Overfull \hbox (10.04463pt too wide) in paragraph at lines 189--205
+[][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[37 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CI
 FARExamples.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Repor
-t/Graphics/CIFARExamples2.png>] [36]
-Overfull \hbox (16.78545pt too wide) in paragraph at lines 201--215
+t/Graphics/CIFARExamples2.png>] [38]
+Overfull \hbox (16.78545pt too wide) in paragraph at lines 242--256
 []|  [] 
  []
 
-[37]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[39]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/GeoSha
-pes_Dynamic_Results_STE.png, id=173, 939.51pt x 939.51pt>
+pes_Dynamic_Results_STE.png, id=179, 939.51pt x 939.51pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/G
 eoShapes_Dynamic_Results_STE.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ge
 oShapes_Dynamic_Results_STE.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/GeoShapes_Dynamic_Results_STE.png used on input line 294.
+t/Report/Graphics/GeoShapes_Dynamic_Results_STE.png used on input line 335.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/GeoSha
-pes_Dynamic_Results_Boxplt.png, id=174, 1084.05pt x 1084.05pt>
+pes_Dynamic_Results_Boxplt.png, id=180, 1084.05pt x 1084.05pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/G
 eoShapes_Dynamic_Results_Boxplt.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ge
 oShapes_Dynamic_Results_Boxplt.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/GeoShapes_Dynamic_Results_Boxplt.png used on input line 301.
+t/Report/Graphics/GeoShapes_Dynamic_Results_Boxplt.png used on input line 342.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
-Overfull \hbox (81.94524pt too wide) in paragraph at lines 290--305
+Overfull \hbox (81.94524pt too wide) in paragraph at lines 331--346
  []|  $[]$$[]$ 
  []
 
@@ -771,64 +800,64 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MNIST_
-Dynamic_Results.png, id=175, 939.51pt x 939.51pt>
+Dynamic_Results.png, id=181, 939.51pt x 939.51pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/M
 NIST_Dynamic_Results.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
 IST_Dynamic_Results.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/MNIST_Dynamic_Results.png used on input line 314.
+t/Report/Graphics/MNIST_Dynamic_Results.png used on input line 355.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CIFAR_
-Dynamic_Results.png, id=176, 939.51pt x 939.51pt>
+Dynamic_Results.png, id=182, 939.51pt x 939.51pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/C
 IFAR_Dynamic_Results.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CI
 FAR_Dynamic_Results.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/CIFAR_Dynamic_Results.png used on input line 321.
+t/Report/Graphics/CIFAR_Dynamic_Results.png used on input line 362.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
-Overfull \hbox (81.94524pt too wide) in paragraph at lines 310--325
+Overfull \hbox (81.94524pt too wide) in paragraph at lines 351--366
  []|  $[]$$[]$ 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [38] [39 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Grap
+) [40] [41 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Grap
 hics/GeoShapes_Dynamic_Results_STE.png> </Users/ianmcwilliam/Desktop/MSc/Active
 _Learning_Project/Report/Graphics/GeoShapes_Dynamic_Results_Boxplt.png>]
-[40 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
+[42 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
 IST_Dynamic_Results.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Proje
 ct/Report/Graphics/CIFAR_Dynamic_Results.png>]
 Chapter 6.
-(./Report.bbl [41
+(./Report.bbl [43
 
 
-] [42
+] [44
 
-] [43])
+] [45])
 
 Package natbib Warning: There were undefined citations.
 
-[44] (./Report.aux (./Introduction.aux) (./Background.aux) (./RelatedWork.aux)
+[46] (./Report.aux (./Introduction.aux) (./Background.aux) (./RelatedWork.aux)
 (./BootstrappedActiveCurricula.aux) (./DynamicSampledActiveCurricula.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5878 strings out of 492995
- 93538 string characters out of 6132703
- 165574 words of memory out of 5000000
- 9241 multiletter control sequences out of 15000+600000
+ 6017 strings out of 492995
+ 95182 string characters out of 6132703
+ 166059 words of memory out of 5000000
+ 9376 multiletter control sequences out of 15000+600000
  63198 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,13n,45p,3138b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,13n,45p,3138b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -842,10 +871,10 @@ t/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
 e1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on Report.pdf (50 pages, 1107362 bytes).
+Output written on Report.pdf (52 pages, 1113573 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
+ 255 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
