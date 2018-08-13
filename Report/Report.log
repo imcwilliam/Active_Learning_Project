@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.15)  13 AUG 2018 23:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.15)  14 AUG 2018 00:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -552,7 +552,7 @@ Missing character: There is no  in font ptmr7t!
 
 
 
-]) [16] [17]
+] [16]) [17]
 \openout2 = `BootstrappedActiveCurricula.aux'.
 
  (./BootstrappedActiveCurricula.tex
@@ -968,10 +968,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6097 strings out of 492995
- 99205 string characters out of 6132703
- 167714 words of memory out of 5000000
- 9435 multiletter control sequences out of 15000+600000
+ 6106 strings out of 492995
+ 99442 string characters out of 6132703
+ 167762 words of memory out of 5000000
+ 9444 multiletter control sequences out of 15000+600000
  63198 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,13n,45p,3138b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -988,7 +988,7 @@ t/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
 e1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on Report.pdf (63 pages, 1400821 bytes).
+Output written on Report.pdf (63 pages, 1402916 bytes).
 PDF statistics:
  304 PDF objects out of 1000 (max. 8388607)
  182 compressed objects within 2 object streams

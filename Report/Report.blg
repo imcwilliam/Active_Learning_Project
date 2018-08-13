@@ -13,45 +13,45 @@ Database file #1: bibliography.bib
 Warning--can't use both volume and number fields in jiang2015self
 Warning--empty journal in lecun-mnisthandwrittendigit-2010
 Warning--empty journal in GeoShapes
-You've used 47 entries,
+You've used 50 entries,
             2118 wiz_defined-function locations,
-            765 strings with 11783 characters,
-and the built_in function-call counts, 17316 in all, are:
-= -- 1720
-> -- 810
-< -- 19
-+ -- 321
-- -- 270
-* -- 1125
-:= -- 2764
-add.period$ -- 147
-call.type$ -- 47
-change.case$ -- 272
+            783 strings with 12169 characters,
+and the built_in function-call counts, 18242 in all, are:
+= -- 1813
+> -- 843
+< -- 21
++ -- 336
+- -- 280
+* -- 1176
+:= -- 2910
+add.period$ -- 156
+call.type$ -- 50
+change.case$ -- 286
 chr.to.int$ -- 0
-cite$ -- 50
-duplicate$ -- 706
-empty$ -- 1358
-format.name$ -- 270
-if$ -- 3729
+cite$ -- 53
+duplicate$ -- 752
+empty$ -- 1434
+format.name$ -- 280
+if$ -- 3931
 int.to.chr$ -- 0
-int.to.str$ -- 47
-missing$ -- 48
-newline$ -- 236
-num.names$ -- 94
-pop$ -- 327
+int.to.str$ -- 50
+missing$ -- 51
+newline$ -- 251
+num.names$ -- 100
+pop$ -- 342
 preamble$ -- 1
-purify$ -- 226
+purify$ -- 237
 quote$ -- 0
-skip$ -- 546
+skip$ -- 585
 stack$ -- 0
-substring$ -- 1046
-swap$ -- 212
-text.length$ -- 19
+substring$ -- 1092
+swap$ -- 228
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 180
+type$ -- 192
 warning$ -- 3
-while$ -- 165
-width$ -- 49
-write$ -- 509
+while$ -- 174
+width$ -- 52
+write$ -- 542
 (There were 3 warnings)

@@ -88,6 +88,11 @@ A.~Graves, M.~G. Bellemare, J.~Menick, R.~Munos, and K.~Kavukcuoglu.
 \newblock Automated curriculum learning for neural networks.
 \newblock {\em arXiv preprint arXiv:1704.03003}, 2017.
 
+\bibitem{grunwaldminimum}
+P.~Grunwald.
+\newblock The minimum description length principle. 2007.
+\newblock {\em Cambridge: Massachusetts Institute of Technology}, 2007.
+
 \bibitem{Chang18}
 A.~H-S~Chang, E.Learned-Miller.
 \newblock Active bias: Training more accuracy neural networks by emphasizing
@@ -138,6 +143,11 @@ L.~Jiang, D.~Meng, Q.~Zhao, S.~Shan, and A.~G. Hauptmann.
 D.~P. Kingma and J.~Ba.
 \newblock Adam: A method for stochastic optimization.
 \newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem{kneser1995improved}
+R.~Kneser and H.~Ney.
+\newblock Improved backing-off for m-gram language modeling.
+\newblock In {\em icassp}, volume~1, page 181e4, 1995.
 
 \bibitem{krizhevsky2009learning}
 A.~Krizhevsky and G.~Hinton.
@@ -244,6 +254,11 @@ S.~Tong and D.~Koller.
 \newblock Support vector machine active learning with applications to text
   classification.
 \newblock {\em Journal of machine learning research}, 2(Nov):45--66, 2001.
+
+\bibitem{vilalta2002perspective}
+R.~Vilalta and Y.~Drissi.
+\newblock A perspective view and survey of meta-learning.
+\newblock {\em Artificial Intelligence Review}, 18(2):77--95, 2002.
 
 \bibitem{wang2017cost}
 K.~Wang, D.~Zhang, Y.~Li, R.~Zhang, and L.~Lin.
