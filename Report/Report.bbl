@@ -101,6 +101,12 @@ T.~Hastie, R.~Tibshirani, and J.~Friedman.
 \newblock In {\em The elements of statistical learning}, pages 485--585.
   Springer, 2009.
 
+\bibitem{hearst1998support}
+M.~A. Hearst, S.~T. Dumais, E.~Osuna, J.~Platt, and B.~Scholkopf.
+\newblock Support vector machines.
+\newblock {\em IEEE Intelligent Systems and their applications}, 13(4):18--28,
+  1998.
+
 \bibitem{houlsby2011bayesian}
 N.~Houlsby, F.~Husz{\'a}r, Z.~Ghahramani, and M.~Lengyel.
 \newblock Bayesian active learning for classification and preference learning.

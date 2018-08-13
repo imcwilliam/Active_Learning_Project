@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: Report.aux
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Report.aux
 A level-1 auxiliary file: Introduction.aux
 A level-1 auxiliary file: Background.aux
 A level-1 auxiliary file: RelatedWork.aux
@@ -8,8 +10,48 @@ A level-1 auxiliary file: Conclusion.aux
 The style file: abbrv.bst
 A level-1 auxiliary file: appendix1.aux
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for ""
 Warning--can't use both volume and number fields in jiang2015self
 Warning--empty journal in lecun-mnisthandwrittendigit-2010
 Warning--empty journal in GeoShapes
-(There were 4 warnings)
+You've used 47 entries,
+            2118 wiz_defined-function locations,
+            765 strings with 11783 characters,
+and the built_in function-call counts, 17316 in all, are:
+= -- 1720
+> -- 810
+< -- 19
++ -- 321
+- -- 270
+* -- 1125
+:= -- 2764
+add.period$ -- 147
+call.type$ -- 47
+change.case$ -- 272
+chr.to.int$ -- 0
+cite$ -- 50
+duplicate$ -- 706
+empty$ -- 1358
+format.name$ -- 270
+if$ -- 3729
+int.to.chr$ -- 0
+int.to.str$ -- 47
+missing$ -- 48
+newline$ -- 236
+num.names$ -- 94
+pop$ -- 327
+preamble$ -- 1
+purify$ -- 226
+quote$ -- 0
+skip$ -- 546
+stack$ -- 0
+substring$ -- 1046
+swap$ -- 212
+text.length$ -- 19
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 180
+warning$ -- 3
+while$ -- 165
+width$ -- 49
+write$ -- 509
+(There were 3 warnings)
