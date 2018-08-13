@@ -57,8 +57,8 @@
 \usepackage{mathtools}
 \usepackage{algorithmic}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
-%\graphicspath{ {C:/Active_Learning_Project/Report/Graphics/}}
-\graphicspath{ {/Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/}}
+\graphicspath{ {C:/Active_Learning_Project/Report/Graphics/}}
+%\graphicspath{ {/Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/}}
 
 \usepackage[demo]{graphicx}
 \usepackage{caption}
@@ -69,7 +69,7 @@
 \newcommand\norm[1]{\left\lVert#1\right\rVert}
 
 %% Information about the title, etc.
-\title{Automatic Curriculum Learning for Deep Models Using Active Learning}
+\title{Automatic Curriculum Construction for Deep Models Using Active Learning}
 \author{Ian McWilliam}
 
 %% If the year of submission is not the current year, uncomment this line and 
@@ -80,7 +80,9 @@
 % \graduationdate{February 1786}
 
 %% Specify the abstract here.
-\abstract{%
+\abstract{\textit{Curriculum Learning} refers to the study of methods for improving supervised learning performance by presenting training data to the model in a meaningful order, usually by using `easy' samples in the early stages of training in order to allow the model to learn more simple concepts that can be used as building blocks for learning more complex, `hard' samples. While learning curricula have been applied succesfully in a variety of studies, one of the main difficulties in using the approach is that few real world datasets have a clear delineation between `easy' and `hard' training samples, often making handcrafted learning curricula infeasible. There is growing interest therefore in implementing methods for automatically the construction of learning curricula.
+
+ In this paper we use various model uncertainty methods from the field of active learning to approximate sample difficulty, enabling the automatic construction of a variety of curriculum methods which we term \textit{active curricula}. We introduce two broad categories of active curricula; \textit{bootstrapped active curricula}, which use a pre-trained baseline model to calculate sample difficulty, and \textit{dynamic active curricula}, which estimates sample difficulty dynamically throughout training, producing an adaptive curriculum that evolves throughout training. We test out curriculum methods on the Geometric Shapes, MNIST and CIFAR 10 datasets, showing consistent test set outperformance of the different active curriculum methods relative to a baseline model trained uniformly on the entire training set in each dataset. 
     
 }
 
@@ -95,7 +97,7 @@
 
 %% Acknowledgements
 \begin{acknowledgements}
-Many thanks
+I would like to thank my supervisors Grant Galloway, Yoni Lev and Sebastian Koch for their guidance and advice throughout the development of this thesis, as well to extend my sincere gratitude to my colleagues Emilio Llorente-Cano, Grigorios Papamanousakis and Yannis Papakonstaninou for their support throughout my Master's studies. Finally, I would like to thank Marley Kappella for his encouragement and company during the write up of this report.
 \end{acknowledgements}
 
 %% Next we need to have the declaration.
@@ -131,7 +133,9 @@ Many thanks
 
 %\chapter{Analysis and Discussion}
 
-\chapter{Conclusion and Further Work}
+
+\include{Conclusion}
+
 
 % \include{chap2}
 %% ... etc ...
@@ -153,6 +157,8 @@ Many thanks
 
 %% Specify the bibliography file. Default is thesis.bib.
 \bibliography{bibliography}
+
+\include{appendix1}
 
 
 %% ... that's all, folks!

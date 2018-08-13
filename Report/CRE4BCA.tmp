@@ -1,0 +1,24 @@
+
+\appendix
+\chapter{Appendices}
+\section{Bootstrapped Active Curriculum Results}
+\begin{table}[h]
+\caption{Geometric Shapes BAC Results} \label{tab:GeoShapes BACResults}
+\begin{tabular}{|c||c|c|}
+\hline
+\multicolumn{3}{|c|}{GeoShapes BAC Results} \\
+\hline
+ & Test Accuracy (\%) & Test Cross-Entropy Error \\
+\hline
+Uniform Baseline&  0.825 $\pm$ 0.00269 & 0.440 $\pm$ 0.00614 \\
+\hline
+Easy to Hard Curriculum & 0.840 $\pm$ 0.00267 & 0.398 $\pm$ 0.00670 \\
+\hline
+Hard to Easy Curriculum &  0.815 $\pm$ 0.00278 & 0.467 $\pm$ 0.00699 \\
+\hline
+Adjusted Predefined Curriculum & 0.800 $\pm$ 0.00143 & 0.486 $\pm$ 0.00409 \\
+\hline
+Predefined Curriculum & 0.757 $\pm$ 0.00279 & 0.576 $\pm$ 0.00489 \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,3 +1,91 @@
 
+\appendix
+\chapter{Bootstrapped Active Curriculum Results}
+\begin{table}[h]
+\caption{Geometric Shapes BAC Results} \label{tab:GeoShapes BACResults}
+\begin{tabular}{|c||c|c|}
+\hline
+\multicolumn{3}{|c|}{GeoShapes BAC Results} \\
+\hline
+ & Test Accuracy (\%) & Test Cross-Entropy Error \\
+\hline
+Uniform Baseline&  0.825 $\pm$ 0.00269 & 0.440 $\pm$ 0.00614 \\
+\hline
+Easy to Hard Curriculum & 0.840 $\pm$ 0.00267 & 0.398 $\pm$ 0.00670 \\
+\hline
+Hard to Easy Curriculum &  0.815 $\pm$ 0.00278 & 0.467 $\pm$ 0.00699 \\
+\hline
+Adjusted Predefined Curriculum & 0.800 $\pm$ 0.00143 & 0.486 $\pm$ 0.00409 \\
+\hline
+Predefined Curriculum & 0.757 $\pm$ 0.00279 & 0.576 $\pm$ 0.00489 \\
+\hline
+\end{tabular}
+\end{table}
 
-Test
+\chapter{Dynamic Active Curriculum Results}
+\begin{table}[h!]
+\caption{Geometric Shapes Dynamic Active Curricula Results} \label{tab:GeoShapes DACResults}
+\begin{tabular}{|c||c|c|}
+\hline
+\multicolumn{3}{|c|}{GeoShapes Dynamic Active Curricula Results} \\
+\hline
+ & Test Accuracy (\%) & Test Cross-Entropy Error \\
+\hline
+Uniform Baseline&  0.826 $\pm$ 0.00281 & 0.437 $\pm$ 0.00696 \\
+\hline
+DSC - Hard& 0.846$ \pm$ 0.00369 & 0.391 $\pm$ 0.00827 \\
+\hline
+DTC - Hard&  0.865  $\pm$ 0.00157 & 0.362 $\pm$ 0.00350 \\
+\hline
+DSTC - Hard & 0.866 $\pm$ 0.00192 & 0.355 $\pm$ 0.00502 \\
+\hline
+DTC - Easy & 0.830 $\pm$ 0.00198 & 0.420 $\pm$ 0.00469 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\caption{MNIST Dynamic Active Curricula  Results} \label{tab:MNIST DACResults}
+\begin{tabular}{|c||c|c|}
+\hline
+\multicolumn{3}{|c|}{MNIST Dynamic Active Curricula Results} \\
+\hline
+ & Test Accuracy (\%) & Test Cross-Entropy Error \\
+\hline
+Uniform Baseline&  0.975 $\pm$ 0.000188& 0.229 $\pm$ 0.000562 \\
+\hline
+DSC - Hard& 0.977$ \pm$ 0.000216& 0.250 $\pm$ 0.000497 \\
+\hline
+DTC - Hard&  0.977  $\pm$ 0.000216 & 0.227 $\pm$ 0.000611 \\
+\hline
+DSTC - Hard & 0.979 $\pm$ 0.000327 & 0.251 $\pm$ 0.000736\\
+\hline
+DSC - Easy& 0.970$ \pm$ 0.000240 & 0.227 $\pm$ 0.00102 \\
+\hline
+DTC - Easy & 0.970 $\pm$ 0.000276 & 0.224 $\pm$ 0.000696 \\
+\hline
+DSTC - Easy & 0.964 $\pm$ 0.000314 & 0.228$\pm$ 0.000595 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\caption{CIFAR 10 Dynamic Active Curricula  Results} \label{tab:CIFAR DACResults}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{CIFAR 10 Dynamic Active Curricula Results} \\
+\hline
+ & Test Accuracy (\%) \\
+\hline
+Uniform Baseline&  0.713 $\pm$ 0.00439\\
+\hline
+DTC - Hard&  0.730 $\pm$ 0.00132 \\
+\hline
+DSTC - Hard & 0.725 $\pm$ 0.00129\\
+\hline
+DTC - Easy & 0.727 $\pm$ 0.00197 \\
+\hline
+DSTC - Easy & 0.722 $\pm$ 0.00429 \\
+\hline
+\end{tabular}
+\end{table}

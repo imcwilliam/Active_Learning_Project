@@ -83,6 +83,11 @@ D.~Ghosh and A.~Vogt.
 \newblock In {\em Joint statistical meetings}, pages 3455--3460. American
   Statistical Association San Diego, CA, 2012.
 
+\bibitem{graves2017automated}
+A.~Graves, M.~G. Bellemare, J.~Menick, R.~Munos, and K.~Kavukcuoglu.
+\newblock Automated curriculum learning for neural networks.
+\newblock {\em arXiv preprint arXiv:1704.03003}, 2017.
+
 \bibitem{Chang18}
 A.~H-S~Chang, E.Learned-Miller.
 \newblock Active bias: Training more accuracy neural networks by emphasizing
@@ -118,6 +123,11 @@ L.~Jiang, D.~Meng, S.-I. Yu, Z.~Lan, S.~Shan, and A.~Hauptmann.
 \newblock In {\em Advances in Neural Information Processing Systems}, pages
   2078--2086, 2014.
 
+\bibitem{jiang2015self}
+L.~Jiang, D.~Meng, Q.~Zhao, S.~Shan, and A.~G. Hauptmann.
+\newblock Self-paced curriculum learning.
+\newblock In {\em AAAI}, volume~2, page~6, 2015.
+
 \bibitem{kingma2014adam}
 D.~P. Kingma and J.~Ba.
 \newblock Adam: A method for stochastic optimization.
@@ -133,6 +143,11 @@ M.~P. Kumar, B.~Packer, and D.~Koller.
 \newblock Self-paced learning for latent variable models.
 \newblock In {\em Advances in Neural Information Processing Systems}, pages
   1189--1197, 2010.
+
+\bibitem{lecun2015deep}
+Y.~LeCun, Y.~Bengio, and G.~Hinton.
+\newblock Deep learning.
+\newblock {\em nature}, 521(7553):436, 2015.
 
 \bibitem{lecun-mnisthandwrittendigit-2010}
 Y.~LeCun and C.~Cortes.
