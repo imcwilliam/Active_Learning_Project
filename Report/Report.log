@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.15)  13 AUG 2018 00:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.15)  13 AUG 2018 01:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -598,12 +598,12 @@ Overfull \hbox (11.72511pt too wide) in paragraph at lines 70--83
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
+[22]
 Overfull \hbox (37.75148pt too wide) in paragraph at lines 89--98
 [][] 
  []
 
-[22]
+
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/GeoSha
 pesBACResults_STE.png, id=113, 939.51pt x 939.51pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/G
@@ -735,30 +735,34 @@ Overfull \hbox (16.78545pt too wide) in paragraph at lines 201--215
 []|  [] 
  []
 
+[37]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/GeoSha
-pes_Dynamic_Results_STE.png, id=169, 939.51pt x 939.51pt>
+pes_Dynamic_Results_STE.png, id=173, 939.51pt x 939.51pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/G
 eoShapes_Dynamic_Results_STE.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ge
 oShapes_Dynamic_Results_STE.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/GeoShapes_Dynamic_Results_STE.png used on input line 225.
+t/Report/Graphics/GeoShapes_Dynamic_Results_STE.png used on input line 294.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/GeoSha
-pes_Dynamic_Results_Boxplt.png, id=170, 1084.05pt x 1084.05pt>
+pes_Dynamic_Results_Boxplt.png, id=174, 1084.05pt x 1084.05pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/G
 eoShapes_Dynamic_Results_Boxplt.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ge
 oShapes_Dynamic_Results_Boxplt.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/GeoShapes_Dynamic_Results_Boxplt.png used on input line 232.
+t/Report/Graphics/GeoShapes_Dynamic_Results_Boxplt.png used on input line 301.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
-Overfull \hbox (81.94524pt too wide) in paragraph at lines 221--236
+Overfull \hbox (81.94524pt too wide) in paragraph at lines 290--305
  []|  $[]$$[]$ 
  []
 
@@ -767,61 +771,61 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MNIST_
-Dynamic_Results.png, id=171, 939.51pt x 939.51pt>
+Dynamic_Results.png, id=175, 939.51pt x 939.51pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/M
 NIST_Dynamic_Results.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
 IST_Dynamic_Results.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/MNIST_Dynamic_Results.png used on input line 245.
+t/Report/Graphics/MNIST_Dynamic_Results.png used on input line 314.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CIFAR_
-Dynamic_Results.png, id=172, 939.51pt x 939.51pt>
+Dynamic_Results.png, id=176, 939.51pt x 939.51pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/C
 IFAR_Dynamic_Results.png Graphic file (type png)
 
 <use /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CI
 FAR_Dynamic_Results.png>
 Package pdftex.def Info: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Projec
-t/Report/Graphics/CIFAR_Dynamic_Results.png used on input line 252.
+t/Report/Graphics/CIFAR_Dynamic_Results.png used on input line 321.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
-Overfull \hbox (81.94524pt too wide) in paragraph at lines 241--256
+Overfull \hbox (81.94524pt too wide) in paragraph at lines 310--325
  []|  $[]$$[]$ 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [37] [38 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Grap
+) [38] [39 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Grap
 hics/GeoShapes_Dynamic_Results_STE.png> </Users/ianmcwilliam/Desktop/MSc/Active
 _Learning_Project/Report/Graphics/GeoShapes_Dynamic_Results_Boxplt.png>]
-[39 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
+[40 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
 IST_Dynamic_Results.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Proje
 ct/Report/Graphics/CIFAR_Dynamic_Results.png>]
 Chapter 6.
-(./Report.bbl [40
+(./Report.bbl [41
 
 
-] [41
+] [42
 
-] [42])
+] [43])
 
 Package natbib Warning: There were undefined citations.
 
-[43] (./Report.aux (./Introduction.aux) (./Background.aux) (./RelatedWork.aux)
+[44] (./Report.aux (./Introduction.aux) (./Background.aux) (./RelatedWork.aux)
 (./BootstrappedActiveCurricula.aux) (./DynamicSampledActiveCurricula.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5872 strings out of 492995
- 93396 string characters out of 6132703
- 165525 words of memory out of 5000000
- 9235 multiletter control sequences out of 15000+600000
+ 5878 strings out of 492995
+ 93538 string characters out of 6132703
+ 165574 words of memory out of 5000000
+ 9241 multiletter control sequences out of 15000+600000
  63198 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,13n,45p,3138b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -838,10 +842,10 @@ t/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
 e1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on Report.pdf (49 pages, 1104188 bytes).
+Output written on Report.pdf (50 pages, 1107362 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
+ 249 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

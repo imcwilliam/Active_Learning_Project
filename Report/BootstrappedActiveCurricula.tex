@@ -82,7 +82,7 @@ Activation & Tanh \footnotemark & NA & Tanh & NA & Tanh & NA & Softmax \\
 \end{tabular}
 \end{table}
 \footnotetext{The Hyperbolic Tangent activation is chosen as this was this the activation used in \cite{Bengio2009}.}
-We also lay out the hyperparameters for the training procedures in table \ref{tab:HyperParams} below:
+We also lay out the hyperparameters for the training procedures in table \ref{tab:HyperParams} below, experiments were carried out in Keras \cite{chollet2015keras} with the Adam optimiser implemented with the default hyperparameters (except for the learning rate which is given in Table \ref{tab:HyperParams}):
 
 \begin{table}[h]
 \caption{Experiment Hyperparameters} \label{tab:HyperParams}
@@ -92,7 +92,7 @@ We also lay out the hyperparameters for the training procedures in table \ref{ta
 \hline
  &Epochs & Optimiser &Learning Rate & Dropout \% & Batch Size & Num Tasks \\
 \hline
-GeoShapes & 350 & ADAM & 0.0001 & 0.25 & 32 & 2  \\
+GeoShapes & 350 & Adam & 0.0001 & 0.25 & 32 & 2  \\
 \hline
 \end{tabular}
 \end{table}
@@ -109,7 +109,7 @@ The results of running the bootstrapped active curriuculum experiments with the 
 \hline
  & Test Accuracy (\%) & Test Cross-Entropy Error \\
 \hline
-Baseline&  0.825 $\pm$ 0.00269 & 0.440 $\pm$ 0.00614 \\
+Uniform Baseline&  0.825 $\pm$ 0.00269 & 0.440 $\pm$ 0.00614 \\
 \hline
 Easy to Hard Curriculum & 0.840 $\pm$ 0.00267 & 0.398 $\pm$ 0.00670 \\
 \hline

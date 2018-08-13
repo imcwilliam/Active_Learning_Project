@@ -8,47 +8,48 @@ A level-1 auxiliary file: BootstrappedActiveCurricula.aux
 A level-1 auxiliary file: DynamicSampledActiveCurricula.aux
 The style file: abbrv.bst
 Database file #1: bibliography.bib
+Warning--I didn't find a database entry for ""
 Warning--empty journal in lecun-mnisthandwrittendigit-2010
 Warning--empty journal in GeoShapes
-You've used 42 entries,
+You've used 43 entries,
             2118 wiz_defined-function locations,
-            737 strings with 11073 characters,
-and the built_in function-call counts, 15609 in all, are:
-= -- 1569
-> -- 695
+            740 strings with 11126 characters,
+and the built_in function-call counts, 15839 in all, are:
+= -- 1589
+> -- 708
 < -- 17
-+ -- 276
-- -- 230
-* -- 993
-:= -- 2468
-add.period$ -- 133
-call.type$ -- 42
-change.case$ -- 238
++ -- 281
+- -- 234
+* -- 1002
+:= -- 2506
+add.period$ -- 135
+call.type$ -- 43
+change.case$ -- 242
 chr.to.int$ -- 0
-cite$ -- 44
-duplicate$ -- 650
-empty$ -- 1241
-format.name$ -- 230
-if$ -- 3386
+cite$ -- 45
+duplicate$ -- 657
+empty$ -- 1263
+format.name$ -- 234
+if$ -- 3436
 int.to.chr$ -- 0
-int.to.str$ -- 42
+int.to.str$ -- 43
 missing$ -- 44
-newline$ -- 212
-num.names$ -- 84
-pop$ -- 290
+newline$ -- 216
+num.names$ -- 86
+pop$ -- 299
 preamble$ -- 1
-purify$ -- 197
+purify$ -- 200
 quote$ -- 0
-skip$ -- 504
+skip$ -- 514
 stack$ -- 0
-substring$ -- 991
-swap$ -- 201
+substring$ -- 996
+swap$ -- 202
 text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 160
+type$ -- 164
 warning$ -- 2
-while$ -- 151
-width$ -- 44
-write$ -- 457
-(There were 2 warnings)
+while$ -- 153
+width$ -- 45
+write$ -- 465
+(There were 3 warnings)
