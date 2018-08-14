@@ -83,7 +83,7 @@ x^{*}_{LC} = \arg\max_{x} 1 - P_{\theta}(\hat{y}|x),
 \end{equation}
 where
 \begin{equation}
-\hat{y} = \arg\max_{y_i}P_{\theta}(y_i|x).
+\hat{y} = \arg\max_{y_i}P_{\theta}(oftsy_i|x).
 \end{equation}
 Where $x^{*}_{LC}$ is the queried training sample and $P_{\theta}(y_{i}|x)$ is the model's predicted probability that sample $x$ is of class $y_{i}$, given model parameters $\theta$. Similarly, samples can be queried by their average distance to classification threshold or, similarly, the entropy of the algorithm prediction, again taken from \cite{settles2012active}:
 \begin{equation}

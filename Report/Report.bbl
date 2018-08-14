@@ -282,6 +282,12 @@ R.~Vilalta and Y.~Drissi.
 \newblock A perspective view and survey of meta-learning.
 \newblock {\em Artificial Intelligence Review}, 18(2):77--95, 2002.
 
+\bibitem{wan2013regularization}
+L.~Wan, M.~Zeiler, S.~Zhang, Y.~Le~Cun, and R.~Fergus.
+\newblock Regularization of neural networks using dropconnect.
+\newblock In {\em International Conference on Machine Learning}, pages
+  1058--1066, 2013.
+
 \bibitem{wang2017cost}
 K.~Wang, D.~Zhang, Y.~Li, R.~Zhang, and L.~Lin.
 \newblock Cost-effective active learning for deep image classification.
