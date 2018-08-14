@@ -56,9 +56,10 @@
 \usepackage{caption}
 \usepackage{mathtools}
 \usepackage{algorithmic}
+\usepackage{hyperref}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
-%\graphicspath{ {C:/Active_Learning_Project/Report/Graphics/}}
-\graphicspath{ {/Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/}}
+\graphicspath{ {C:/Active_Learning_Project/Report/Graphics/}}
+%\graphicspath{ {/Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/}}
 
 \usepackage[demo]{graphicx}
 \usepackage{caption}
@@ -80,9 +81,9 @@
 % \graduationdate{February 1786}
 
 %% Specify the abstract here.
-\abstract{\textit{Curriculum Learning} refers to the study of methods for improving supervised learning performance by presenting training data to the model in a meaningful order, usually by using `easy' samples in the early stages of training in order to allow the model to learn more simple concepts that can be used as building blocks for learning more complex, `hard' samples. While learning curricula have been applied succesfully in a variety of studies, one of the main difficulties in using the approach is that few real world datasets have a clear delineation between `easy' and `hard' training samples, often making handcrafted learning curricula infeasible. There is growing interest therefore in implementing methods for automatically the construction of learning curricula.
+\abstract{\textit{Curriculum Learning} refers to the study of methods for improving supervised learning performance by presenting training data to the model in a meaningful order. Motivated by the way in which animals learn, this is usually achieved by using `easy' samples in the early stages of training, allowing the model to learn basic  concepts that can be used as building blocks for learning more complex, `hard' samples in later training epochs. While learning curricula have been applied succesfully in a variety of studies, one of the main difficulties is that few real world datasets have a clear delineation between `easy' and `hard' training samples, often making handcrafted learning curricula infeasible. There is growing interest therefore in implementing methods for automating the construction of learning curricula.
 
- In this paper we use various model uncertainty methods from the field of active learning to approximate sample difficulty, enabling the automatic construction of a variety of curriculum methods which we term \textit{active curricula}. We introduce two broad categories of active curricula; \textit{bootstrapped active curricula}, which use a pre-trained baseline model to calculate sample difficulty, and \textit{dynamic active curricula}, which estimates sample difficulty dynamically throughout training, producing an adaptive curriculum that evolves throughout training. We test out curriculum methods on the Geometric Shapes, MNIST and CIFAR 10 datasets, showing consistent test set outperformance of the different active curriculum methods relative to a baseline model trained uniformly on the entire training set in each dataset. 
+ In this paper we use uncertainty methods from the field of active learning to infer training sample difficulty, enabling the automatic construction of a variety of curriculum methods for deep models, which we term \textit{active curricula}. We introduce two broad categories of active curricula; \textit{bootstrapped active curricula}, which use a pre-trained baseline model to calculate sample difficulty, and \textit{dynamic active curricula}, which estimates sample difficulty dynamically throughout training, producing an adaptive curriculum that evolves as the model is trained. We test our curriculum methods on the Geometric Shapes, MNIST and CIFAR 10 datasets, showing consistent test set outperformance of the different active curriculum methods relative to baseline models, providing support for the use of curriculum learning and introducing several flexible methods for automating curriculum construction
     
 }
 

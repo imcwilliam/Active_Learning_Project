@@ -6,7 +6,7 @@ In the BAC approach we train two models; the first, which we term the `baseline 
 \begin{equation}\label{eq:BAC_S}
 s^{\theta_{baseline}}_i = AADT_{\theta_{baseline}}(x_i) 
 \end{equation}
-where $x_i$ are the inputs of the $i^{th}$ training sample. We then abuse the function notation slightly to set $\mathbf{s}^{\theta_{baseline}} = AADT_{\theta_{baseline}}(\mathcal{T}) $, i.e. signifying that $\mathbf{s}^{\theta_{baseline}} $ is the output of the AADT uncertainty function over the entire training set $\mathcal{T}$.
+where $x_i$ are the inputs of the $i^{th}$ training sample. 
 
  We then sort the training samples according to their score, producing an ordered training set $\mathcal{T}_{\mathbf{s}^{\theta_{baseline}}}$, such that the first training sample in $\mathcal{T}_{\mathbf{s}^{\theta_{baseline}}}$ is the sample which produces the highest value from the AADT function. We then split $\mathcal{T}_{\mathbf{s}^{\theta_{baseline}}}$ into equally sized `tasks', with the number of tasks being a hyperparameter of the curriculum construction. The learning curriculum is then constructed from these tasks; the chosen approach is to split training into discrete phases, with the number of phases being equal to the chosen number of tasks. The first phase of the curriculum consists of training only on the first task, denoted $\mathcal{T}^1_{\mathbf{s}^{\theta_{baseline}}}$, in the second phase, the second task is added to the training samples, training the model on $\mathcal{T}^1_{\mathbf{s}^{\theta_{baseline}}}\cup\mathcal{T}^2_{\mathbf{S}^{\theta_{baseline}}}$. In the third phase (if the number of tasks is greater than 2), the next task is added, and so on until all tasks have been added and the final phase consist of training on the entirety of the original training set $\mathcal{T}$. Having constructed the BAC learning curriculum, we train a new `curriculum' model', which we denote by $\theta_{curriculum}$, using the curriculum. Pseudocode for the BAC method is given in Section \ref{BACPseudocode}.
 
@@ -26,7 +26,7 @@ NumEpochs^{t} =\floor{ \frac{BaselineEpochs}{t}}
 Where $BaselineEpochs$ is the number of epochs used to train the baseline model and $NumEpochs^{t}$ denotes the number of training epochs in the $t^{th}$ training phase. For example, in the first phase, $NumEpochs^{1} = \frac{BaselineEpochs}{1} = BaselineEpochs$. $\floor{.}$ represents the floor function; as $\frac{BaselineEpochs}{i}$ will not always be integer, we round down the number of epochs in each phase. The curriculum model will therefore be trained for a higher number of epochs (precisely, $\sum_{t=1}^{NumTasks}{\frac{1}{t}}$ times more epochs), however the number of parameter updates will be equalised. 
 
 \subsection{Pseudocode for BAC}\label{BACPseudocode}
-Pseudocode for the boostrapped active curriculum method (assuming the use of the AADT uncertainty function and an easy to hard curriculum):
+Pseudocode for the boostrapped active curriculum method (assuming the use of the AADT uncertainty function and an easy to hard curriculum). Note that we abuse the definition of the AADT function from Section \ref{BAC_AADT}, slightly to set $\mathbf{s}^{\theta_{baseline}} = AADT_{\theta_{baseline}}(\mathcal{T}) $, i.e. signifying that $\mathbf{s}^{\theta_{baseline}} $ is the output of the AADT uncertainty function over the entire training set $\mathcal{T}$.:
 \begin{algorithmic}
 \FOR {$Num\_Epochs$}
 \STATE $\text{train }  \theta_{baseline} \text{ on training set } \mathcal{T}$

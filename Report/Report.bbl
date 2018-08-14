@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{Allgoer1980}
+E.~Allgower and K.~Georg.
+\newblock {\em Numerical continuation methods. An introduction}.
+\newblock Springer-Verlag, 1980.
+
 \bibitem{avramova2015curriculum}
 V.~Avramova.
 \newblock Curriculum learning with deep convolutional neural networks, 2015.
@@ -22,6 +27,24 @@ Y.~Bengio.
 \newblock In {\em Neural networks: Tricks of the trade}, pages 437--478.
   Springer, 2012.
 
+\bibitem{Bengio2009}
+Y.~Bengio, J.~Louradour, R.~Collobert, and J.~Weston.
+\newblock Curriculum learning.
+\newblock {\em Procedures of the International Conference on Machine Learning},
+  26:41--48, 2009.
+
+\bibitem{GeoShapes}
+O.~Breuleux, J.~Louradour, and F.~Bastien.
+\newblock Geometric shapes database.
+\newblock 2008.
+
+\bibitem{Chang18}
+H.-S. Chang, E.~Learned-Miller, and A.~McCallum.
+\newblock Active bias: Training more accuracy neural networks by emphasizing
+  high variance samples.
+\newblock {\em Advances in Neural Information Processing Systems}, 31:1--122,
+  2017.
+
 \bibitem{chollet2015keras}
 F.~Chollet et~al.
 \newblock Keras, 2015.
@@ -35,11 +58,6 @@ D.~Cohn, L.~Atlas, and R.~Ladner.
 D.~A. Cohn, Z.~Ghahramani, and M.~I. Jordan.
 \newblock Active learning with statistical models.
 \newblock {\em Journal of artificial intelligence research}, 4:129--145, 1996.
-
-\bibitem{Allgoer1980}
-E.L.Allgower and K.Georg.
-\newblock {\em Numerical continuation methods. An introduction}.
-\newblock Springer-Verlag, 1980.
 
 \bibitem{ELMAN199371}
 J.~L. Elman.
@@ -93,13 +111,6 @@ P.~Grunwald.
 \newblock The minimum description length principle. 2007.
 \newblock {\em Cambridge: Massachusetts Institute of Technology}, 2007.
 
-\bibitem{Chang18}
-A.~H-S~Chang, E.Learned-Miller.
-\newblock Active bias: Training more accuracy neural networks by emphasizing
-  high variance samples.
-\newblock {\em Advances in Neural Information Processing Systems}, 31:1--122,
-  2017.
-
 \bibitem{hastie2009unsupervised}
 T.~Hastie, R.~Tibshirani, and J.~Friedman.
 \newblock Unsupervised learning.
@@ -112,15 +123,15 @@ M.~A. Hearst, S.~T. Dumais, E.~Osuna, J.~Platt, and B.~Scholkopf.
 \newblock {\em IEEE Intelligent Systems and their applications}, 13(4):18--28,
   1998.
 
+\bibitem{hinton2005kind}
+G.~E. Hinton et~al.
+\newblock What kind of graphical model is the brain?
+\newblock In {\em IJCAI}, volume~5, pages 1765--1775, 2005.
+
 \bibitem{houlsby2011bayesian}
 N.~Houlsby, F.~Husz{\'a}r, Z.~Ghahramani, and M.~Lengyel.
 \newblock Bayesian active learning for classification and preference learning.
 \newblock {\em arXiv preprint arXiv:1112.5745}, 2011.
-
-\bibitem{Witten2011}
-E.~I.H.Witten and M.A.Hall.
-\newblock {\em DATA MINING. Practical Machine Learning Tools and Techniques}.
-\newblock Morgan Kaufman, 3 edition, 2011.
 
 \bibitem{ioffe2015batch}
 S.~Ioffe and C.~Szegedy.
@@ -170,6 +181,12 @@ Y.~LeCun and C.~Cortes.
 \newblock {MNIST} handwritten digit database.
 \newblock 2010.
 
+\bibitem{lecun1988theoretical}
+Y.~LeCun, D.~Touresky, G.~Hinton, and T.~Sejnowski.
+\newblock A theoretical framework for back-propagation.
+\newblock In {\em Proceedings of the 1988 connectionist models summer school},
+  volume~1, pages 21--28. CMU, Pittsburgh, Pa: Morgan Kaufmann, 1988.
+
 \bibitem{louradour2014curriculum}
 J.~Louradour and C.~Kermorvant.
 \newblock Curriculum learning for handwritten text line recognition.
@@ -182,6 +199,11 @@ T.~Mikolov, M.~Karafi{\'a}t, L.~Burget, J.~{\v{C}}ernock{\`y}, and
 \newblock Recurrent neural network based language model.
 \newblock In {\em Eleventh Annual Conference of the International Speech
   Communication Association}, 2010.
+
+\bibitem{murphy2012machine}
+K.~P. Murphy.
+\newblock Machine learning: A probabilistic perspective. adaptive computation
+  and machine learning, 2012.
 
 \bibitem{nagi2011max}
 J.~Nagi, F.~Ducatelle, G.~A. Di~Caro, D.~Cire{\c{s}}an, U.~Meier, A.~Giusti,
@@ -197,11 +219,6 @@ V.~Nair and G.~E. Hinton.
 \newblock In {\em Proceedings of the 27th international conference on machine
   learning (ICML-10)}, pages 807--814, 2010.
 
-\bibitem{GeoShapes}
-J.~O.Breuleux and F.Bastien.
-\newblock Geometric shapes database.
-\newblock 2008.
-
 \bibitem{pan2010survey}
 S.~J. Pan, Q.~Yang, et~al.
 \newblock A survey on transfer learning.
@@ -213,6 +230,11 @@ A.~Pentina, V.~Sharmanska, and C.~H. Lampert.
 \newblock Curriculum learning of multiple tasks.
 \newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
   Pattern Recognition}, pages 5492--5500, 2015.
+
+\bibitem{ruder2016overview}
+S.~Ruder.
+\newblock An overview of gradient descent optimization algorithms.
+\newblock {\em arXiv preprint arXiv:1609.04747}, 2016.
 
 \bibitem{settles2012active}
 B.~Settles.
@@ -272,16 +294,15 @@ D.~Weinshall and G.~Cohen.
   deep networks.
 \newblock {\em arXiv preprint arXiv:1802.03796}, 2018.
 
+\bibitem{Witten2011}
+I.~Witten, E.~Frank, and M.~Hall.
+\newblock {\em DATA MINING. Practical Machine Learning Tools and Techniques}.
+\newblock Morgan Kaufman, 3 edition, 2011.
+
 \bibitem{yang2003automatically}
 J.~Yang et~al.
 \newblock Automatically labeling video data using multi-class active learning.
 \newblock In {\em Computer Vision, 2003. Proceedings. Ninth IEEE International
   Conference on}, pages 516--523. IEEE, 2003.
-
-\bibitem{Bengio2009}
-R.~Y.Bengio, J.Louradour and J.Weston.
-\newblock Curriculum learning.
-\newblock {\em Procedures of the International Conference on Machine Learning},
-  26:41--48, 2009.
 
 \end{thebibliography}
