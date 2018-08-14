@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.15)  14 AUG 2018 00:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.15)  14 AUG 2018 01:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -552,7 +552,7 @@ Missing character: There is no ù in font ptmr7t!
 
 
 
-] [16]) [17]
+] [16] [17]) [18]
 \openout2 = `BootstrappedActiveCurricula.aux'.
 
  (./BootstrappedActiveCurricula.tex
@@ -563,7 +563,7 @@ Overfull \hbox (1.55127pt too wide) in paragraph at lines 2--3
 te is what we term \OT1/ptm/m/it/12 boot-strapped
  []
 
-[18
+[19
 
 
 
@@ -573,15 +573,15 @@ Overfull \hbox (2.36656pt too wide) in paragraph at lines 14--15
 ine the prox-im-ity of the model's
  []
 
-[19]
+[20]
 Overfull \hbox (51.6872pt too wide) in paragraph at lines 29--31
 \OT1/ptm/m/n/12 AADT un-cer-tainty func-tion and an easy to hard cur-ricu-lum):
                                                       
  []
 
-[20] [21]
+[21] [22]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/EasyGe
-oShapesExamples.png, id=106, 722.7pt x 722.7pt>
+oShapesExamples.png, id=109, 722.7pt x 722.7pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/E
 asyGeoShapesExamples.png Graphic file (type png)
 
@@ -594,7 +594,7 @@ LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 (Font)              scaled to size 9.85492pt on input line 61.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/HardGe
-oShapesExamples.png, id=107, 722.7pt x 722.7pt>
+oShapesExamples.png, id=110, 722.7pt x 722.7pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/H
 ardGeoShapesExamples.png Graphic file (type png)
 
@@ -608,9 +608,9 @@ Overfull \hbox (27.89253pt too wide) in paragraph at lines 56--70
  []|  $[]$$[]$ 
  []
 
-[22 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ea
+[23 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ea
 syGeoShapesExamples.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Proje
-ct/Report/Graphics/HardGeoShapesExamples.png>] [23]
+ct/Report/Graphics/HardGeoShapesExamples.png>] [24]
 Overfull \hbox (11.72511pt too wide) in paragraph at lines 90--103
 [][] 
  []
@@ -620,9 +620,9 @@ Overfull \hbox (37.75148pt too wide) in paragraph at lines 109--118
 [][] 
  []
 
-[24]
+[25]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/GeoSha
-pesBACResults_STE.png, id=119, 939.51pt x 939.51pt>
+pesBACResults_STE.png, id=123, 939.51pt x 939.51pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/G
 eoShapesBACResults_STE.png Graphic file (type png)
 
@@ -633,7 +633,7 @@ t/Report/Graphics/GeoShapesBACResults_STE.png used on input line 130.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/GeoSha
-pesBACResults_Boxplt.png, id=120, 1084.05pt x 1084.05pt>
+pesBACResults_Boxplt.png, id=124, 1084.05pt x 1084.05pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/G
 eoShapesBACResults_Boxplt.png Graphic file (type png)
 
@@ -647,34 +647,34 @@ Overfull \hbox (81.94524pt too wide) in paragraph at lines 126--141
  []|  $[]$$[]$ 
  []
 
-[25 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ge
+[26 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ge
 oShapesBACResults_STE.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Pro
-ject/Report/Graphics/GeoShapesBACResults_Boxplt.png>] [26] [27]) [28]
+ject/Report/Graphics/GeoShapesBACResults_Boxplt.png>] [27] [28]) [29]
 \openout2 = `DynamicSampledActiveCurricula.aux'.
 
 
 (./DynamicSampledActiveCurricula.tex
 Chapter 5.
-[29
+[30
 
 
 
-] [30]
+] [31]
 Overfull \hbox (16.08403pt too wide) in paragraph at lines 14--16
 \OT1/ptm/m/n/12 un-cer-tainty func-tion and an easy to hard cur-ricu-lum):     
                                                  
  []
 
-[31] [32] [33]
+[32] [33] [34]
 Overfull \hbox (14.14821pt too wide) in paragraph at lines 81--82
 [] []$[]\OML/ptmcm/m/it/12 ^^R[][]\OMS/pzccm/m/n/12 T[]\OML/ptmcm/m/it/12 ; [][
 ]\OT1/ptmcm/m/n/12 (\OML/ptmcm/m/it/12 :\OMS/pzccm/m/n/12 j\OML/ptmcm/m/it/12 ^
 ^R[]\OT1/ptmcm/m/n/12 )$ 
  []
 
-[34] [35] [36]
+[35] [36] [37]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MNISTE
-xamples.png, id=161, 722.7pt x 722.7pt>
+xamples.png, id=165, 722.7pt x 722.7pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/M
 NISTExamples.png Graphic file (type png)
 
@@ -685,7 +685,7 @@ t/Report/Graphics/MNISTExamples.png used on input line 146.
 (pdftex.def)             Requested size: 247.54149pt x 247.53429pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MNISTE
-xamples2.png, id=162, 722.7pt x 722.7pt>
+xamples2.png, id=166, 722.7pt x 722.7pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/M
 NISTExamples2.png Graphic file (type png)
 
@@ -702,9 +702,9 @@ Overfull \hbox (27.89253pt too wide) in paragraph at lines 142--152
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[37]
+[38]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CIFARE
-xamples.png, id=167, 542.025pt x 542.025pt>
+xamples.png, id=170, 542.025pt x 542.025pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/C
 IFARExamples.png Graphic file (type png)
 
@@ -715,7 +715,7 @@ t/Report/Graphics/CIFARExamples.png used on input line 163.
 (pdftex.def)             Requested size: 247.54149pt x 247.5398pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CIFARE
-xamples2.png, id=168, 542.025pt x 542.025pt>
+xamples2.png, id=171, 542.025pt x 542.025pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/C
 IFARExamples2.png Graphic file (type png)
 
@@ -732,7 +732,7 @@ Overfull \hbox (27.89253pt too wide) in paragraph at lines 159--169
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[38 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
+[39 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
 ISTExamples.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Repor
 t/Graphics/MNISTExamples2.png>]
 Overfull \hbox (11.72511pt too wide) in paragraph at lines 180--194
@@ -752,16 +752,16 @@ Overfull \hbox (10.04463pt too wide) in paragraph at lines 216--232
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[39 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CI
+[40 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CI
 FARExamples.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Repor
-t/Graphics/CIFARExamples2.png>] [40]
+t/Graphics/CIFARExamples2.png>] [41]
 Overfull \hbox (16.78545pt too wide) in paragraph at lines 265--279
 []|  [] 
  []
 
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/GeoSha
-pes_Dynamic_Results_STE.png, id=182, 939.51pt x 939.51pt>
+pes_Dynamic_Results_STE.png, id=185, 939.51pt x 939.51pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/G
 eoShapes_Dynamic_Results_STE.png Graphic file (type png)
 
@@ -772,7 +772,7 @@ t/Report/Graphics/GeoShapes_Dynamic_Results_STE.png used on input line 290.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/GeoSha
-pes_Dynamic_Results_Boxplt.png, id=183, 1084.05pt x 1084.05pt>
+pes_Dynamic_Results_Boxplt.png, id=186, 1084.05pt x 1084.05pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/G
 eoShapes_Dynamic_Results_Boxplt.png Graphic file (type png)
 
@@ -789,9 +789,9 @@ Overfull \hbox (81.94524pt too wide) in paragraph at lines 286--301
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[41]
+[42]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/DAC_Ge
-oShapes_Proportion.png, id=187, 722.7pt x 722.7pt>
+oShapes_Proportion.png, id=190, 722.7pt x 722.7pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/D
 AC_GeoShapes_Proportion.png Graphic file (type png)
 
@@ -804,11 +804,11 @@ t/Report/Graphics/DAC_GeoShapes_Proportion.png used on input line 310.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[42 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ge
+[43 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/Ge
 oShapes_Dynamic_Results_STE.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learni
 ng_Project/Report/Graphics/GeoShapes_Dynamic_Results_Boxplt.png>]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MNIST_
-Dynamic_Results.png, id=193, 939.51pt x 939.51pt>
+Dynamic_Results.png, id=197, 939.51pt x 939.51pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/M
 NIST_Dynamic_Results.png Graphic file (type png)
 
@@ -819,7 +819,7 @@ t/Report/Graphics/MNIST_Dynamic_Results.png used on input line 325.
 (pdftex.def)             Requested size: 288.79422pt x 288.79367pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CIFAR_
-Dynamic_Results.png, id=194, 939.51pt x 939.51pt>
+Dynamic_Results.png, id=198, 939.51pt x 939.51pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/C
 IFAR_Dynamic_Results.png Graphic file (type png)
 
@@ -836,12 +836,12 @@ Overfull \hbox (81.94524pt too wide) in paragraph at lines 321--336
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[43 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/DA
-C_GeoShapes_Proportion.png>] [44 </Users/ianmcwilliam/Desktop/MSc/Active_Learni
+[44 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/DA
+C_GeoShapes_Proportion.png>] [45 </Users/ianmcwilliam/Desktop/MSc/Active_Learni
 ng_Project/Report/Graphics/MNIST_Dynamic_Results.png> </Users/ianmcwilliam/Desk
 top/MSc/Active_Learning_Project/Report/Graphics/CIFAR_Dynamic_Results.png>]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MNIST_
-Uncertain_Samples.png, id=206, 722.7pt x 722.7pt>
+Uncertain_Samples.png, id=209, 722.7pt x 722.7pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/M
 NIST_Uncertain_Samples.png Graphic file (type png)
 
@@ -852,7 +852,7 @@ t/Report/Graphics/MNIST_Uncertain_Samples.png used on input line 349.
 (pdftex.def)             Requested size: 288.79422pt x 288.78816pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MNIST_
-certain_Samples.png, id=207, 722.7pt x 722.7pt>
+certain_Samples.png, id=210, 722.7pt x 722.7pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/M
 NIST_certain_Samples.png Graphic file (type png)
 
@@ -866,11 +866,11 @@ Overfull \hbox (81.94524pt too wide) in paragraph at lines 345--360
  []|  $[]$$[]$ 
  []
 
-[45 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
+[46 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/MN
 IST_Uncertain_Samples.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Pro
 ject/Report/Graphics/MNIST_certain_Samples.png>]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CIFAR_
-Uncertain_Samples.png, id=213, 542.025pt x 542.025pt>
+Uncertain_Samples.png, id=216, 542.025pt x 542.025pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/C
 IFAR_Uncertain_Samples.png Graphic file (type png)
 
@@ -881,7 +881,7 @@ t/Report/Graphics/CIFAR_Uncertain_Samples.png used on input line 372.
 (pdftex.def)             Requested size: 288.79422pt x 288.80194pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CIFAR_
-certain_Samples.png, id=214, 542.025pt x 542.025pt>
+certain_Samples.png, id=217, 542.025pt x 542.025pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/C
 IFAR_certain_Samples.png Graphic file (type png)
 
@@ -895,11 +895,11 @@ Overfull \hbox (81.94524pt too wide) in paragraph at lines 368--383
  []|  $[]$$[]$ 
  []
 
-[46 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CI
+[47 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CI
 FAR_Uncertain_Samples.png> </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Pro
 ject/Report/Graphics/CIFAR_certain_Samples.png>]
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CIFAR_
-certain_Samples_D2T.png, id=220, 542.025pt x 542.025pt>
+certain_Samples_D2T.png, id=223, 542.025pt x 542.025pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/C
 IFAR_certain_Samples_D2T.png Graphic file (type png)
 
@@ -910,7 +910,7 @@ t/Report/Graphics/CIFAR_certain_Samples_D2T.png used on input line 394.
 (pdftex.def)             Requested size: 288.79422pt x 288.80194pt.
 
 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/CIFAR_
-Uncertain_Samples_D2T.png, id=221, 542.025pt x 542.025pt>
+Uncertain_Samples_D2T.png, id=224, 542.025pt x 542.025pt>
 File: /Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graphics/C
 IFAR_Uncertain_Samples_D2T.png Graphic file (type png)
 
@@ -927,7 +927,7 @@ Overfull \hbox (81.94524pt too wide) in paragraph at lines 390--405
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[47]) [48 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graph
+[48]) [49 </Users/ianmcwilliam/Desktop/MSc/Active_Learning_Project/Report/Graph
 ics/CIFAR_certain_Samples_D2T.png> </Users/ianmcwilliam/Desktop/MSc/Active_Lear
 ning_Project/Report/Graphics/CIFAR_Uncertain_Samples_D2T.png>]
 \openout2 = `Conclusion.aux'.
@@ -935,11 +935,11 @@ ning_Project/Report/Graphics/CIFAR_Uncertain_Samples_D2T.png>]
 
 (./Conclusion.tex
 Chapter 6.
-[49
+[50
 
 
 
-] [50]) [51] (./Report.bbl [52
+] [51]) [52] (./Report.bbl [53
 
 
 ]
@@ -948,17 +948,17 @@ Underfull \hbox (badness 5403) in paragraph at lines 87--90
 /ptm/m/it/12 arXiv preprint
  []
 
-[53] [54]) [55]
+[54] [55]) [56]
 \openout2 = `appendix1.aux'.
 
  (./appendix1.tex
 Appendix A.
-[56
+[57
 
 
 ]
 Appendix B.
-) [57
+) [58
 
 ] (./Report.aux (./Introduction.aux) (./Background.aux) (./RelatedWork.aux) (./
 BootstrappedActiveCurricula.aux) (./DynamicSampledActiveCurricula.aux)
@@ -988,10 +988,10 @@ t/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
 e1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on Report.pdf (63 pages, 1402916 bytes).
+Output written on Report.pdf (64 pages, 1405181 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
+ 307 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
